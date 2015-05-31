@@ -1,5 +1,11 @@
 body, button, input, select, textarea{
 	font-family: '微软雅黑';
 }
-
+.footBtn{
+  text-align: center;
+  padding:30px 0 70px 0; 
+}
+.footBtn a{
+   padding: 12px 26px;
+}
  

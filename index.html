@@ -3,10 +3,12 @@
     <head>
     <meta charset="UTF-8">
     <title>教育质量测评系统</title>
-    <link type="image/x-icon" href="favicon.ico" rel="icon">
-    <link media="all" href="style/reset.css" rel="stylesheet"> 
-    <link media="all" href="style/public.css" rel="stylesheet"> 
-    <link media="all" href="style/index.css" rel="stylesheet">  
+    <link type="image/x-icon" href="favicon.ico" rel="icon">    
+    <link media="all" href="style/public.css" rel="stylesheet">    
+    <link href="style/component.css" rel="stylesheet" type="text/css">    
+    <link href="style/layout.css" rel="stylesheet" type="text/css">    
+    <link href="style/skin.css" rel="stylesheet" type="text/css">    
+    <link media="all" href="style/index.css" rel="stylesheet">    
     <!--[if IE]>
         <script src="js/html5.js"></script>
     <![endif]-->
@@ -53,12 +55,9 @@
                 <li>
                     <a href="">统计分析</a>
                 </li>
-                <li>
-                    <a href="">系统管理</a>
-                </li>
                 <li class="last">
-                    <a href="" class="mustLogin">我的通宝</a>
-                </li>
+                    <a href="">系统管理</a>
+                </li> 
             </ul>
         </div>
     </div>
@@ -72,8 +71,130 @@
             <div class="projectTitle">
             <a class="projectName" href="javascript:void(0);"><span></span>考试设置</a> 
             </div>
+              <div class="formItem-wrap marginB10">
+                <div class="formStyle-item">
+                    <label for="" class="formStyle-label">考试名称：</label>
+                    <input type="text" value="坚持使用礼貌用语，不随便拿别人的东西" class="customForm_inputBoxDefault customForm_txtInput grid_col10">
+                </div>
+
+                <div class="formStyle-item">
+                    <label for="" class="formStyle-label">考试时间：</label>
+                    <input type="text" value="6分" class="customForm_inputBoxDefault customForm_txtInput grid_col5_6">&nbsp;<input type="text" value="6分" class="customForm_inputBoxDefault customForm_txtInput grid_col5_6">
+                </div>
+                 <div class="formStyle-item" style="width:100%;">
+                    <label for="" class="formStyle-label">考生须知：</label>
+                    <textarea name="" id="" cols="" rows="" class="customForm_inputBoxDefault customForm_textarea grid_col26">
+                        
+                    </textarea> 
+                </div>
+                <div class="formStyle-item">
+                    <label for="" class="formStyle-label">考试时长：</label>
+                     <select name="" id="" class="customForm_inputBoxDefault customForm_select">
+                      <option value="">限制时长</option>
+                      <option value="">不限制时长</option>
+                    </select>
+                    <input type="text" value="60" class="customForm_inputBoxDefault customForm_txtInput grid_col2">&nbsp;分钟
+                </div>
+
+                <div class="formStyle-item">
+                    <label for="" class="formStyle-label">考试次数：</label>
+                    <select name="" id="" class="customForm_inputBoxDefault customForm_select">
+                      <option value="">限制每人最多参考次数</option>
+                      <option value="">限制每人最少参考次数</option>
+                    </select>
+                    <input type="text" value="1" class="customForm_inputBoxDefault customForm_txtInput grid_col2">
+                </div> 
+                <div class="clear"></div>
+              </div>  
         </div>
         <!-- ==考试设置== -->
+
+        <!-- 考试试卷 -->
+        <div class="project">
+            <div class="projectTitle">
+            <a class="projectName" href="javascript:void(0);"><span></span>考试试卷</a> 
+            </div>
+              <div class="formItem-wrap marginB10">
+                <div class="formStyle-item" style="width:100%;">
+                    <label for="" class="formStyle-label">试卷名称：</label>
+                    <input type="text" value="坚持使用礼貌用语，不随便拿别人的东西" class="customForm_inputBoxDefault customForm_txtInput grid_col15">
+                    <a href="javascript:;" name="editPublish" class="customBtn colourBlack marginR10">确定</a>
+                </div> 
+                <div class="clear"></div>
+              </div>  
+        </div>
+        <!-- ==考试试卷== -->
+
+         <!-- 参考对象 -->
+        <div class="project">
+            <div class="projectTitle">
+            <a class="projectName" href="javascript:void(0);"><span></span>参考对象</a> 
+            </div>
+
+            <div class="tableCon">
+               <div class="tableBtn ">
+                   <a href="javascript:;" name="editPublish" class="customBtn colourWhite marginR10">删除</a>
+                   <a href="javascript:;" name="editPublish" class="customBtn colourBlack marginR10">选择对象</a> 
+                   <div class="clear"></div>
+               </div>
+               <table class="tableSet" >
+                <!-- 可以在class中加入tableSet-inbox或tableSet-noborder分别适应不同的情况 -->
+                <!-- 有边框 -->
+                <thead>
+                    <tr>
+                        <th style="width:6%"><input type="checkbox"></th>
+                        <th style="width:50%">组名称</th>
+                        <th style="width:18%">是否包含下级分组</th>
+                        <th >组描述</th>
+                    </tr>
+                </thead>
+                <!-- 表头可选 -->
+                <tbody>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>孝感文昌区中学</td>
+                        <td><input type="checkbox"></td>
+                        <td>孝感文昌区中学下面还有附属小学，等等......</td>
+                    </tr>
+                    <tr class="tableSet-split">
+                        <td><input type="checkbox"></td>
+                        <td>孝感文昌区中学</td>
+                        <td><input type="checkbox"></td>
+                        <td>孝感文昌区中学下面还有附属小学，等等......</td>
+                    </tr>
+                     <tr>
+                        <td><input type="checkbox"></td>
+                        <td>孝感文昌区中学</td>
+                        <td><input type="checkbox"></td>
+                        <td>孝感文昌区中学下面还有附属小学，等等......</td>
+                    </tr>
+                    <tr class="tableSet-split">
+                        <td><input type="checkbox"></td>
+                        <td>孝感文昌区中学</td>
+                        <td><input type="checkbox"></td>
+                        <td>孝感文昌区中学下面还有附属小学，等等......</td>
+                    </tr>
+                     <tr>
+                        <td><input type="checkbox"></td>
+                        <td>孝感文昌区中学</td>
+                        <td><input type="checkbox"></td>
+                        <td>孝感文昌区中学下面还有附属小学，等等......</td>
+                    </tr>
+                    <tr class="tableSet-split">
+                        <td><input type="checkbox"></td>
+                        <td>孝感文昌区中学</td>
+                        <td><input type="checkbox"></td>
+                        <td>孝感文昌区中学下面还有附属小学，等等......</td>
+                    </tr> 
+                </tbody>              
+            </table>
+        </div>
+        </div>
+        <!-- ==参考对象== -->
+        <div class="footBtn">
+            <a href="javascript:;" name="editPublish" class="customBtn colourGreen marginR10">添加完成</a>
+            <a href="javascript:;" name="editPublish" class="customBtn colourWhite  marginR10">清空页面</a> 
+        </div>
     </div>
 </div>
 <!--== 主要模块== -->

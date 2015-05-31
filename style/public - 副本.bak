@@ -1,93 +1,7 @@
-﻿/*全局*/
-body {
-	font-size:12px;
-	text-align:center;
-	line-height:1.2;
-	padding:0;
-	margin:0;
-	font-family:'Microsoft YaHei';
+.container{
+  width: 1190px;
+  margin:0 auto 
 }
-
-div,h1,h2,h3,h4,h5,h6,ol,ul,li,dl,dt,dd,form,input,select,textarea {
-	text-align:left;
-	padding:0;
-	margin:0;
-}
-
-input,select,textarea,table {
-	font-size:12px;
-	font-family:'Microsoft YaHei';
-}
-
-ol,ul {
-	list-style:none;
-}
-
-p {
-	padding:0;
-	margin:0;
-}
-
-img {
-	vertical-align:middle;
-	border:none;
-}
-
-a:hover {
-	-webkit-transition: background 0.3s;
-	transition: background 0.3s;
-	-moz-transition: background 0.3s;
-	-o-transition: background 0.3s;
-}
-
-/*align*/
-.textAlignC {
-	text-align:center;
-}
-
-/*width*/
-.width82 {
-	width:82px;
-}
-
-.width100 {
-	width:100px;
-}
-
-.width110 {
-	width:110px;
-}
-
-.width184 {
-	width:184px;
-}
-
-.width298 {
-	width:298px;
-}
-
-.width306 {
-	width:306px;
-}
-
-.width330 {
-	width:330px;
-}
-
-.width344 {
-	width:344px;
-}
-
-.width348 {
-	width:348px;
-}
-
-/*height*/
-.height24 {
-	height:24px;
-	line-height:24px;
-}
-
 .exampleWrap {
 	width:800px;
 	padding:15px;
@@ -95,6 +9,7 @@ a:hover {
 	border:1px solid #e5e5e5;
 	margin:35px auto 0 auto;
 	box-shadow:1px 1px 2px #f0f0f0;
+	background: #fff;
 }
 
 .exampleWrap h3 {
@@ -108,102 +23,6 @@ a:hover {
 
 .exampleWrap .inner {
 	padding:0 0 15px 0;
-}
-
-a {
-	color:#000;
-	text-decoration:none;
-}
-
-a:hover,a:active {
-	color:#072;
-	text-decoration:underline;
-}
-/*tab4*/
-a.LWhiteA:link,a.LWhiteA:visited {
-	color:#c0dfc0;
-	text-decoration:none;
-}
-
-a.LWhiteA:hover {
-	color:#225e30;
-	text-decoration:none;
-}
-
-a.LWhiteAB:link,a.LWhiteAB:visited {
-	color:#c0dfc0;
-	text-decoration:underline;
-}
-
-a.LWhiteAB:hover {
-	color:#225e30;
-	text-decoration:underline;
-}
-
- 
-
-.greenBgColor {
-	background:#469d52;
-}
-
-/*分页*/
-.page {
-
-}
-.page b{
-	padding: 2px 9px;
-	margin: 0 3px;
-	border: 1px solid #B8BFC4;
-	vertical-align: middle;
-	background: #B8BFC4;
-	color: #fff;
-}
-.page div {
-	width:auto;
-	overflow:hidden;
-	text-align:center;
-	clear:both;
-	margin:0;
-	padding:0;
-	background: #FAFAFA;
-}
-
-#info {
-	padding:4px 0;
-	display:inline-block;
-}
-
-.page a {
-	 font-family:'simsun';
-	color:#505050;
-	display:inline-block;
-	padding:4px 9px;
-	margin:0 3px;
-	border:1px solid #e7e7e7;
-	background: #EEE;
-	vertical-align:middle;
-}
-
-.page a:hover {
-	text-decoration:none;
-	color:#fff;
-	background: #4a8bc2;
-	border: 1px solid #4a8bc2;
-}
-
-.page .current {
-	display:inline-block;
-	padding:0 7px;
-	font-weight:bold;
-}
-.page .pn {
-	font-family: 'simsun';
-}
-
-/*==分页==*/
-.container{
-  width: 1190px;
-  margin:0 auto 
 }
 
 .topNav{ width:100%;min-width: 1020px; background:#3d3d3d; height:30px;position: fixed;z-index: 10000;top: 0px;}
@@ -278,7 +97,7 @@ _background: url(../images/master2.gif) no-repeat  -4px -51px;}
 /*底部*/
 .footer{
 	margin-top: 50px;
-	height: 95px;
+	height: 116px;
 	background: #2f2f2f;
 	
 }
@@ -317,7 +136,8 @@ body{
 /*公共表单模块*/
 .project {
 	border: 1px solid #dadada;
-	border-radius: 3px; 
+	border-radius: 3px;
+	height: 150px;
 	margin-top: 12px;
 	background-color: #ffffff;
 	position: relative;
@@ -356,21 +176,59 @@ box-shadow: 2px 2px 3px #dadada;
 /*box-shadow: 0px 4px 10px #dadada;*/
 }
 /*==公共表单模块==*/
-/*表格样式调整*/
-.tableCon{
-  padding: 15px 20px;	
-}
-.tableSet tbody td{
-	color: #929191;
-}
-.tableSet thead th{
-	font-weight: bold;
-	color: #696969;
-}
-.tableBtn a{
-	float: right;
-	margin-bottom: 10px;
-}
-/*==表格样式调整==*/
 
+/*分页*/
+.page {
 
+}
+.page b{
+	padding: 2px 9px;
+	margin: 0 3px;
+	border: 1px solid #B8BFC4;
+	vertical-align: middle;
+	background: #B8BFC4;
+	color: #fff;
+}
+.page div {
+	width:auto;
+	overflow:hidden;
+	text-align:center;
+	clear:both;
+	margin:0;
+	padding:0;
+	background: #FAFAFA;
+}
+
+#info {
+	padding:4px 0;
+	display:inline-block;
+}
+
+.page a {
+	 font-family:'simsun';
+	color:#505050;
+	display:inline-block;
+	padding:4px 9px;
+	margin:0 3px;
+	border:1px solid #e7e7e7;
+	background: #EEE;
+	vertical-align:middle;
+}
+
+.page a:hover {
+	text-decoration:none;
+	color:#fff;
+	background: #4a8bc2;
+	border: 1px solid #4a8bc2;
+}
+
+.page .current {
+	display:inline-block;
+	padding:0 7px;
+	font-weight:bold;
+}
+.page .pn {
+	font-family: 'simsun';
+}
+
+/*==分页==*/
