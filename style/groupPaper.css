@@ -1,0 +1,174 @@
+aside{
+	width: 266px;
+	float:left;
+}
+
+aside .projectTop{
+	 margin:1px;
+	 height:54px;
+	 background: #ebebeb;
+	 overflow: hidden;
+}
+aside .projectTop .formStyle-item{
+	padding: 16px 5px 0px 10px; 
+}
+aside .project .projectTitle .projectName{
+	margin-right: 20px;
+}
+aside .project .projectTitle .projectName  span{
+	 display: none
+}
+aside .project .projectTitle .projectName.sel {
+	color: #e43636;
+}
+aside .project .projectTitle .projectName.sel span{
+	 display: block
+}
+#treeDemo{
+	margin-top: 10px;
+	padding-left: 20px;
+}
+#treeDemo li{
+	line-height: 28px;
+}
+#treeDemo li a.curSelectedNode{
+	height: 28px;
+}
+#treeDemo li span.button.ico_docu {
+ vertical-align: middle;
+}
+.mainList{
+	float: right;
+	width:914px; 
+}
+.mainList .testTop .project,.mainList .testlist .project{
+	padding:10px 12px; 
+}
+.mainList .testTop span{
+	color: #4a4a4a;
+	line-height: 24px;
+}
+.mainList .testTop span b{
+	color: #66b34e;
+	padding:0  10px;
+}
+.mainList .testlist .projectTit{
+	color: #252424;
+	font-size:16px;
+	line-height:28px;  
+	padding-bottom: 20px;
+}
+
+.mainList .testlist .projectAnswer li{
+	color: #6e6e6e;
+	font-size:14px;  
+	display: inline-block;
+	width:260px;
+	padding-bottom: 12px;
+}
+.mainList .testlist .projectAnswer{
+	padding-bottom: 20px;
+	border-bottom: 1px dashed #d4d2d2;
+}
+.mainList .testlist .projectBtn{
+	color: #252424; 
+	padding-top: 10px;
+}
+.mainList .testlist .projectBtn span{
+	padding-right: 15px;
+	line-height: 24px;
+}
+.mainList .testlist .projectBtn span b{
+	color: #e54949;
+	padding:0  10px;
+}
+/*试题栏*/
+#basket {
+	position: fixed;
+	top: 200px;
+	width: 193px;
+	background: #e54949 url(../images/basket_03.jpg) 3px 38px no-repeat;
+	padding-left: 37px;
+	right: 0px;
+	z-index: 999;
+	overflow: hidden;
+	min-height: 266px;
+}
+t
+#basket-Tool {
+	position: fixed;
+	top: 200px;
+	right: 4px;
+	z-index: 999;
+}
+
+.hanger-line {
+	width: 65px;
+	border-right: 1px dashed #c5c5c5;
+	height: 100px;
+}
+
+.hanger-con {
+	border-top: 4px solid #e54949; 
+	border-bottom: 4px solid #e54949;
+	background: #fff;
+	min-height: 258px;
+}
+
+.hanger-tit {
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	color: #fff;
+	background-color: #f27a2a;
+	font-size: 18px;
+	font-weight: bold;
+}
+
+.hanger-con dl {
+	width: 180px;
+	margin: 0 auto 10px;
+	
+}
+
+.hanger-con dt {
+	border-bottom: 1px dashed #a0a0a0;
+	height: 20px;
+	line-height: 20px; 
+	text-align: center;
+	padding-bottom: 15px;
+	margin: 15px auto;
+	font-size: 16px;
+	color: #2f2f2f;
+}
+
+.hanger-con dt span {
+	color: #ff1e1e;
+	font-weight: bold;
+	font-size: 14px;
+}
+
+.hanger-con dd div {
+	padding: 0 7px;
+}
+
+a.for-empty,a.goto-test {
+	display: block;
+	margin: 0 auto 10px;
+	width: 130px;
+	background-color: #090;
+	text-align: center;
+	height: 24px;
+	line-height: 24px;
+	color: #fff;
+}
+
+a.for-empty {
+	background-color: #e3e3e3;
+	color: #666;
+}
+
+a.for-empty:hover,a.goto-test:hover {
+	color: #fff;
+	background-color: #029CDE;
+}

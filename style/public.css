@@ -209,7 +209,7 @@ a.LWhiteAB:hover {
 .topNav{ width:100%;min-width: 1020px; background:#3d3d3d; height:30px;position: fixed;z-index: 10000;top: 0px;}
 .topNav li{line-height:30px;font-size: 12px; color:#dcdcdc;text-align: center;border-left: 1px solid #2f2f2f; float: left; height: 30px;}
 .topNav li.last{border-right: 1px solid #444444;}
-.topNav .left li{position: relative;padding: 0px 18px;}
+.topNav .left li{position: relative;padding: 0px 8px;}
 .topNav .left li.phoneNum{font-size: 14px;}
 .topNav .left li .phone{display: inline-block;
 overflow: hidden;
@@ -276,8 +276,7 @@ _background: url(../images/master2.gif) no-repeat  -4px -51px;}
 .header .siteDesDiv li .company {color:#505050;}
 
 /*底部*/
-.footer{
-	margin-top: 50px;
+.footer{  
 	height: 95px;
 	background: #2f2f2f;
 	
@@ -372,5 +371,77 @@ box-shadow: 2px 2px 3px #dadada;
 	margin-bottom: 10px;
 }
 /*==表格样式调整==*/
+
+.f-fl{
+	float: left; 
+}
+.f-fr{
+	float: right; 
+}
+
+/*分页调整*/
+
+/*分页*/
+.page {
+	clear:both;
+	margin:15px 0;
+	padding:5px 0;
+	background: #FAFAFA;
+}
+
+.page div {
+	width:auto;
+	overflow:hidden;
+	text-align:right;
+}
+
+/*#info {
+	padding:4px 0;
+	display:inline-block;
+}*/
+
+.page a {
+	color:#747474;
+	display:inline-block;
+	padding:4px 9px;
+	margin:0 3px;
+	border:1px solid #e7e7e7;
+	background: #EEE;
+	vertical-align:middle; 
+}
+
+.page a:hover {
+	text-decoration:none;
+	color:#fff;
+	background:#AE9883;
+	border:1px solid #87725d;
+}
+
+.page .current {
+	display:inline-block;
+	padding:0 7px;
+	font-weight:bold;
+}
+
+
+.page,.page div{
+  background: none;
+}
+.page div { 
+  text-align: center;
+}
+.page a {
+	border-radius: 3px;
+	color: #434445; 
+	border: 1px solid #dbdbdb;
+	background: #ffffff; 
+}
+.page a:hover,.page b{ 
+	border-radius: 3px;
+	color:#fff;
+	background:#e54949;
+	border:1px solid #edadad;
+}
+/*== 分页调整 ==*/
 
 

@@ -1230,47 +1230,6 @@ a.Popups_close:hover{
 	padding: 0 24px;
 }
 
-/*分页*/
-.page {
-	clear:both;
-	margin:15px 0;
-	padding:5px 0;
-	background: #FAFAFA;
-}
-
-.page div {
-	width:auto;
-	overflow:hidden;
-	text-align:right;
-}
-
-/*#info {
-	padding:4px 0;
-	display:inline-block;
-}*/
-
-.page a {
-	color:#747474;
-	display:inline-block;
-	padding:4px 9px;
-	margin:0 3px;
-	border:1px solid #e7e7e7;
-	background: #EEE;
-	vertical-align:middle;
-}
-
-.page a:hover {
-	text-decoration:none;
-	color:#fff;
-	background:#AE9883;
-	border:1px solid #87725d;
-}
-
-.page .current {
-	display:inline-block;
-	padding:0 7px;
-	font-weight:bold;
-}
 
 
 .table_form tr{
