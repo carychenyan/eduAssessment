@@ -88,13 +88,14 @@ aside .project .projectTitle .projectName.sel span{
 	top: 200px;
 	width: 193px;
 	background: #e54949 url(../images/basket_03.jpg) 3px 38px no-repeat;
-	padding-left: 37px;
+	padding-left: 35px;
 	right: 0px;
 	z-index: 999;
 	overflow: hidden;
 	min-height: 266px;
+	border-radius: 3px 0 0 3px;
+	box-shadow: -5px 5px 15px #d6d6d6; 
 }
-t
 #basket-Tool {
 	position: fixed;
 	top: 200px;
@@ -127,6 +128,7 @@ t
 
 .hanger-con dl {
 	width: 180px;
+	height: 198px;
 	margin: 0 auto 10px;
 	
 }
@@ -171,4 +173,18 @@ a.for-empty {
 a.for-empty:hover,a.goto-test:hover {
 	color: #fff;
 	background-color: #029CDE;
+}
+.basketBtn{
+	padding-left: 12px;
+}
+#showwayBtn{
+	width: 24px;
+	height: 24px;
+	position: absolute;
+	bottom: 13px;
+	left: 6px;
+	background: #e54949 url(../images/basket_07.jpg) 0 0 no-repeat;
+}
+#showwayBtn.showbtn{
+	background-image: url(../images/basket_08.jpg);
 }

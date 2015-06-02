@@ -12,6 +12,8 @@
     <!--[if IE]>
         <script src="js/html5.js"></script>
     <![endif]-->
+     <script type="text/javascript" src="js/jquery-1.6.4.min.js"></script>
+     <script type="text/javascript" src="js/public.js"></script>
     </head> 
     <body> 
 <!-- 顶部 -->
@@ -40,23 +42,50 @@
         <a class="master logo yundanLogo" href="/"></a>  
         <div class="nav">
             <ul>
-                <li>
-                    <a href="">首页</a>
+                <li><a href="" class="sec">首页</a>
                 </li>
                 <li>
-                    <a href="">题库管理</a>
+                <span></span>
+                    <a href="" class="sec">题库管理</a>
+                    <ul class="secUl">
+                        <li><a href="">评价指标</a></li>
+                        <li><a href="">添加试题</a></li>
+                        <li><a href="">试题管理</a></li>
+                    </ul>
                 </li>
                 <li class="active">
-                    <a href="">试卷管理</a>
+                    <span></span>
+                    <a href="" class="sec">试卷管理</a>
+                    <ul class="secUl">
+                        <li><a href="">手工组卷</a></li>
+                        <li><a href="">试卷管理</a></li> 
+                    </ul>
                 </li>
                 <li>
-                    <a href="">考试管理</a>
+                    <span></span>
+                    <a href="" class="sec">考试管理</a>
+                    <ul class="secUl">
+                        <li><a href="">添加考试</a></li>
+                        <li><a href="">考试管理</a></li> 
+                    </ul>
                 </li>
                 <li>
-                    <a href="">统计分析</a>
+                   <span></span>
+                    <a href="" class="sec">统计分析</a>
+                    <ul class="secUl">
+                        <li><a href="">统计查询</a></li>
+                        <li><a href="">对比分析</a></li> 
+                    </ul>
                 </li>
                 <li class="last">
-                    <a href="">系统管理</a>
+                    <span></span>
+                    <a href="" class="sec">系统管理</a>
+                    <ul class="secUl">
+                        <li><a href="">数据字典</a></li>
+                        <li><a href="">用户分组</a></li> 
+                        <li><a href="">角色维护</a></li>
+                        <li><a href="">用户管理</a></li> 
+                    </ul>
                 </li> 
             </ul>
         </div>

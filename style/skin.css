@@ -205,6 +205,28 @@ a:active, a:hover {
 	border-color: #509f37;
 	box-shadow: inset 0 2px 3px #40792e;
 }
+/*红色按钮*/
+.colourRed  {
+	color: #fff;
+	background-color: #f16565;
+	border-color: #f16565;
+	/*box-shadow: inset 0 1px 0px #368ebb;*/
+}
+.colourRed:hover  {
+	color: #fff;
+	text-decoration: none;
+	background-color: #e54949;
+	border-color: #e54949;
+	/*box-shadow: inset 0 1px 0px #449ac8;*/
+}
+
+.colourRed:active {
+	color: #fff;
+	text-decoration: none;
+	background-color: #e54949;
+	border-color: #e54949;
+	box-shadow: inset 0 2px 3px #b02e2e;
+}
  
 /*蓝色按钮*/
 .colourDarkBlue ,.colourDarkGreen ,.colourDarkGreen:link ,.colourDarkGreen:visited ,.edui-default .edui-dialog-buttons .edui-button .edui-button-body {
