@@ -568,6 +568,7 @@ select {
 	width: 48%;
 	float: left;
 }
+.formStyle-item
 .formStyle-item-divder{
 	padding: 10px 5px 10px 170px;
 	zoom: 1;
@@ -712,7 +713,7 @@ select {
 	background: #3598dc;
 }
 .m-normalPop .ct{
-	overflow-y:auto;
+	/*overflow-y:auto;*/
 }
 .PopupsFra h5{
 	font-size: 14px;
@@ -729,6 +730,12 @@ select {
 	padding: 10px 15px 10px 15px;
 	_padding: 10px 15px 10px 15px;
 	font-weight: bolder;
+}
+.m-normalPop .formStyle-item{
+	width: 100%;
+}
+.m-normalPop .formStyle-item ..formStyle-label{
+	width: 96px;
 }
 /*关闭按钮*/
 a.Popups_close:link,.edui-dialog-closebutton .edui-button-body {
