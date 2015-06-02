@@ -216,7 +216,9 @@ overflow: hidden;
 margin-right: 5px;
 width: 16px;
 height: 18px;
-background: url(../images/master2.png) no-repeat -178px -15px;}
+background: url(../images/master2.png) no-repeat -178px -15px;
+_background: url(../images/master2.gif) no-repeat -178px -15px;
+}
 .topNav .left li .dowm{margin-left: 5px;}
 .topNav .right{float: right;}
 .topNav .right li a{font-size: 12px; color:#dcdcdc;padding: 0px 18px;float: left;}
@@ -413,6 +415,9 @@ box-shadow: 2px 2px 3px #dadada;
 .tableSet thead th{
 	font-weight: bold;
 	color: #696969;
+}
+.tableBtn{
+	height: 36px;
 }
 .tableBtn a{
 	float: right;

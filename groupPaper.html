@@ -166,9 +166,9 @@
             </dd>
             <dd id="QtypeBall">
                 <div>
-                    <span class="title">探究题：</span>
-                    <span>2题</span>
-                    <a class="Empty" href="javascript:void(0);" onclick="Page.Paper.ClearQuestionType('9')" title="点击清空" style="float:right">清空</a>
+                    <span class="title f-fl">探究题：</span>
+                    <span class="f-fl">2题</span>
+                    <a class="Empty f-fr" href="javascript:void(0);" onclick="Page.Paper.ClearQuestionType('9')" title="点击清空">清空</a>
                 </div>
             </dd>
         </dl>
@@ -186,22 +186,26 @@
                <div class="projectTop">
                    <div class="formStyle-item" style="width: 100%;">
                        <label for="" class="formStyle-label" style="color: #000000">当前学段：</label>
-                       <select name="" id="" class="customForm_inputBoxDefault customForm_select grid_col4">
+                       <select name="" id="" class="customForm_inputBoxDefault customForm_select grid_col4" style="float:left">
                            <option value="0">小学</option>
                            <option value="1">初中</option>
                            <option value="2">高中</option>
                        </select>
+                       <div class="clear"></div>
                    </div>
-               </div>
+               </div>  
                <div class="projectTitle">
-                    <a class="projectName sel" href="javascript:void(0);">
-                        <span></span>
-                        按评价指标     
-                    </a>
-                    <a class="projectName" href="javascript:void(0);">
-                        <span></span>
-                        按属性
-                    </a>
+                   <div class="projectTitleBor">
+                       <a class="projectName sel" href="javascript:void(0);">
+                           <span></span>
+                           按评价指标
+                       </a>
+                       <a class="projectName" href="javascript:void(0);">
+                           <span></span>
+                           按属性
+                       </a>
+                        
+                   </div>
                </div>
                <ul id="treeDemo" class="ztree"></ul>               
            </div>
@@ -210,12 +214,16 @@
         <!-- 题目列表栏 -->
         <article class="mainList">          
                  <div class="testTop">
-                 <div class="project">
-                     <span class="f-fl">总计：<b>12139</b>道相关试题</span>
-                      <a href="javascript:;" name="editPublish" class="customBtn colourGreen f-fr">将本页全部试题添加到试题篮</a>
-                      <div class="clear"></div>
+                     <div class="project">
+                         <span class="f-fl">
+                             总计： <b>12139</b>
+                             道相关试题
+                         </span>
+                         <a href="javascript:;" name="editPublish" class="customBtn colourGreen f-fr">将本页全部试题添加到试题篮</a>
+                         <div class="clear"></div>
+                     </div>
+                     <div class="clear"></div>
                  </div>
-             </div>
                  <div class="testlist">
                     <div class="project">
                         <div class="projectTit">1,“学问”二字，需要拆开看，学是学，问是问。“今人有学而无问，虽读书万卷，只是一条钝汉耳。”郑板桥的这段话启示我们（  ）</div>
@@ -224,8 +232,8 @@
                                 <li>A．端正学习态度非常重要</li>
                                 <li>B．要讲究学习方法，带着疑问去学 </li><br/>
                                 <li>C．不懂就问，无须动脑 </li>
-                                <li>D．不管什么书，读多了就能变聪明</li>
-                            </ul>
+                                <li>D．不管什么书，读多了就能变聪明</li> 
+                            </ul> 
                         </div>
                         <div class="projectBtn">
                         <span class="f-fl">累积组卷次数：<b>311</b>次</span>
