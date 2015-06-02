@@ -596,6 +596,7 @@ select {
 
 .formItem-wrap{ 
 	position: relative;
+	_float: left;
 }
 
 .formItem-wrap a.js-form-item-remove{
