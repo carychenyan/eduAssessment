@@ -99,8 +99,6 @@ _background: url(../images/master2.gif) no-repeat -178px -15px;
 
 .topNav .right li{position: relative;}
 
-
-
 .header{height:92px; width: 100%;min-width: 1020px;border-bottom:1px solid #dadada;padding-top: 30px;background: #fff;position: relative; z-index: 100;}
 .header .logo{margin:23px 0px 0px 20px;float: left;
 width: 234px;
