@@ -177,15 +177,13 @@
             <a class="projectName" href="javascript:void(0);"><span></span>选择位置</a> 
             </div>
               <div class="formItem-wrap marginB10">
-                <div class="formStyle-item" style="width:100%;">
+                <div class="formStyle-item" style="width:100%;" id="unionSleArea">
                     <label for="" class="formStyle-label">位置：</label>
-                    <select name="" id="mianSel" class="customForm_inputBoxDefault customForm_select">
-                       <option value="0">中国</option>
-                       <option value="1">美国</option>
+                    <select name="" id="mainSel" class="customForm_inputBoxDefault customForm_select"> 
                     </select>
-                    <select name="" id="secSel" class="customForm_inputBoxDefault customForm_select">              
+                    <select name="" id="secSel" class="customForm_inputBoxDefault customForm_select childSelect">              
                     </select>
-                    <select name="" id="thirdsel" class="customForm_inputBoxDefault customForm_select">           
+                    <select name="" id="thirdsel" class="customForm_inputBoxDefault customForm_select childSelect">           
                     </select>
 
                     <a href="javascript:;" name=" " class="customBtn colourBlack marginR10">确定</a>
@@ -199,13 +197,45 @@
     var opdata1={0:'请选择',1:'中国',2:'美国'};
     var opdata2={0:'请选择',1:'湖北',2:'湖南'};
     var opdata3={0:'请选择',1:'武汉',2:'咸宁',};
-    var op={
-          
-          init=function(){
+    var op={//下拉选择对象 
+            init:function(data,id){
+                 var con='';
+                 for (var i = 0; i <= data.length(); i++) {
+                    con+= '<option value='+i+'>'+data.i+'</option>' 
+                 };
+                 $('#'+id).html(con);
+             },
+             change:function(par,chi){//par和chi如果为true，表明存在父级跟子级
+                if(par==false&&chi==true){
+                   
+                }
+             } 
+    };
 
-          }
+    var selUnion={
+            init:function(unionId,mainSelId,childSelClass,data){
+                //unionId 组件总id
+                //mainSelId 第一组件id
+                //childSelClass 子级选择样式名字
+                //data 第一下拉选择数据
+                var con='';
+                for (var i in data) {
 
-    }
+                    con+= '<option value='+i+'>'+data[i]+'</option>' 
+
+                };
+                $('#'+mainSelId).html(con);
+                $('#'+unionId).find("."+childSelClass).html('');
+            }
+    };
+
+    //初始化联合下拉组件
+    $(function(){
+
+         selUnion.init('unionSleArea','mainSel','childSelect',opdata1);
+    }); 
+   
+  
 </script>
          <!-- 参考对象 -->
         <div class="project">
