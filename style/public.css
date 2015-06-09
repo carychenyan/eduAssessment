@@ -121,16 +121,39 @@ z-index: 1;}
 	border-radius: 3px;
 	box-shadow: 3px 3px 5px #cccccc;
 	display: none;
-	overflow: hidden;
+	/*overflow: hidden;*/
 }
 .header .nav li .sec{
    padding:0 20px; 
    line-height: 30px}
-.header .nav li .secUl li{
+.header .nav li .secUl li,.header .nav li .thirdUl li{
 	line-height: 30px;
 	text-align: center;
 	padding:0px ;
 	width: 100%;
+}
+.header .nav li .thirdUl{
+	margin:0px;
+	position: absolute;
+	z-index: 10;
+	top: 0px;
+	right: -109px; 
+	left: auto;
+	border: 1px solid #dbdbdb;
+	background: #fff;
+	border-radius: 3px;
+	box-shadow: 3px 3px 5px #cccccc;
+	display: none;
+	overflow: hidden;
+	width: 106px;
+}
+ 
+.header .nav li em{
+	font-family: '宋体';
+	margin-right: -15px;
+	padding-left: 10px;
+	font-style: normal;
+	color: #dedede;
 }
 .header .nav li span{
 	position: absolute;
@@ -1438,6 +1461,22 @@ a.Popups_close:hover{
 	-webkit-box-shadow:0px 10px 20px #868686;
 	box-shadow:0px 10px 20px #868686;
 }
+/*面包屑*/
+	.m-breakNav{color:#75570a;font-size:14px;padding-top: 10px;}
+	.m-breakNav b{font-weight: normal;font-family: '宋体';padding: 0 5px;}
+	.m-breakNav a{color:#5cbc3a}
+	.m-breakNav a:hover{color:#3b941b;text-decoration:none}
+	.m-breakNav .icon_tc1{
+		display: inline-block;
+		width: 20px;
+		height: 20px;
+		line-height: 0;
+		font-size: 0;
+		vertical-align: middle;
+		background: url(../images/ico/file_type_sprite.png) no-repeat 0 -2px;
+		_background: url(../images/ico/file_type_sprite.gif) no-repeat 0 -2px;
+}
+/*面包屑*/
  
  
 

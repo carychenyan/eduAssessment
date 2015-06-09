@@ -45,7 +45,17 @@
                 <span></span>
                     <a href="" class="sec">题库管理</a>
                     <ul class="secUl">
-                        <li><a href="">评价指标</a></li>
+                        <li>
+                        <a href="">评价指标<em>&gt;</em></a>
+                            <ul class="thirdUl">
+                                <li>
+                                    <a href="">三级菜单</a>
+                                </li>
+                                <li>
+                                    <a href="">三级菜单</a>
+                                </li>
+                            </ul>
+                        </li>
                         <li><a href="">添加试题</a></li>
                         <li><a href="">试题管理</a></li>
                     </ul>
@@ -92,6 +102,15 @@
 <!-- 主要模块 -->
 <div class="wrap">
     <div class="container">
+<!-- 面包屑 -->
+    <div class="m-breakNav f-mb10"> <i class="icon_tc1"></i>
+        <span>当前位置</span>
+        ：
+        <a href="/xl/teacher">教师</a> <b>&gt;</b>
+        <a href="/xl/lesson">备课夹</a> <b>&gt;</b>
+        公共备课夹
+    </div>
+<!--== 面包屑 ==-->
         <!-- 考试设置 -->
         <div class="project">
             <div class="projectTitle">
@@ -152,7 +171,42 @@
                <div class="clear"></div>
         </div>
         <!-- ==考试试卷== -->
+         <!-- 选择位置 -->
+        <div class="project">
+            <div class="projectTitle">
+            <a class="projectName" href="javascript:void(0);"><span></span>选择位置</a> 
+            </div>
+              <div class="formItem-wrap marginB10">
+                <div class="formStyle-item" style="width:100%;">
+                    <label for="" class="formStyle-label">位置：</label>
+                    <select name="" id="mianSel" class="customForm_inputBoxDefault customForm_select">
+                       <option value="0">中国</option>
+                       <option value="1">美国</option>
+                    </select>
+                    <select name="" id="secSel" class="customForm_inputBoxDefault customForm_select">              
+                    </select>
+                    <select name="" id="thirdsel" class="customForm_inputBoxDefault customForm_select">           
+                    </select>
 
+                    <a href="javascript:;" name=" " class="customBtn colourBlack marginR10">确定</a>
+                </div> 
+                <div class="clear"></div>
+              </div>  
+               <div class="clear"></div>
+        </div>
+        <!-- ==选择位置== -->
+<script type="text/javascript">
+    var opdata1={0:'请选择',1:'中国',2:'美国'};
+    var opdata2={0:'请选择',1:'湖北',2:'湖南'};
+    var opdata3={0:'请选择',1:'武汉',2:'咸宁',};
+    var op={
+          
+          init=function(){
+
+          }
+
+    }
+</script>
          <!-- 参考对象 -->
         <div class="project">
             <div class="projectTitle">
