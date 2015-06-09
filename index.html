@@ -205,9 +205,30 @@
                  };
                  $('#'+id).html(con);
              },
-             change:function(par,chi){//par和chi如果为true，表明存在父级跟子级
+             change:function(par,chi,unionId,childSelId,childSelClass,data){//par和chi如果为true，表明存在父级跟子级
                 if(par==false&&chi==true){
-                   
+                    $('#'+unionId).find("."+childSelClass).html('');
+                    var con='';
+                    for (var i in data) {
+
+                    con+= '<option value='+i+'>'+data[i]+'</option>' 
+
+                    };
+                    $('#'+childSelId).html(con);
+                }
+                else if(par==true&&chi==true){
+                    var ind=$('#'+childSelId).index();
+                     $('#'+unionId).find("."+childSelClass).slice(ind).html('');
+                    var con='';
+                    for (var i in data) {
+
+                    con+= '<option value='+i+'>'+data[i]+'</option>' 
+
+                    };
+                    $('#'+childSelId).html(con);
+                }
+                else if(par==true&&chi==false){
+                    return;
                 }
              } 
     };
@@ -233,6 +254,9 @@
     $(function(){
 
          selUnion.init('unionSleArea','mainSel','childSelect',opdata1);
+         $("#mainSel").bind("change",function(){
+            
+         });
     }); 
    
   
