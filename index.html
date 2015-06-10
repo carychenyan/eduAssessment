@@ -179,7 +179,7 @@
               <div class="formItem-wrap marginB10">
                 <div class="formStyle-item" style="width:100%;" id="unionSleArea">
                     <label for="" class="formStyle-label">位置：</label>
-                    <select name="" id="mainSel" class="customForm_inputBoxDefault customForm_select"> 
+                    <select name="" id="mainSel" class="customForm_inputBoxDefault customForm_select">  
                     </select>
                     <select name="" id="secSel" class="customForm_inputBoxDefault customForm_select childSelect">              
                     </select>
@@ -193,7 +193,7 @@
                <div class="clear"></div>
         </div>
         <!-- ==选择位置== -->
-<script type="text/javascript">
+<script type="text/javascript"> 
     var opdata1={0:'请选择',1:'中国',2:'美国'};
     var opdata2={0:'请选择',1:'湖北',2:'湖南'};
     var opdata3={0:'请选择',1:'武汉',2:'咸宁',};
@@ -205,8 +205,8 @@
                  };
                  $('#'+id).html(con);
              },
-             change:function(par,chi,unionId,childSelId,childSelClass,data){//par和chi如果为true，表明存在父级跟子级
-                if(par==false&&chi==true){
+             chan:function(par,chi,unionId,childSelId,childSelClass,data){//par和chi如果为true，表明存在父级跟子级
+                if(par==false&&chi==true){ 
                     $('#'+unionId).find("."+childSelClass).html('');
                     var con='';
                     for (var i in data) {
@@ -248,18 +248,17 @@
                 $('#'+mainSelId).html(con);
                 $('#'+unionId).find("."+childSelClass).html('');
             }
-    };
-
+    }; 
     //初始化联合下拉组件
-    $(function(){
+   
 
          selUnion.init('unionSleArea','mainSel','childSelect',opdata1);
-         $("#mainSel").bind("change",function(){
-            
-         });
-    }); 
-   
+         //$("#mainSel").bind("change",op.change(false,true,'unionSleArea','secSel','childSelect',opdata2));
+         $("#mainSel").bind("change",function(){op.chan(false,true,'unionSleArea','secSel','childSelect',opdata2);});
+         $("#secSel").bind("change",function(){op.chan(true,true,'unionSleArea','thirdsel','childSelect',opdata3);});
   
+   
+ 
 </script>
          <!-- 参考对象 -->
         <div class="project">
