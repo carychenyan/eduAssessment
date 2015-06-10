@@ -185,6 +185,8 @@
                     </select>
                     <select name="" id="thirdsel" class="customForm_inputBoxDefault customForm_select childSelect">           
                     </select>
+                     <select name="" id="forthsel" class="customForm_inputBoxDefault customForm_select childSelect">           
+                    </select>
 
                     <a href="javascript:;" name=" " class="customBtn colourBlack marginR10">确定</a>
                 </div> 
@@ -196,7 +198,9 @@
 <script type="text/javascript"> 
     var opdata1={0:'请选择',1:'中国',2:'美国'};
     var opdata2={0:'请选择',1:'湖北',2:'湖南'};
-    var opdata3={0:'请选择',1:'武汉',2:'咸宁',};
+    var opdata3={0:'请选择',1:'武汉',2:'咸宁',}; 
+    var opdata4={0:'请选择',1:'汉口',2:'武昌',3:'汉阳',}; 
+
     var op={//下拉选择对象 
             init:function(data,id){
                  var con='';
@@ -217,8 +221,12 @@
                     $('#'+childSelId).html(con);
                 }
                 else if(par==true&&chi==true){
-                    var ind=$('#'+childSelId).index();
-                     $('#'+unionId).find("."+childSelClass).slice(ind).html('');
+                    var ind=$('#'+unionId+' '+'#'+childSelId).index(),l=$('#'+unionId).find("select").length;debugger;
+                     var select=$('#'+unionId).find("."+childSelClass);
+                     for (var i = ind-1; i<l; i++) {
+                        select.eq(i).html('');
+                     };
+                     
                     var con='';
                     for (var i in data) {
 
@@ -233,7 +241,7 @@
              } 
     };
 
-    var selUnion={
+    var selUnion={//联动组件 
             init:function(unionId,mainSelId,childSelClass,data){
                 //unionId 组件总id
                 //mainSelId 第一组件id
@@ -256,6 +264,7 @@
          //$("#mainSel").bind("change",op.change(false,true,'unionSleArea','secSel','childSelect',opdata2));
          $("#mainSel").bind("change",function(){op.chan(false,true,'unionSleArea','secSel','childSelect',opdata2);});
          $("#secSel").bind("change",function(){op.chan(true,true,'unionSleArea','thirdsel','childSelect',opdata3);});
+         $("#thirdsel").bind("change",function(){op.chan(true,true,'unionSleArea','forthsel','childSelect',opdata4);});
   
    
  
