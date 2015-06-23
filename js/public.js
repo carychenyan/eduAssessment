@@ -20,8 +20,8 @@ $(function(){
     //联动下拉菜单【select】
     var opdata1={0:'请选择',1:'中国',2:'美国'};
     var opdata2={0:'请选择',1:'湖北',2:'湖南'};
-    var opdata3={0:'请选择',1:'武汉',2:'咸宁',}; 
-    var opdata4={0:'请选择',1:'汉口',2:'武昌',3:'汉阳',}; 
+    var opdata3={0:'请选择',1:'武汉',2:'咸宁'}; 
+    var opdata4={0:'请选择',1:'汉口',2:'武昌',3:'汉阳'}; 
 
     var op={//下拉选择对象 
             init:function(data,id){
@@ -43,7 +43,7 @@ $(function(){
                     $('#'+childSelId).html(con);
                 }
                 else if(par==true&&chi==true){
-                    var ind=$('#'+unionId+' '+'#'+childSelId).index(),l=$('#'+unionId).find("select").length;debugger;
+                    var ind=$('#'+unionId+' '+'#'+childSelId).index(),l=$('#'+unionId).find("select").length;
                      var select=$('#'+unionId).find("."+childSelClass);
                      for (var i = ind-1; i<l; i++) {
                         select.eq(i).html('');
