@@ -818,7 +818,7 @@ a.imgA: active,a.imgA: hover {
 	width: 110px
 }
 .grid_col4 {
-	width: 150px
+	width: 150px !important;
 }
 .grid_col5 {
 	width: 190px

@@ -1,0 +1,293 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>弹窗集合</title>
+<link href="style/public.css" rel="stylesheet" type="text/css" /> 
+</head>
+
+<body style="overflow:auto;background-color:#fff;">
+<div class="popWarp">
+  <div class="m-jumpPop grid_col8 s-bsdStyle1">
+      <div class="tt"><strong>操作提示</strong></div>
+      <div class="ct">
+        <div class="customTipsWrap">
+            <i class="icon_finish floatL"></i><div class="floatL font14 paddingT3">添加成功</div>
+            <div class="clear"></div>
+        </div>
+      </div>
+  </div>
+
+  <div class="m-normalPop s-bsdStyle1">
+    <div class="tt"><a class="floatR Popups_close" href="" title="关闭"></a><strong>设置学期时间</strong></div>
+    <div class="ct editCon">
+
+      <!-- 提示 -->
+<!--       <div class="customTipsWrap tipsHint marginB10">
+        <div class="floatL width298">提示：请设置学生在校时间。</div>
+        <div class="clear"></div>
+      </div> -->
+
+      <div class="listCon">
+          <form class="ajax-query-form" data-target="online-edit-wrap" action="/admin/time/online" method="get">
+              <div class="title clearfix">
+                  <h4 class="marginR20 f-fl">选择查询条件</h4>
+                  <select name="school_id" id="school-select" class="marginR20">
+                      <option value="121502" selected="selected">长江数字小学</option>
+                      <option value="117686">钟祥市冷水镇第二初级中学</option>
+                      <option value="121584">长江实验小学</option>
+                  </select>                    
+                  <input type="submit" class="customBtn colourDarkBlue" value="查询">
+              </div>
+          </form>
+      </div>
+
+      <form class="formStyle ajax-form" method="post" action="/admin/time/online">
+        <fieldset>
+            <legend>表单标题</legend>
+
+            <div class="formStyle-item formStyle-item-error">
+                <label class="formStyle-label">参与人员</label>
+                <p class="formStyle-text">家长</p>
+                （家长线下评价，班主任线上录入评价结果）
+            </div>
+
+            <div class="formStyle-item">
+                <label for="" class="formStyle-label">上学期时间:</label>
+                <input type="text" name="online[first][start]" value="">
+                到
+                <input type="text" name="online[first][end]" value="">
+            </div>
+
+            <div class="formStyle-item">
+                <label for="" class="formStyle-label">下学期时间:</label>
+                <input type="text" name="online[second][start]" value="">
+                到
+                <input type="text" name="online[second][end]" value="">
+            </div>
+
+        </fieldset>
+      </form>
+    </div>
+
+    <div class="ft">
+          <div class="option">
+                <input type="submit" class="customBtnLarge colourDarkBlue" value="确定">
+                <input type="button" class="customBtnLarge colourLightGray js-popups-close" value="取消">
+              <!-- <a href="#" title="" target="" class="customBtn colourDarkGrey marginR10">取消</a> -->
+              <!-- <a href="javascript:;" name="editPublish" class="customBtn colourDarkGreen marginR10">确定</a> -->
+          </div>
+    </div>
+  </div>
+
+
+  <div class="m-normalPop s-bsdStyle1">
+      <div class="tt"><a class="floatR Popups_close" href="" title="关闭"></a><strong>关键表现点排名设置(模态弹框)</strong></div>
+      <div class="ct editCon">
+        <p>
+            <select name="" id="" class="customForm_inputBoxDefault grid_col3"> <option value="">三年级</option> </select>
+            <select name="" id="" class="customForm_inputBoxDefault grid_col3 marginL10"> <option value="">1班</option> </select>
+        </p>
+        <h3 class="paddingT10">班级人数:60</h3>
+        <table class="tableSet tableSet-noHover marginB10" id="tableTest">
+            <tbody>
+                <tr class="thead">zh
+                    <td>提示文案</td>
+                    <td>名次</td>
+                </tr>
+                <tr>
+                    <td>"领先"</td>
+                    <td>前<input class="customForm_inputBoxDefault customForm_txtInput grid_col3 marginL10" type="text" data-explain="请输入右图中字符，不区分大小写。" maxlength="4" autocomplete="off" value="5"></td>
+                </tr>
+                <tr>
+                    <td>"落后"</td>
+                    <td>后<input class="customForm_inputBoxDefault customForm_txtInput grid_col3 marginL10" type="text" data-explain="请输入右图中字符，不区分大小写。" maxlength="4" autocomplete="off" value="5"></td>
+                </tr>
+            </tbody>
+        </table>
+      </div>
+      <div class="ft">
+            <div class="option">
+                <a href="#" title="" target="" class="customBtn colourDarkGrey marginR10">取消</a>
+                <a href="javascript:;" name="editPublish" class="customBtn colourDarkGreen marginR10">确定</a>
+            </div>
+      </div>
+  </div>
+
+  <div class="m-normalPop s-bsdStyle1">
+      <div class="tt"><a class="floatR Popups_close" href="" title="关闭"></a><strong>设置学期时间</strong></div>
+      <div class="ct editCon">
+        <div class="customTipsWrap tipsHint ">
+          <i class="icon_hintSmall floatL"></i><div class="floatL width298">提示：对学生当月动态的评价需在下月完成。</div><a href="" title="" class="floatR icon_forkBlue"></a>
+          <div class="clear"></div>
+        </div>
+      <form class="formStyle" name="" method="post" action="#" id="">
+          <fieldset>
+              <div class="formStyle-item">
+                  <label for="" class="formStyle-label">评价开始时间:</label>
+                  <select id="province" name="province" class="customForm_inputBoxDefault customForm_select grid_col2 marginR10 marginL10"> <option value=""> 1号 </option> </select>  到  <select id="province" name="province" class="customForm_inputBoxDefault customForm_select grid_col2"> <option value=""> 1号 </option> </select>
+              </div>
+
+              <div class="formStyle-item">
+                  <label for="" class="formStyle-label">评价结束时间:</label>
+                  <select id="province" name="province" class="customForm_inputBoxDefault customForm_select grid_col2 marginR10"> <option value=""> 1号 </option> </select>  到  <select id="province" name="province" class="customForm_inputBoxDefault customForm_select grid_col2"> <option value=""> 1号 </option> </select>
+              </div>
+          </fieldset>
+      </form>
+      </div>
+      <div class="ft">
+            <div class="option">
+                <a href="#" title="" target="" class="customBtn colourDarkGrey marginR10">取消</a>
+                <a href="javascript:;" name="editPublish" class="customBtn colourDarkGreen marginR10">确定</a>
+            </div>
+      </div>
+  </div>
+
+  <div class="m-normalPop s-bsdStyle1">
+      <div class="tt"><a class="floatR Popups_close" href="" title="关闭"></a><strong>复制</strong></div>
+      <div class="ct editCon">
+        <!-- 将评价指标内容复制到 -->
+      <form class="formStyle" name="" method="post" action="#" id="">
+          <fieldset>
+              <div class="formStyle-item">
+              <label for="" class="formStyle-label">将评价指标内容复制到:</label>
+              <p class="checkBox"><span class="marginR10"><input type="checkbox" name="" id="">语文</span><span class="marginR10"><input type="checkbox" name="" id="">语文</span><span class="marginR10"><input type="checkbox" name="" id="">语文</span><span class="marginR10"><input type="checkbox" name="" id="">语文</span><span class="marginR10"><input type="checkbox" name="" id="">语文</span><span class="marginR10"><input type="checkbox" name="" id="">语文</span><span class="marginR10"><input type="checkbox" name="" id="">语文</span><span class="marginR10"><input type="checkbox" name="" id="">语文</span></p>
+              </div>
+          </fieldset>
+      </form>
+      </div>
+      <div class="ft">
+            <div class="option">
+                <a href="#" title="" target="" class="customBtn colourDarkGrey marginR10">取消</a>
+                <a href="javascript:;" name="editPublish" class="customBtn colourDarkGreen marginR10">确定</a>
+            </div>
+      </div>
+  </div>
+
+  <div class="m-normalPop s-bsdStyle1">
+      <div class="tt"><a class="floatR Popups_close" href="" title="关闭"></a><strong>编辑</strong></div>
+      <div class="ct editCon">
+      <form class="formStyle" name="" method="post" action="#" id="">
+          <fieldset>
+              <!-- 关键表现点1： -->
+              <div class="formItem-wrap marginB10">
+                <div class="formStyle-item">
+                    <label for="" class="formStyle-label">关键表现点1：</label>
+                    <input type="text" value="坚持使用礼貌用语，不随便拿别人的东西" class="customForm_inputBoxDefault customForm_txtInput grid_col8"/>
+                </div>
+
+                <div class="formStyle-item">
+                    <label for="" class="formStyle-label">分值：</label>
+                    <input type="text" value="6分" class="customForm_inputBoxDefault customForm_txtInput grid_col2"/>
+                </div>
+
+                <div class="formStyle-item">
+                    <label for="" class="formStyle-label">档案属性：</label>
+                    <select name="" id="" class="customForm_inputBoxDefault customForm_select">
+                      <option value="">社区记录</option>
+                      <option value="">期末分数</option>
+                    </select>
+                </div>
+              </div>
+              <!-- ==关键表现点1：== -->
+
+              <!-- 关键表现点2： -->
+              <div class="formItem-wrap marginB10">
+                <div class="formStyle-item">
+                    <label for="" class="formStyle-label">关键表现点2：</label>
+                    <input type="text" value="坚持使用礼貌用语，不随便拿别人的东西" class="customForm_inputBoxDefault customForm_txtInput grid_col8"/>
+                </div>
+
+                <div class="formStyle-item">
+                    <label for="" class="formStyle-label">分值：</label>
+                    <input type="text" value="6分" class="customForm_inputBoxDefault customForm_txtInput grid_col2"/>
+                </div>
+
+                <div class="formStyle-item">
+                    <label for="" class="formStyle-label">档案属性：</label>
+                    <select name="" id="" class="customForm_inputBoxDefault customForm_select">
+                      <option value="">社区记录</option>
+                      <option value="">期末分数</option>
+                    </select>
+                </div>
+              </div>
+              <!-- ==关键表现点2：== -->
+              <div class="formStyle-item-divder"><a href="">+增加</a></div>
+
+          </fieldset>
+      </form>
+      </div>
+      <div class="ft">
+            <div class="option">
+                <a href="#" title="" target="" class="customBtn colourDarkGrey marginR10">取消</a>
+                <a href="javascript:;" name="editPublish" class="customBtn colourDarkGreen marginR10">确定</a>
+            </div>
+      </div>
+  </div>
+
+  <div class="m-normalPop s-bsdStyle1">
+      <div class="tt"><a class="floatR Popups_close" href="" title="关闭"></a><strong>复制</strong></div>
+      <div class="ct editCon">
+        <!-- 将评价指标内容复制到 -->
+      <form class="formStyle" name="" method="post" action="#" id="">
+          <fieldset>
+              <div class="formStyle-item">
+              <label for="" class="formStyle-label">将评价指标内容复制到:</label>
+              <p class="checkBox"><span class="marginR10"><input type="checkbox" name="" id="">语文</span><span class="marginR10"><input type="checkbox" name="" id="">语文</span><span class="marginR10"><input type="checkbox" name="" id="">语文</span><span class="marginR10"><input type="checkbox" name="" id="">语文</span><span class="marginR10"><input type="checkbox" name="" id="">语文</span><span class="marginR10"><input type="checkbox" name="" id="">语文</span><span class="marginR10"><input type="checkbox" name="" id="">语文</span><span class="marginR10"><input type="checkbox" name="" id="">语文</span></p>
+              </div>
+          </fieldset>
+      </form>
+      </div>
+      <div class="ft">
+            <div class="option">
+                <a href="#" title="" target="" class="customBtn colourDarkGrey marginR10">取消</a>
+                <a href="javascript:;" name="editPublish" class="customBtn colourDarkGreen marginR10">确定</a>
+            </div>
+      </div>
+  </div>
+
+  <div class="m-normalPop s-bsdStyle1">
+      <div class="tt"><a class="floatR Popups_close" href="" title="关闭"></a><strong>编辑</strong></div>
+      <div class="ct editCon">
+        <!-- 将评价指标内容复制到 -->
+      <form class="formStyle" name="" method="post" action="#" id="">
+          <fieldset>
+              <div class="formStyle-item">
+              <label for="" class="formStyle-label">关键表现点1:</label>
+              <p class="txt">坚持使用礼貌用语，不随便拿别人的东西</p>
+              </div>
+
+              <div class="formStyle-item">
+              <label for="" class="formStyle-label">评价主体:</label>
+                <div class="pjzt">
+                <p class="marginB10"><input type="checkbox" name="" id="" />学生<input class="customForm_inputBoxDefault customForm_txtInput grid_col3 marginR5 marginL5" type="text" data-explain="请输入右图中字符，不区分大小写。" maxlength="4" autocomplete="off" value="" placeholder="权重值（数字）">%</p>
+
+                <p class="marginB10"><input type="checkbox" name="" id="" />老师<select name="" id="" class="customForm_inputBoxDefault customForm_select grid_col3 marginR5 marginL5"> <option value="">所有老师</option> </select> 
+
+                <input class="customForm_inputBoxDefault customForm_txtInput grid_col3 marginR5 marginL5" type="text" data-explain="请输入右图中字符，不区分大小写。" maxlength="4" autocomplete="off" value="" placeholder="权重值（数字）">%
+                </p>
+                <p class="marginB10"><input type="checkbox" name="" id="" />家长<input class="customForm_inputBoxDefault customForm_txtInput grid_col3 marginR5 marginL5" type="text" data-explain="请输入右图中字符，不区分大小写。" maxlength="4" autocomplete="off" value="" placeholder="权重值（数字）">%</p>
+              </div>
+
+
+              </div>
+
+          </fieldset>
+      </form>
+      </div>
+      <div class="ft">
+            <div class="option">
+                <a href="#" title="" target="" class="customBtn colourDarkGrey marginR10">取消</a>
+                <a href="javascript:;" name="editPublish" class="customBtn colourDarkGreen marginR10">确定</a>
+            </div>
+      </div>
+  </div>
+
+
+  <div class="bg"></div>
+</div>
+
+</body>
+</html>
+
+
