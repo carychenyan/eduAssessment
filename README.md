@@ -14,5 +14,5 @@ education quality assessment
 4，表格列表排序、title提示
 
 #重大改进
-1，加入grunt
+1，加入grunt，对css文件、对js文件、对images压缩优化很多
 
