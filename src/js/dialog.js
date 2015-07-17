@@ -37,21 +37,23 @@ var styledialog = {
                 this.settings.content = responseObj;
             }
         }
-        var dialogConHtml = '<div class="m-POP s-POP" style="margin:0;width:' + this.settings.width + 'px;" id="PopupsFra"><div class="tt clearfix"><h5 class="f-fl">' + this.settings.title + '</h5><a class="icon-close f-fr upload-close f-fr btn-close" href="javascript:;" title="关闭"></a></div><div id="editFraCon" name="editFraCon" style="width:' + this.settings.width + 'px;"><div class="ct">' + this.settings.content + '</div>';
+        var dialogConHtml = '<div class="m-normalPop s-bsdStyle1" style="margin:0;width:' + this.settings.width + 'px;" id="PopupsFra"><div class="tt"><strong>' + this.settings.title + '</strong><a class="floatR Popups_close" href="javascript:;" title="关闭"></a></div><div id="editFraCon" name="editFraCon" style="width:' + this.settings.width + 'px;"><div class="ct editCon">' + this.settings.content + '</div>';
         if (this.settings.button.show || this.settings.confirm.show || this.settings.cancel.show) {
             //dialogConHtml += '<div class="m-ftc">';
 
-            dialogConHtml += '<div id="PopupsFunc" class="w-btn ft">';
+            dialogConHtml += '<div id="PopupsFunc" class="w-btn ft"><div class="option">';
             if (this.settings.button.show) {
                 dialogConHtml += this.settings.button.html;
             }
             if (this.settings.confirm.show) {
-                dialogConHtml += '<input name="confirm" type="button" class="customBtnLarge colourDarkblue f-mr10" value="' + this.settings.confirm.name + '">';
-            }
+                dialogConHtml += '<input name="confirm" type="button" class="customBtn colourBlack marginR10" value="' + this.settings.confirm.name + '">';
+            } 
+
             if (this.settings.cancel.show) {
-                dialogConHtml += '<input name="cancel" type="button" class="customBtnLarge colourLightGray" value="' + this.settings.cancel.name + '">';
+                dialogConHtml += '<input name="cancel" type="button" class="customBtn colourLightGray" value="' + this.settings.cancel.name + '">';
             }
-            dialogConHtml += '</div>';
+
+            dialogConHtml += '</div></div>';
             //dialogConHtml += '</div>';
         }
         dialogConHtml += '</div></div><div id="divBg" class="pageBg"><iframe style="position: absolute;width: 100%;height: 100%;z-index:-1;"></iframe></div>';
@@ -265,8 +267,8 @@ function cueDialog(confirmFun, that, inside, content) {
         styledialog.initContent("提示", cueHTML, null);
     }
     $(".w-btn input[name='confirm']").unbind().bind("click", function () {
-        var btnloading = new btnLoading(this);
-        btnloading.toLoading(); //提交按钮变loading图片
+        //var btnloading = new btnLoading(this);
+        //btnloading.toLoading(); //提交按钮变loading图片
         confirmFun(that);
         if (inside) {
             styledialog.closeInsideDialog();
@@ -288,13 +290,13 @@ function cueDialog(confirmFun, that, inside, content) {
 //提示弹框
 function promptMessageDialog(settings) {
     this.settings = {
-        icon: "warning",
-        content: "数据返回出现异常！",
+        icon: "finish",
+        content: "操作成功！",
         time: 1000
-    }
+    };
     $.extend(this.settings, settings || {});
-    var iconName = this.settings.icon == "finish" || this.settings.icon == "success" ? "finish" : this.settings.icon;
-    var dialogContent = '<div class="customTipsSuccessfulOperation"><i class="icon_' + iconName + '"></i>' + this.settings.content + '</div>';
+    var iconSty = this.settings.icon == "success" || this.settings.icon == "finish" ? "finish" : this.settings.icon;
+    var dialogContent = '<div class="customTipsSuccessfulOperation"><i class="icon_' + iconSty + '"></i>' + this.settings.content + '</div>';
 
     $("body").eq(0).append(dialogContent);
 
@@ -318,9 +320,11 @@ function promptMessageDialog(settings) {
         "position": "absolute",
         "z-index": "950"
     });
-    setTimeout(function () {
-        $(".customTipsSuccessfulOperation").remove();
-    }, this.settings.time);
+    if (this.settings.time > 0) {
+        setTimeout(function () {
+            $(".customTipsSuccessfulOperation").remove();
+        }, this.settings.time);
+    }
 }
 
 //登陆弹框

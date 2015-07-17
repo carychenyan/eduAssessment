@@ -720,7 +720,7 @@ a.imgA: active,a.imgA: hover {
 }
 .customTipsWrap {
 	line-height: 18px;
-	padding: 8px 9px;
+	padding: 3px 9px;
 	margin: 0 auto;
 	font-size: 14px;
 	height: 100%;
@@ -759,11 +759,6 @@ a.imgA: active,a.imgA: hover {
 }
 
 
-
-
-
-
-
 .customTipsNoCon {
 	width: 100%;
 	padding: 15% 0;
@@ -773,9 +768,11 @@ a.imgA: active,a.imgA: hover {
 	color: #333
 }
 .customTipsSuccessfulOperation {
+	padding:0 20px; 
 	text-align: center;
 	height: 56px;
 	color: #fff;
+    float: left;
 	font-size: 18px;
 	line-height: 56px;
 	border: 1px solid rgba(178,178,178,.3);
@@ -1577,6 +1574,23 @@ a.Popups_close:hover{
 	border-radius:4px;
 }
  /*==title样式背景色样式==*/
+ .pageBg {
+    background-color: gray;
+    position: absolute;
+    width:100%;
+    height:100%;
+    left: 0;
+    top: 0;
+    opacity: 0.5;
+    filter: Alpha(opacity=50);
+    z-index:20000;
+    display:none;
+    overflow: hidden;
+}
+.m-normalPop{ 
+	position: absolute;
+	z-index: 100000;
+}
  
 
 
