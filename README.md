@@ -8,11 +8,11 @@ education quality assessment
 首页、组卷页面制作完成
 
 #更新需求
-1，联动菜单
-2，面包屑
-3，多级菜单
-4，表格列表排序、title提示
-5,titte  hover提示（20151712）
+1，联动菜单<br/>
+2，面包屑<br/>
+3，多级菜单<br/>
+4，表格列表排序、title提示<br/>
+5,titte  hover提示（20151712）<br/>
 
 #重大改进
 1，加入grunt，对css文件、对js文件、对images压缩优化很多
