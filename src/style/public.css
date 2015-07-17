@@ -334,7 +334,7 @@ body{
 	bottom: -1px; 
 	left: 0px;
 	height: 2px;
-	width: 78px;
+	width: 71px;
 	overflow: hidden;
 	background: #e43636;
 	display: inline-block;
@@ -1537,7 +1537,46 @@ a.Popups_close:hover{
 		_background: url(../images/ico/file_type_sprite.gif) no-repeat 0 -2px;
 }
 /*面包屑*/
- 
+/*副标题*/
+.projectTitle .projectName em{
+	font-size: 12px;
+	color: #c1c1c1;
+	font-style: normal;
+	padding-left: 10px;
+	font-weight: normal;
+}
+/*==副标题==*/
+ /*title样式背景色样式*/
+.titleTips {
+	text-align:center;
+	width:auto!important;
+	max-width:200px;
+	display:inline-block;
+	z-index:101;
+}
+
+.titleTips em {
+	width:0;
+	height:0;
+	line-height:0;
+	font-size:0;
+	display:block;
+	margin:0 auto;
+	border-left:5px solid rgba(255,255,255,0);
+	border-right:5px solid rgba(255,255,255,0);
+	border-bottom:5px solid #666;
+}
+
+.titleTips span {
+	color:#fff;
+	text-align:center;
+	display:inline-block;
+	line-height:18px;
+	padding:4px 10px;
+	background:#666;
+	border-radius:4px;
+}
+ /*==title样式背景色样式==*/
  
 
 
