@@ -230,3 +230,111 @@ $(function() {
         }
     }; 
 
+
+    //表格全选
+    var checkTable = function(o) {
+        var main = $("#" + o);
+        var child = main.parent().parent().parent().siblings("tbody").find("input[name='checkboxItem']");
+        main.bind("click", function() {
+            var checkStatus = main.find("input").prop('checked');
+            if (checkStatus) {
+                child.prop('checked',true);;
+            } else {
+                child.prop('checked',false);;
+            }
+        });
+    };
+
+//表格[包含表格的全选、单选、删除、翻页]
+tablesOp=function(settings){
+    var my =this;
+        my.settings = {
+            checkAll: settings.o, //全选最外层id
+            item: settings.item ,//每一列inpu的name
+            del: settings.del //每一列inpu的name
+        };
+
+    //全选
+    my.checkAll = function() {
+        var main = $("#" + my.settings.checkAll);
+        var child = main.parent().parent().parent().siblings("tbody").find("input[name='" +my.settings.item + "']");
+        main.bind("click", function() {
+            var checkStatus = main.find("input").prop('checked');
+            if (checkStatus) {
+                child.prop('checked', true);
+            } else {
+                child.prop('checked', false);
+            }
+        });
+    };
+
+    //单选
+    my.checkSingle = function() {
+        var main = $("#" + my.settings.checkAll);
+        var child = $("input[name='" + my.settings.item + "']");
+
+        child.bind('click', function() {
+
+            main.find("input").prop('checked', false);
+
+        }); 
+    }; 
+
+    //删除单行
+    my.del = function() {
+        var delO = $("input[name='" + my.settings.del + "']");
+        var id = delO.parent().parent().find("input[name='" + my.settings.item + "']").attr("id");
+        delO.bind('click', function() {
+            $(this).parent().parent().remove();
+            //ajax后台
+            /*var post_param = 'id=' + id ;
+
+            function postEvent(obj) {
+                if (obj.type == 'success') {
+                    promptMessageDialog({
+                        icon: "finish",
+                        content: '操作成功！'
+                    });
+                    styledialog.closeDialog();
+                }
+            }
+
+            AjaxForJson(commonParams.dodoDevPath + "/class/evaluate/evaluateRecordPost", post_param, postEvent, null);
+            */
+        });
+    };
+    
+
+};
+
+
+
+
+//ajax调用公共方法
+function AjaxForJson(requestUrl, requestData, SuccessCallback, errorCallback) {
+    //if (AjaxForJson.ajaxing) return;
+    //AjaxForJson.ajaxing = true;   
+    jQuery.ajax({
+        type: "POST",
+        url: requestUrl,
+        data: requestData,
+        contentType: "application/json;charset=utf-8",
+        dataType: "json",
+        success: function (data) {
+            var obj = null; // $.parseJSON(data.d);
+            try {
+                eval("obj=" + data.d);
+            } catch (ex) {
+
+            }
+            SuccessCallback(obj, callbackSelfParamObj);
+        },
+        error: function (err) { errorCallback(); },
+        complete: function (XHR, TS) { XHR = null }
+    });
+}
+
+
+ 
+
+

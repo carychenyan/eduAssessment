@@ -2,6 +2,8 @@
 <html>
     <head>
     <meta charset="UTF-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <title>教育质量测评系统</title>
     <link type="image/x-icon" href="favicon.ico" rel="icon">    
     <link media="all" href="style/public.css" rel="stylesheet">                         
@@ -9,8 +11,11 @@
     <!--[if IE]>
         <script src="js/html5.js"></script>
     <![endif]-->
-     <script type="text/javascript" src="js/jquery-1.6.4.min.js"></script>
+     <script type="text/javascript" src="http://cdn.bootcss.com/jquery/1.8.3/jquery.js"></script>
+     <script type="text/javascript" src="js/dialog.js"></script>
      <script type="text/javascript" src="js/public.js"></script>
+     <script type="text/javascript" src="js/index.js"></script>
+
     </head> 
     <body> 
 <!-- 顶部201506-->
@@ -114,7 +119,7 @@
         <!-- 考试设置 -->
         <div class="project">
               <div class="projectTitle">
-                <h2 class="projectName"><span></span>考试设置</h2> 
+              <h2 class="projectName"><span></span>考试设置<em>【 统计各地开课情况，数据来自多多社区班级课表 】</em></h2> 
               </div>
               <div class="formItem-wrap marginB10">
                     <div class="formStyle-item">
@@ -158,9 +163,9 @@
             </div>
               <div class="formItem-wrap marginB10">
                 <div class="formStyle-item" style="width:100%;">
-                    <label for="" class="formStyle-label">试卷名称：</label>
+                    <label for="" class="formStyle-label"  styletitle="styleTitle"  titlecon="试卷名称综合测试第一册">试卷名称：</label>
                     <input type="text" value="坚持使用礼貌用语，不随便拿别人的东西" class="customForm_inputBoxDefault customForm_txtInput grid_col15">
-                    <a href="javascript:;" name=" " class="customBtn colourBlack marginR10">确定</a>
+                    <a href="javascript:;" name=" " class="customBtn colourBlack marginR10" id="testComfor">确定</a>
                 </div> 
                 <div class="clear"></div>
               </div>  
@@ -191,6 +196,17 @@
                <div class="clear"></div>
         </div>
         <!-- ==选择位置== -->
+          <!-- 图表 -->
+        <div class="project">
+            <div class="projectTitle">
+           <h2 class="projectName" ><span></span>图表</h2> 
+            </div>
+              <div class="formItem-wrap marginB10" id="container" style="width: 1188px; height: 400px; margin: 0 auto">
+                
+              </div>  
+               <div class="clear"></div>
+        </div>
+        <!-- ==图表== -->
 
          <!-- 参考对象 -->
         <div class="project">
@@ -201,7 +217,7 @@
             <div class="tableCon">
                <div class="tableBtn ">
                    <a href="javascript:void(0);" name=" " class="customBtn colourWhite marginR10">删除</a>
-                   <a href="javascript:void(0);" name=" " class="customBtn colourBlack marginR10">选择对象</a> 
+                   <a href="javascript:void(0);" name=" " class="customBtn colourBlack marginR10" id="popTips">选择对象</a> 
                    <div class="clear"></div>
                </div>
                <table class="tableSet" >
@@ -209,58 +225,34 @@
                 <!-- 有边框 -->
                 <thead>
                     <tr>
-                        <th style="width:6%"><input type="checkbox"></th>
-                        <th style="width:50%">组名称</th>
+                        <th style="width:6%"><div id="checkAllObj"><input type="checkbox" id="checkAll"><label for="checkAll">&nbsp;全选</label></div></th>
+                        <th style="width:40%">组名称</th>
                         <th style="width:18%">是否包含下级分组</th>
-                        <th >组描述</th>
+                        <th style="width:20%" >组描述</th>
+                        <th>操作</th>
                     </tr>
                 </thead>
                 <!-- 表头可选 -->
                 <tbody>
-                    <tr>
-                        <td><input type="checkbox"></td>
+                    <tr >
+                        <td><input type="checkbox" name="checkboxItem"  id="1"></td>
                         <td>孝感文昌区中学</td>
                         <td><input type="checkbox"></td>
                         <td>孝感文昌区中学下面还有附属小学，等等......</td>
+                        <td> 
+                            <input type="button" value="预览" style="cursor: pointer;color:#2fcc71;border:0px none;background: none;">&nbsp;
+                            <input type="button" name="del" value="删除" style="cursor: pointer;color:#2fcc71;border:0px none;background: none;"> 
+                        </td>
                     </tr>
-                    <tr class="tableSet-split">
-                        <td><input type="checkbox"></td>
-                        <td>孝感文昌区中学</td>
-                        <td><input type="checkbox"></td>
-                        <td>孝感文昌区中学下面还有附属小学，等等......</td>
-                    </tr>
-                     <tr>
-                        <td><input type="checkbox"></td>
-                        <td>孝感文昌区中学</td>
-                        <td><input type="checkbox"></td>
-                        <td>孝感文昌区中学下面还有附属小学，等等......</td>
-                    </tr>
-                    <tr class="tableSet-split">
-                        <td><input type="checkbox"></td>
-                        <td>孝感文昌区中学</td>
-                        <td><input type="checkbox"></td>
-                        <td>孝感文昌区中学下面还有附属小学，等等......</td>
-                    </tr>
-                     <tr>
-                        <td><input type="checkbox"></td>
-                        <td>孝感文昌区中学</td>
-                        <td><input type="checkbox"></td>
-                        <td>孝感文昌区中学下面还有附属小学，等等......</td>
-                    </tr>
-                    <tr class="tableSet-split">
-                        <td><input type="checkbox"></td>
-                        <td>孝感文昌区中学</td>
-                        <td><input type="checkbox"></td>
-                        <td>孝感文昌区中学下面还有附属小学，等等......</td>
-                    </tr> 
+                     
                 </tbody>              
             </table>
         </div>
         </div>
         <!-- ==参考对象== -->
         <div class="footBtn">
-            <a href="javascript:;" name="editPublish" class="customBtn colourGreen marginR10">添加完成</a>
-            <a href="javascript:;" name="editPublish" class="customBtn colourWhite  marginR10">清空页面</a> 
+            <a href="javascript:void(0);" id="addPage" class="customBtn colourGreen marginR10">添加完成</a>
+            <a href="javascript:void(0);" id="clearPage" class="customBtn colourWhite  marginR10">清空页面</a> 
         </div>
     </div>
 </div>
@@ -272,5 +264,7 @@
         <dd class="ui-dlist-det">建议使用1024*768以上的屏幕分辨率和6.0以上版本的IE来访问本站</dd>
     </dl>
 </footer>
+<script src="js/third-party/highcharts.js"></script>
+<script src="js/third-party/exporting.js"></script> 
     </body>
 </html>

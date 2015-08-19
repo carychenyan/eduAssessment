@@ -1,4 +1,7 @@
 $(function(){
+    //执行title hover事件
+    styleTitle();
+
     //初始化联合下拉组件 
     selUnion.init('unionSleArea', 'mainSel', 'childSelect', opdata1);
     //$("#mainSel").bind("change",op.change(false,true,'unionSleArea','secSel','childSelect',opdata2));
@@ -119,8 +122,16 @@ $(function(){
 
         }]
     });
-
-
+  
+  //表单全选
+    var tablesOps = new tablesOp({
+        'o': 'checkAllObj',
+        'item': 'checkboxItem',
+        'del': 'del',
+    });
+    tablesOps.checkAll();
+    tablesOps.checkSingle();
+    tablesOps.del();
     
 });
 
