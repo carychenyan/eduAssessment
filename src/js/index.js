@@ -23,8 +23,8 @@ $(function(){
         }); //成功finish；警告warning；错误error；提示hint；疑问query
     });
 
-    //考试试卷---确认弹框
 
+    //考试试卷---确认弹框
     $("#testComfor").bind("click", function() {      
         function toDeleteNews() {
             alert("成功");
@@ -129,9 +129,10 @@ $(function(){
         'item': 'checkboxItem',
         'del': 'del',
     });
-    tablesOps.checkAll();
-    tablesOps.checkSingle();
-    tablesOps.del();
+    tablesOps.init();
+ 
+    //表单提交时候验证 必填项 最大长度 最小长度
+    $('form[name="formExamSetting"]').checkRequire("examSettingComfor");
     
 });
 

@@ -1339,7 +1339,12 @@ select {
 	zoom: 1;
 	border-top: solid 1px #F1F1F1;
 }
-
+.formStyle-item .formRequired {
+	font-family: '宋体';
+	color: #e25353;
+	padding-right: 2px;
+	font-size: 12px;
+}
 .formStyle-item select {
 	vertical-align: middle; 
 	width: 180px;
@@ -1591,7 +1596,6 @@ a.Popups_close:hover{
 	position: absolute;
 	z-index: 100000;
 }
- 
 
 
 

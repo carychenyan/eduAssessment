@@ -121,14 +121,15 @@
               <div class="projectTitle">
               <h2 class="projectName"><span></span>考试设置<em>【 统计各地开课情况，数据来自多多社区班级课表 】</em></h2> 
               </div>
+              <form name="formExamSetting">
               <div class="formItem-wrap marginB10">
                     <div class="formStyle-item">
-                        <label for="" class="formStyle-label">考试名称：</label>
-                        <input type="text" value="坚持使用礼貌用语，不随便拿别人的东西" class="customForm_inputBoxDefault customForm_txtInput grid_col10">
+                        <label for="" class="formStyle-label"><span class="formRequired">*</span>考试名称：</label>
+                        <input type="text" value="" class="require customForm_inputBoxDefault customForm_txtInput grid_col10 maxlength" data-maxlength="5">
                     </div>
                     <div class="formStyle-item">
-                        <label for="" class="formStyle-label">考试时间：</label>
-                        <input type="text" value="6分" class="customForm_inputBoxDefault customForm_txtInput grid_col5_6">&nbsp;<input type="text" value="6分" class="customForm_inputBoxDefault customForm_txtInput grid_col5_6">
+                        <label for="" class="formStyle-label"><span class="formRequired">*</span>考试时间：</label>
+                        <input type="text" value="" class="require customForm_inputBoxDefault customForm_txtInput grid_col5_6">&nbsp;<input type="text" value="" class="  customForm_inputBoxDefault customForm_txtInput grid_col5_6">
                     </div>
                      <div class="formStyle-item"  style="width: 100%;">
                          <label for="" class="formStyle-label">考生须知：</label>
@@ -136,7 +137,7 @@
                      </div>
                     <div class="formStyle-item">
                         <label for="" class="formStyle-label">考试时长：</label>
-                         <select name="" id="" class=" ">
+                         <select name="" id="" class="customForm_inputBoxDefault">
                           <option value="">限制时长</option>
                           <option value="">不限制时长</option>
                         </select>
@@ -150,8 +151,12 @@
                         </select>
                         <input type="text" value="1" class="customForm_inputBoxDefault customForm_txtInput grid_col2">
                     </div> 
+                    <div class="formStyle-item">
+                        <a href="javascript:;" name=" " class="customBtn colourBlack marginR10" id="examSettingComfor">确定</a>
+                    </div>
                     <div class="clear"></div>
               </div> 
+              </form>
               <div class="clear"></div> 
         </div>
         <!-- ==考试设置== -->

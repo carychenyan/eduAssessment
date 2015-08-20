@@ -1,6 +1,8 @@
 $(function() {
 
-    //菜单下拉
+    /**
+    *菜单下拉
+    */ 
     $(".nav ul>li").hover(function() { //二级菜单
         $(this).find("span").css("display", "block");
         $(this).find(".secUl").css("display", "block");
@@ -17,7 +19,9 @@ $(function() {
 
 });
 
-    //联动下拉菜单【select】
+    /**
+    *联动下拉菜单【select】
+    */     
     var opdata1 = {
         0: '请选择',
         1: '中国',
@@ -98,8 +102,9 @@ $(function() {
  
 
 
-
-//自定义hover title样式
+     /**
+      *自定义hover title样式
+      */
     var styleTitle = function () {
         var t;
         var tbox = document.createElement("div");
@@ -229,23 +234,11 @@ $(function() {
             return o.clientWidth || o.offsetWidth;
         }
     }; 
+ 
 
-
-    //表格全选
-    var checkTable = function(o) {
-        var main = $("#" + o);
-        var child = main.parent().parent().parent().siblings("tbody").find("input[name='checkboxItem']");
-        main.bind("click", function() {
-            var checkStatus = main.find("input").prop('checked');
-            if (checkStatus) {
-                child.prop('checked',true);;
-            } else {
-                child.prop('checked',false);;
-            }
-        });
-    };
-
-//表格[包含表格的全选、单选、删除、翻页]
+/**
+ *表格[包含表格的全选、单选、删除、翻页]
+ */ 
 tablesOp=function(settings){
     var my =this;
         my.settings = {
@@ -303,14 +296,124 @@ tablesOp=function(settings){
             */
         });
     };
-    
+
+    //入口函数
+    my.init=function(){
+            my.checkAll();
+            my.checkSingle();
+            my.del();
+    };    
 
 };
 
+jQuery.fn.extend({ 
+
+    /**
+     * 表单提交时验证必填项
+     */
+    checkRequire: function (id) { //id为表单提交的按钮
+        var main = this;
+            main.extend({
+            // 检测必填项
+            require: main.find('.require'),
+            // 检测最大长度
+            maxlength: main.find('.maxlength'),
+            // 检测最小长度
+            minlength: main.find('.minlength'),
+            check: function () {
+                var submit = true;
+                // 检查必填项
+                main.require.each(function () {
+                    var content = jQuery.trim(this.value);
+                    if (content <= 0 || content == this.defaultValue) {
+                        
+                        if (($(this).next(".tipsForErro").css("display")) == undefined) {
+                            $(this).focus().after("<span class='tipsForErro' style='color:red; padding-left:4px;'>该项为必填项</span>");
+                        }
+                        else{
+                            return;
+                        }
+                        submit = false;
+                        return false;
+                    }
+                    else{
+                        $(this).blur().next(".tipsForErro").remove();
+                    }
+                });
+
+                if (submit == false) {//停顿，跳出检测函数
+                    return false;
+                }
+
+                // 检查最大长度
+                main.maxlength.each(function (i) {
+                    var $this = $(this);
+                    var maxlength = $(this).data('maxlength');
+                    if (this.value.length > maxlength) {
+                           
+                        if (($(this).next(".tipsForErro").css("display")) == undefined) {
+                            $this.focus().after("<span class='tipsForErro' style='color:red; padding-left:4px;'>最大长度不得超过" + maxlength + "个字符</span>");
+                        } else {
+                            return;
+                        }
+
+                        submit = false;
+                        return false;
+                    }
+                    else{
+                        $(this).blur().next(".tipsForErro").remove();
+                    }
+                });
+
+                if(submit==false){//停顿，跳出检测函数
+                    return false;
+                }
+
+                // 检查最小长度
+                main.minlength.each(function (i) {
+                    var $this = $(this);
+                    var minlength = $(this).data('minlength');
+                    if (this.value.length < minlength) {
+
+                        if (($(this).next(".tipsForErro").css("display")) == undefined) {
+                            $this.focus().after("<span class='tipsForErro' style='color:red; padding-left:4px;'> 最小长度不得低于" + maxlength + "个字符</span>");
+                        }
+                        else{
+                            return;
+                        }
+                        
+                        submit = false;
+                        return false;
+                    }
+                    else{
+                        $(this).blur().next(".tipsForErro").remove();
+                    }
+                });
+
+                if(submit==false){//停顿，跳出检测函数
+                    return false;
+                }
+
+                
+            }
+        });
+
+        $("#" + id).bind({
+            click: function(e) { 
+
+                return main.check();
+
+            }
+        });
+
+    }
+
+});
 
 
-
-//ajax调用公共方法
+/**
+ *ajax调用公共方法
+ */
 function AjaxForJson(requestUrl, requestData, SuccessCallback, errorCallback) {
     //if (AjaxForJson.ajaxing) return;
     //AjaxForJson.ajaxing = true;   
