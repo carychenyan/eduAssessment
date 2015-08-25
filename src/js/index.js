@@ -133,6 +133,23 @@ $(function(){
  
     //表单提交时候验证 必填项 最大长度 最小长度
     $('form[name="formExamSetting"]').checkRequire("examSettingComfor");
+
+
+    //验证用户名、手机号码、电话号码、邮箱、中文、身份证号 
+    $("#testValidate").bind("click", function() {
+
+
+        if (adValidate.checkUser($(".userValidate").val()) == false) {
+            
+            alert("您输入的用户名不正确");
+     
+        }
+
+    });
+
+
+
+    
     
 });
 

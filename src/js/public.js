@@ -306,6 +306,145 @@ tablesOp=function(settings){
 
 };
 
+
+/**
+ *js正则验证用户信息
+ */ 
+var adValidate = {
+    //检测用户名
+    //验证规则：4到20位字符
+    checkUser: function(str) {
+        var re = /^(?!_)(?!.*?_$)/;
+        if (re.test(str) && str.length >= 4 && str.length <= 20) {
+            return true;
+        } else {
+            return false;
+        }
+    },
+    //验证手机号码
+    //验证规则：11位数字，以1开头。
+    checkMobile: function(str) {
+        var re = /^1\d{10}$/;
+        if (re.test(str)) {
+            return true;
+        } else {
+            return false;
+        }
+    },
+
+    //验证电话号码
+    //验证规则：区号+号码，区号以0开头，3位或4位
+    //号码由7位或8位数字组成
+    //区号与号码之间可以无连接符，也可以“-”连接
+    //如01088888888,010-88888888,0955-7777777 
+    checkPhone: function(str) {
+        var re = /^0\d{2,3}-?\d{7,8}$/;
+        if (re.test(str)) {
+            return true;
+        } else {
+            return false;
+        }
+    },
+
+    //验证邮箱
+    //验证规则：邮箱地址分成“第一部分@第二部分”这样
+    //第一部分：由字母、数字、下划线、短线“-”、点号“.”组成，
+    //第二部分：为一个域名，域名由字母、数字、短线“-”、域名后缀组成，
+    //而域名后缀一般为.xxx或.xxx.xx，一区的域名后缀一般为2-4位，如cn,com,net，现在域名有的也会大于4位
+    checkEmail: function(str) {
+        var re = /^(\w-*\.*)+@(\w-?)+(\.\w{2,})+$/
+        if (re.test(str)) {
+            return true;
+        } else {
+            return false;
+        }
+    },
+
+    //验证中文
+    checkNameCH: function(str) {
+        var re = /[^\u4E00-\u9FA5]/g;
+        if (re.test(str)) {
+            return true;
+        } else {
+            return false;
+        }
+    },
+
+    //验证学号、教师证号
+    checkIdentifier: function(str) {
+        var re1 = /^\d{12}$/;
+        var re2 = /^\d{20}$/;
+        var re3 = /^\d{10}$/;
+        if (re1.test(str) || re2.test(str) || re3.test(str)) {
+            return true;
+        } else {
+            return false;
+        }
+    },
+
+    //验证身份证号
+    checkIDcards: function(str) {
+        var aCity = {
+            11: "北京",
+            12: "天津",
+            13: "河北",
+            14: "山西",
+            15: "内蒙古",
+            21: "辽宁",
+            22: "吉林",
+            23: "黑龙江",
+            31: "上海",
+            32: "江苏",
+            33: "浙江",
+            34: "安徽",
+            35: "福建",
+            36: "江西",
+            37: "山东",
+            41: "河南",
+            42: "湖北",
+            43: "湖南",
+            44: "广东",
+            45: "广西",
+            46: "海南",
+            50: "重庆",
+            51: "四川",
+            52: "贵州",
+            53: "云南",
+            54: "西藏",
+            61: "陕西",
+            62: "甘肃",
+            63: "青海",
+            64: "宁夏",
+            65: "新疆",
+            71: "台湾",
+            81: "香港",
+            82: "澳门",
+            91: "国外"
+        };
+        var iSum = 0;
+        var info = "";
+        if (!(/(^\d{15}$)|(^\d{17}([0-9]|X|x)$)/.test(str))) {
+            return false;
+        }
+        str = str.replace(/x$/i, "a");
+        if (aCity[parseInt(str.substr(0, 2))] == null) {
+            return false;
+        }
+        sBirthday = str.substr(6, 4) + "-" + Number(str.substr(10, 2)) + "-" + Number(str.substr(12, 2));
+        var d = new Date(sBirthday.replace(/-/g, "/"));
+        if (sBirthday != (d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate())) {
+            return false;
+        }
+        for (var i = 17; i >= 0; i--) {
+            iSum += (Math.pow(2, i) % 11) * parseInt(str.charAt(17 - i), 11);
+        }
+        if (iSum % 11 != 1) {
+            return false;
+        }
+        return true;
+    }
+};
+
 jQuery.fn.extend({ 
 
     /**
@@ -313,6 +452,7 @@ jQuery.fn.extend({
      */
     checkRequire: function (id) { //id为表单提交的按钮
         var main = this;
+        var submit = true;
             main.extend({
             // 检测必填项
             require: main.find('.require'),
@@ -320,8 +460,7 @@ jQuery.fn.extend({
             maxlength: main.find('.maxlength'),
             // 检测最小长度
             minlength: main.find('.minlength'),
-            check: function () {
-                var submit = true;
+            check: function () {                
                 // 检查必填项
                 main.require.each(function () {
                     var content = jQuery.trim(this.value);
@@ -338,10 +477,12 @@ jQuery.fn.extend({
                     }
                     else{
                         $(this).blur().next(".tipsForErro").remove();
+                         submit = true;
+
                     }
                 });
-
-                if (submit == false) {//停顿，跳出检测函数
+                console.log(submit);
+                if (submit == false) {//停顿，跳出检测函数                    
                     return false;
                 }
 
@@ -361,7 +502,9 @@ jQuery.fn.extend({
                         return false;
                     }
                     else{
+
                         $(this).blur().next(".tipsForErro").remove();
+                        submit = true;
                     }
                 });
 
@@ -386,7 +529,9 @@ jQuery.fn.extend({
                         return false;
                     }
                     else{
+
                         $(this).blur().next(".tipsForErro").remove();
+                        submit = true;
                     }
                 });
 
