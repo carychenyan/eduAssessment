@@ -1,5 +1,19 @@
-$(function() {
+   /**
+     *全局地址配置
+     */ 
+    var commonParams = {
+        dodoDevAccountPath: "http://dev-account.dodoedu.com",
+        dodoYanxiuPath: window.location.protocol + "//" + window.location.host,
+        dodoStaticPath: window.location.protocol + "//dev-images.dodoedu.com",
+        dodoPhotoPath: "http://dev-images.dodoedu.com/image/"
+            //dodoDevAccountPath: "https://account.dodoedu.com",
+            //dodoYanxiuPath: "http://www.dodoedu.com",
+            //dodoStaticPath: window.location.protocol + "//static.dodoedu.com",
+            //dodoPhotoPath: "http://files.dodoedu.com/photo/"
+    };
 
+$(function() {   
+ 
     /**
     *菜单下拉
     */ 
@@ -581,6 +595,11 @@ function AjaxForJson(requestUrl, requestData, SuccessCallback, errorCallback) {
         complete: function (XHR, TS) { XHR = null }
     });
 }
+
+
+
+
+
 
 
  

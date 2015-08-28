@@ -145,10 +145,12 @@ $(function(){
      
         }
 
-    });
+    }); 
 
 
-
+    //富文本编辑器
+    var editor = new UE.ui.Editor();
+    editor.render('editorArticle');
     
     
 });
