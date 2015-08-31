@@ -151,7 +151,73 @@ $(function(){
     //富文本编辑器
     var editor = new UE.ui.Editor();
     editor.render('editorArticle');
+
+
+    //测试ajax
+    $("#testAjx").bind("click", function() {
+        var my_data = "前台变量";        
+        $.ajax({
+            url: "../control/index.php",
+            type: "POST",
+            data: {
+                trans_data: my_data
+            },
+            //dataType: "json",
+            error: function() {
+                alert('Error loading XML document');
+            },
+            success: function(data, status) { //如果调用php成功    
+               // alert(unescape(data)); //解码，显示汉字                         
+               alert(data.msg);
+            }
+        });
+
+    });
+
+    //翻页
+     function disscussContent(data) {
+                console.log(data);
+                var obj = null;
+                try {
+                    obj = eval('(' + data + ')');
+                } catch (ex) {
+                    obj = data;
+                }
+                 var pageContent=$(".pageContent")
+                function setDisscussHTML(objR) { 
+                    console.log(objR);
+                    if (objR.count > 0) {
+                        var list_html = '';
+                            list_html += "<li class=\"articleItem\">";
+                            list_html += "<div class=\"doc_name\">";
+                            list_html += "<a href=\"\" target=\"_blank\">";
+                            list_html += objR.data[index].tit;
+                            list_html += "<\/a>";
+                            list_html += "<\/div>";
+                            list_html += "<div class=\"doc_intro\">";
+                            list_html += objR.data[index].content;
+                            list_html += "<\/div>";
+                            list_html += "<\/li>";
+
+                        pageContent.find("ul").html(list_html);
+
+                    } else {
+
+                        pageContent.find("ul").html("抱歉，没有相关结果。");                        
+
+                    }
+                }
+                 
+                var requestMenberpage = new jsPage(obj.count, "pageNum", "4", requestUrl,requestData, setDisscussHTML);
+                pageMethod.call(requestMenberpage);
+            }
+            var site_id=123456,target='magzine';
+            var requestData = 123
+            var requestUrl = "../control/indexPage.php";
+
+            AjaxForJson(requestUrl, requestData, disscussContent, null);
     
+
     
 });
 
