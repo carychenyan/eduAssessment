@@ -88,7 +88,16 @@ $(function(){
 	$("#secSel").bind("change",function(){op.chan(true,true,'unionSleArea','thirdsel','childSelect',opdata3);});
 	$("#thirdsel").bind("change",function(){op.chan(true,true,'unionSleArea','forthsel','childSelect',opdata4);});
 
-
+ 
+    //tab切换 ， 点击切换_分享、阅读等等
+    var tabItem=$(".projectTitleBor .projectName");
+    tabItem.bind("click",function(){
+        var i=$(this).index();
+        $(this).parent().find(".projectName").removeClass("sel");
+        $(this).addClass("sel");
+        $(this).parent().parent().parent().find(".formItem-wrap").hide();
+        $(this).parent().parent().parent().find(".formItem-wrap").eq(i).show();  
+});
 
 
 
