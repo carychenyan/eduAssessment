@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>表单集合</title>
+<link href="style/public.css" rel="stylesheet" type="text/css" />
+<link href="style/component.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<!--文本框的几种状态-->
+<h2 style="text-align:center;">IE6,7,8不支持阴影。</h2>
+<div class="exampleWrap">
+	<h3>不可点，失效或程序生成的数据</h3>
+	<span class="customForm_inputBoxDisabled customForm_txtInput width330">不可点，失效或程序生成的数据</span>
+    <h3>默认输入框，未有任何操作</h3>
+	<input name="" type="text" class="customForm_inputBoxDefault customForm_txtInput width330" value="默认输入框，未有任何操作" />
+    <h3>有焦点，正在输入,两种样式</h3>
+    <input name="" type="text" class="customForm_inputBoxGetFocus1 customForm_txtInput  width330" value="有焦点，正在输入，样式一" />
+    <input name="" type="text" class="customForm_inputBoxGetFocus2 customForm_txtInput width330" value="有焦点，正在输入，样式二" />
+    <h3>完成输入，焦点离开</h3>
+    <input name="" type="text" class="customForm_inputBoxFinish customForm_txtInput width330" value="完成输入，焦点离开" />
+    <h3>输入有错误或不合法,两种样式</h3>
+    <input name="" type="text" class="customForm_inputBoxError1 customForm_txtInput width330" value="输入有错误或不合法，样式一" />
+    <input name="" type="text" class="customForm_inputBoxError2 customForm_txtInput width330" value="输入有错误或不合法，样式二" />
+</div>
+
+<div class="exampleWrap">
+    <h3>带有按钮功能的输入框</h3>
+    <div class="customForm_controlInputBox customForm_txtInput width330"><input name="" type="text" class="txtInput width306 floatL" value="带有按钮功能的输入框" /><div class="icon_enterControl floatR"></div></div>
+    <p>-----分隔线------</p>
+    <div class="customForm_controlInputBox customForm_txtInput width330"><input name="" type="text" class="txtInput width306 floatL" value="部分功能，可以支持类似iphone的功能" /><div class="icon_forkControl floatR"></div></div>
+    <p>-----分隔线------</p>
+    <div class="customForm_searchTxtInput customForm_searchInputBoxDisabled width344"><input name="" type="text" class="txtInput width306 floatL" readonly="readonly" value="失效" /><label class="floatR searchBtn"><input name="" type="submit" value="" class="icon_magnifier" /></label></div>
+    <p>-----分隔线------</p>
+    <div class="customForm_searchTxtInput customForm_searchInputBoxGetFocus width344"><input name="" type="text" class="txtInput width306 floatL" value="功能的输入" /><label class="floatR searchBtn"><input name="" type="submit" value="" class="icon_magnifier" /></label></div>
+    <p>-----分隔线------</p>
+    <div class="customForm_searchTxtInput customForm_searchInputBoxFinish width344"><input name="" type="text" class="txtInput width306 floatL" value="点击按钮" /><label class="floatR searchBtn"><input name="" type="submit" value="" class="icon_magnifier" /></label></div>
+</div>
+
+<div class="exampleWrap">
+	<h3>下拉框样式1</h3>
+    <p>-----默认------</p>
+    <div class="customForm_selectWrap customSelectStyle1 inlineBlock">
+    	<span class="customForm_selectCategory"><span class="categoryTxt">--请选择类别--</span><i class="icon_downArrStyle1"></i></span>
+        <ul class="categoryItem width184">
+            <li class="categoryCell"><a href="" title="">类别一</a></li>
+            <li class="categoryCell"><a href="" title="" class="selectedCategory">类别二</a></li>
+            <li class="categoryCell"><a href="" title="">类别三</a></li>
+        </ul>
+    </div>
+    <p>-----鼠标移上去------</p>
+    <div class="customForm_selectWrap customSelectStyle1 inlineBlock selectMouseOver">
+    	<span class="customForm_selectCategory"><span class="categoryTxt">--请选择类别--</span><i class="icon_downArrStyle1"></i></span>
+        <ul class="categoryItem width184">
+            <li class="categoryCell"><a href="" title="">类别一</a></li>
+            <li class="categoryCell"><a href="" title="" class="selectedCategory">类别二</a></li>
+            <li class="categoryCell"><a href="" title="">类别三</a></li>
+        </ul>
+    </div>
+    <p>-----出现下拉------</p>
+    <div class="customForm_selectWrap customSelectStyle1 inlineBlock selectClick">
+    	<span class="customForm_selectCategory"><span class="categoryTxt">--请选择类别--</span><i class="icon_downArrStyle1"></i></span>
+        <ul class="categoryItem width184">
+            <li class="categoryCell"><a href="" title="">类别一</a></li>
+            <li class="categoryCell"><a href="" title="" class="selectedCategory">类别二</a></li>
+            <li class="categoryCell"><a href="" title="">类别三</a></li>
+        </ul>
+    </div>
+    
+    <p> </p><p> </p><p> </p><p>
+</div>
+
+<div class="exampleWrap">
+	<h3>下拉框样式2</h3>
+        <p>-----无效------</p>
+    <div class="customForm_selectWrap customDisabledSelectStyle inlineBlock">
+    	<span class="customForm_selectCategory"><span class="categoryTxt">美术</span><span class="selectBtn"><i class="icon_downArrStyle2"></i></span></span>
+    </div>
+    <p>-----默认------</p>
+    <div class="customForm_selectWrap customSelectStyle2 inlineBlock">
+    	<span class="customForm_selectCategory"><span class="categoryTxt">美术</span><span class="selectBtn"><i class="icon_downArrStyle2"></i></span></span>
+        <ul class="categoryItem width100">
+            <li class="categoryCell"><a href="" title="" class="selectedCategory">美术</a></li>
+            <li class="categoryCell"><a href="" title="">思想品德</a></li>
+            <li class="categoryCell"><a href="" title="">体育</a></li>
+        </ul>
+    </div>
+    <p>-----出现下拉------</p>
+    <div class="customForm_selectWrap customSelectStyle2 inlineBlock select2Click">
+    	<span class="customForm_selectCategory"><span class="categoryTxt">美术</span><span class="selectBtn"><i class="icon_downArrStyle2"></i></span></span>
+        <ul class="categoryItem width100">
+            <li class="categoryCell"><a href="" title="" class="selectedCategory">美术</a></li>
+            <li class="categoryCell"><a href="" title="">思想品德</a></li>
+            <li class="categoryCell"><a href="" title="">体育</a></li>
+        </ul>
+    </div>
+    
+    <p> </p><p> </p><p> </p><p>
+</div>
+
+<div class="exampleWrap">
+	<p>-----单选------</p>
+    <i class="icon_radioBtnDefault"></i><label style="vertical-align:middle;">未选中</label>　<i class="icon_radioBtnSelected"></i><label style="vertical-align:middle;">选中</label>
+    <p>-----多选------</p>
+    <i class="icon_checkBtnDefault"></i><label style="vertical-align:middle;">未选中</label>　<i class="icon_checkBtnSelected"></i><label style="vertical-align:middle;">选中</label>
+</div>
+
+
+<div class="exampleWrap">
+	<p>-----支持文本域拖放------</p>
+    <textarea name="" cols="" rows="5" class="customForm_textarea customForm_inputBoxDefault width330">多行文本，支持文本域拖放</textarea>
+    <p>-----不支持文本域拖放------</p>
+    <textarea name="" cols="" rows="5" class="customForm_textarea banResize customForm_inputBoxDefault width330">多行文本，不支持文本域拖放</textarea>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>教育质量测评系统</title>
+    <link type="image/x-icon" href="favicon.ico" rel="icon">    
+    <link media="all" href="style/public.css" rel="stylesheet">                         
+    <link media="all" href="style/index.css" rel="stylesheet">    
+    <!--[if IE]>
+        <script src="js/html5.js"></script>
+    <![endif]-->
+     <script type="text/javascript" src="http://cdn.bootcss.com/jquery/1.8.3/jquery.js"></script>
+     <script type="text/javascript" src="js/public.js"></script>
+     <script type="text/javascript" src="js/dialog.js"></script>
+     <script type="text/javascript" src="js/ueditorAll/editor_config.js"></script>
+     <script type="text/javascript" src="js/ueditorAll/editor_all.js"></script> 
+     <script type="text/javascript" src="js/index.js"></script>
+ 
+
+    </head> 
+    <body> 
+<!-- 顶部201506-->
+<div class="topNav">
+    <div class="container">
+        <ul class="left">
+            <li class="phoneNum"><span class="master phone" title="教育质量测评系统"></span>欢迎登录教育质量测评系统</li>
+            
+        </ul>
+        <ul class="right">
+            <li class="logined" style="display: none;"><a href="/myaccount.html"><span>您好，</span><span class="name spanUserName"></span><span id="vipSpan" class="customerVip vip0"></span></a></li>
+            <li class="logined" style="display: none;"><a href="/logout.do">退出</a></li> 
+            
+            <li class="notLogin"><a href="/login.html">登录</a></li>
+            <li class="notLogin"><a href="/register.html">注册</a></li>            
+            <li><a href="/help-center.html">帮助</a></li>
+            <li><a href="/">首页</a></li>
+            <li class="last"><a href="/mobile.html" target="_blank">手机客户端</a></li>
+        </ul>
+    </div>
+</div>
+<!-- ==顶部 ==-->
+<!-- 导航 -->
+<div class="header">
+    <div class="container">
+        <a class="master logo yundanLogo" href="/"></a>  
+        <div class="nav">
+            <ul>
+                <li><a href="" class="sec">首页</a>
+                </li>
+                <li>
+                <span></span>
+                    <a href="" class="sec">题库管理</a>
+                    <ul class="secUl">
+                        <li>
+                        <a href="">评价指标<em>&gt;</em></a>
+                            <ul class="thirdUl">
+                                <li>
+                                    <a href="">三级菜单</a>
+                                </li>
+                                <li>
+                                    <a href="">三级菜单</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><a href="">添加试题</a></li>
+                        <li><a href="">试题管理</a></li>
+                    </ul>
+                </li>
+                <li class="active">
+                    <span></span>
+                    <a href="" class="sec">试卷管理</a>
+                    <ul class="secUl">
+                        <li><a href="">手工组卷</a></li>
+                        <li><a href="">试卷管理</a></li> 
+                    </ul>
+                </li>
+                <li>
+                    <span></span>
+                    <a href="" class="sec">考试管理</a>
+                    <ul class="secUl">
+                        <li><a href="">添加考试</a></li>
+                        <li><a href="">考试管理</a></li> 
+                    </ul>
+                </li>
+                <li>
+                   <span></span>
+                    <a href="" class="sec">统计分析</a>
+                    <ul class="secUl">
+                        <li><a href="">统计查询</a></li>
+                        <li><a href="">对比分析</a></li> 
+                    </ul>
+                </li>
+                <li class="last">
+                    <span></span>
+                    <a href="" class="sec">系统管理</a>
+                    <ul class="secUl">
+                        <li><a href="">数据字典</a></li>
+                        <li><a href="">用户分组</a></li> 
+                        <li><a href="">角色维护</a></li>
+                        <li><a href="">用户管理</a></li> 
+                    </ul>
+                </li> 
+            </ul>
+        </div>
+    </div>
+</div>
+<!--== 导航 ==-->
+<!-- 主要模块 -->
+<div class="wrap">
+    <div class="container">
+<!-- 面包屑 -->
+    <div class="m-breakNav f-mb10"> <i class="icon_tc1"></i>
+        <span>当前位置</span>
+        ：
+        <a href="/xl/teacher">教师</a> <b>&gt;</b>
+        <a href="/xl/lesson">备课夹</a> <b>&gt;</b>
+        公共备课夹
+    </div>
+<!--== 面包屑 ==-->
+        <!-- 考试设置 -->
+        <div class="project">
+              <div class="projectTitle">
+              <h2 class="projectName"><span></span>考试设置<em>【 统计各地开课情况，数据来自多多社区班级课表 】</em></h2> 
+              </div>
+              <form name="formExamSetting">
+              <div class="formItem-wrap marginB10">
+                    <div class="formStyle-item">
+                        <label for="" class="formStyle-label"><span class="formRequired">*</span>考试名称：</label>
+                        <input type="text" value="" class="require customForm_inputBoxDefault customForm_txtInput grid_col10 maxlength" data-maxlength="5">
+                    </div>
+                    <div class="formStyle-item">
+                        <label for="" class="formStyle-label"><span class="formRequired">*</span>考试时间：</label>
+                        <input type="text" value="" class="require customForm_inputBoxDefault customForm_txtInput grid_col5_6">&nbsp;<input type="text" value="" class="  customForm_inputBoxDefault customForm_txtInput grid_col5_6">
+                    </div>
+                     <div class="formStyle-item"  style="width: 100%;">
+                         <label for="" class="formStyle-label">考生须知：</label>
+                         <textarea name="" id="" cols="" rows="" class="customForm_inputBoxDefault customForm_textarea grid_col26"></textarea>
+                     </div>
+                     <div class="formStyle-item"  style="width: 100%;">
+                         <label for="" class="formStyle-label">考生须知：</label>
+                         <textarea name="" id="editorArticle" cols="" rows="" class="customForm_inputBoxDefault customForm_textarea grid_col26"></textarea>
+                     </div>
+                    <div class="formStyle-item">
+                        <label for="" class="formStyle-label">考试时长：</label>
+                         <select name="" id="" class="customForm_inputBoxDefault">
+                          <option value="">限制时长</option>
+                          <option value="">不限制时长</option>
+                        </select>
+                        <input type="text" value="60" class="customForm_inputBoxDefault customForm_txtInput grid_col2">&nbsp;分钟
+                    </div> 
+                    <div class="formStyle-item">
+                        <label for="" class="formStyle-label">考试次数：</label>
+                        <select name="" id="" class="customForm_inputBoxDefault customForm_select">
+                          <option value="">限制每人最多参考次数</option>
+                          <option value="">限制每人最少参考次数</option>
+                        </select>
+                        <input type="text" value="1" class="customForm_inputBoxDefault customForm_txtInput grid_col2">
+                    </div> 
+                    <div class="formStyle-item">
+                        <a href="javascript:;" name=" " class="customBtn colourBlack marginR10" id="examSettingComfor">确定</a>
+                    </div>
+                    <div class="clear"></div>
+              </div> 
+              </form>
+              <div class="clear"></div> 
+        </div>
+        <!-- ==考试设置== -->
+
+        <!-- 考试试卷 -->
+        <div class="project">
+            <div class="projectTitle">
+            <h2 class="projectName" ><span></span>考试试卷<a href="javascript:;" name=" " class="customBtn colourBlack marginR10 f-fr f-mt10" id="testAjx">测试Ajax</a></h2> 
+            </div>
+              <div class="formItem-wrap marginB10">
+                <div class="formStyle-item" style="width:100%;">
+                    <label for="" class="formStyle-label"  styletitle="styleTitle"  titlecon="试卷名称综合测试第一册">试卷名称：</label>
+                    <input type="text" value="坚持使用礼貌用语" class="customForm_inputBoxDefault customForm_txtInput grid_col15">
+                    <a href="javascript:;" name=" " class="customBtn colourBlack marginR10" id="testComfor">确定</a>
+                </div> 
+                <div class="formStyle-item" style="width:100%;">
+                    <label for="" class="formStyle-label"  styletitle="styleTitle"  titlecon="试卷名称综合测试第一册">用户名：</label>
+                    <input type="text" value="坚持使用礼貌用语，不随便拿别人的东西坚持使用礼貌用语，不随便拿别人的东西" class="customForm_inputBoxDefault customForm_txtInput grid_col15 userValidate">
+                    <a href="javascript:;" name=" " class="customBtn colourBlack marginR10" id="testValidate">验证用户名</a>
+                </div> 
+                <div class="clear"></div>
+              </div>  
+               <div class="clear"></div>
+        </div>
+        <!-- ==考试试卷== -->
+         <!-- 选择位置 -->
+        <div class="project">
+            <div class="projectTitle">
+           <h2 class="projectName" ><span></span>选择位置</h2> 
+            </div>
+              <div class="formItem-wrap marginB10">
+                <div class="formStyle-item" style="width:100%;" id="unionSleArea">
+                    <label for="" class="formStyle-label">位置：</label>
+                    <select name="" id="mainSel" class="customForm_inputBoxDefault customForm_select">  
+                    </select>
+                    <select name="" id="secSel" class="customForm_inputBoxDefault customForm_select childSelect">              
+                    </select>
+                    <select name="" id="thirdsel" class="customForm_inputBoxDefault customForm_select childSelect">           
+                    </select>
+                     <select name="" id="forthsel" class="customForm_inputBoxDefault customForm_select childSelect">           
+                    </select>
+
+                    <a href="javascript:;" name=" " class="customBtn colourBlack marginR10">确定</a>
+                </div> 
+                <div class="clear"></div>
+              </div>  
+               <div class="clear"></div>
+        </div>
+        <!-- ==选择位置== -->
+          <!-- 图表 -->
+        <div class="project">
+            <div class="projectTitle">
+           <h2 class="projectName" ><span></span>图表</h2> 
+            </div>
+              <div class="formItem-wrap marginB10" id="container" style="width: 1188px; height: 400px; margin: 0 auto">
+                
+              </div>  
+               <div class="clear"></div>
+        </div>
+        <!-- ==图表== -->
+
+         <!-- 参考对象 -->
+        <div class="project">
+            <div class="projectTitle">
+            <h2 class="projectName" ><span></span>参考对象</h2> 
+            </div>
+
+            <div class="tableCon">
+               <div class="tableBtn ">
+                   <a href="javascript:void(0);" name=" " class="customBtn colourWhite marginR10">删除</a>
+                   <a href="javascript:void(0);" name=" " class="customBtn colourBlack marginR10" id="popTips">选择对象</a> 
+                   <div class="clear"></div>
+               </div>
+               <table class="tableSet" >
+                <!-- 可以在class中加入tableSet-inbox或tableSet-noborder分别适应不同的情况 -->
+                <!-- 有边框 -->
+                <thead>
+                    <tr>
+                        <th style="width:6%"><div id="checkAllObj"><input type="checkbox" id="checkAll"><label for="checkAll">&nbsp;全选</label></div></th>
+                        <th style="width:40%">组名称</th>
+                        <th style="width:18%">是否包含下级分组</th>
+                        <th style="width:20%" >组描述</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <!-- 表头可选 -->
+                <tbody>
+                    <tr >
+                        <td><input type="checkbox" name="checkboxItem"  id="1"></td>
+                        <td>孝感文昌区中学</td>
+                        <td><input type="checkbox"></td>
+                        <td>孝感文昌区中学下面还有附属小学，等等......</td>
+                        <td> 
+                            <input type="button" value="预览" style="cursor: pointer;color:#2fcc71;border:0px none;background: none;">&nbsp;
+                            <input type="button" name="del" value="删除" style="cursor: pointer;color:#2fcc71;border:0px none;background: none;"> 
+                        </td>
+                    </tr>
+                     
+                </tbody>              
+            </table>
+             </div>
+        </div>
+        <!-- ==参考对象== -->
+       <!-- 翻页实例 -->   
+       <div class="project">
+           <div class="projectTitle">
+               <h2 class="projectName" >
+                   <span></span>
+                   翻页实例
+               </h2>
+           </div>
+
+           <div class="tableCon pageContent">
+               <ul></ul>
+           </div>
+           <div class="page" id="pageNum"></div>
+       </div>
+       <!-- ==翻页实例== -->    
+       <div class="footBtn">
+            <a href="javascript:void(0);" id="addPage" class="customBtn colourGreen marginR10">添加完成</a>
+            <a href="javascript:void(0);" id="clearPage" class="customBtn colourWhite  marginR10">清空页面</a> 
+       </div>
+    </div>
+</div>
+<!--== 主要模块== -->
+
+<footer class="footer">
+    <dl class="ui-dlist">
+        <dt class="ui-dlist-tit">主管单位：湖北省教育厅  主办单位：湖北省教育信息化中心   技术交流群： 198016304</dt>
+        <dd class="ui-dlist-det">建议使用1024*768以上的屏幕分辨率和6.0以上版本的IE来访问本站</dd>
+    </dl>
+</footer>
+<script src="js/third-party/highcharts.js"></script>
+<script src="js/third-party/exporting.js"></script> 
+    </body>
+</html>
