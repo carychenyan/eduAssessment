@@ -11,8 +11,21 @@
             //dodoStaticPath: window.location.protocol + "//static.dodoedu.com",
             //dodoPhotoPath: "http://files.dodoedu.com/photo/"
     };
-
+ 
 $(function() {   
+
+    /**
+     *tab切换 ， 点击切换_分享、阅读等等
+     */
+    var tabItem = $(".projectTitleBor .projectName");
+    tabItem.bind("click", function() {
+        var i = $(this).index();
+        $(this).parent().find(".projectName").removeClass("sel");
+        $(this).addClass("sel");
+        $(this).parent().parent().parent().find(".formItem-wrap").hide();
+        $(this).parent().parent().parent().find(".formItem-wrap").eq(i).show();
+    });
+
  
     /**
     *菜单下拉
@@ -31,7 +44,7 @@ $(function() {
         $(this).find(".thirdUl").css("display", "none");
     });
 
-});
+}); 
 
     /**
     *联动下拉菜单【select】

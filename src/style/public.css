@@ -1596,7 +1596,37 @@ a.Popups_close:hover{
 	position: absolute;
 	z-index: 100000;
 }
+/*tab切换*/
+.projectForTab.project .projectTitle .projectName {
+	margin-right: 20px;
+	width: auto;
+	float: left;
+	border: 0px none;
+	border-image-source: initial;
+	border-image-slice: initial;
+	border-image-width: initial;
+	border-image-outset: initial;
+	border-image-repeat: initial;
+	color: rgb(159, 159, 159);
+}
+.projectForTab.project .projectTitle .projectTitleBor {
+		border-bottom: 1px solid rgb(236, 236, 236);
+		height: 44px;
+		float: left;
+		width: 100%;
+}
+.projectForTab.project .projectTitle .projectName.sel, .projectForTab.project .projectTitle .projectName:hover {
+color: rgb(88, 88, 88);
+}
+.projectForTab.project .projectTitle .projectName span {
+display: none;
+width: 100%;
+}
+.projectForTab.project .projectTitle .projectName.sel span, .projectForTab.project .projectTitle .projectName:hover span {
+display: block;
+}
 
+/*==tab切换==*/
 
 
 
