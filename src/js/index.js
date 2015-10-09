@@ -219,7 +219,63 @@ $(function(){
             var requestUrl = "../control/indexPage.php";
 
             AjaxForJson(requestUrl, requestDataTex, disscussContent, null);
-    
+
+
+  
+   //日历
+   $('input[name="date_test"]').calendar();
+
+   //上传文件 
+    var freshUploadOK = true;
+    //是否可以进行单张上传
+    $("#upLoadLocation").live("click", function() {
+        if (!freshUploadOK) {
+            return;
+        }
+
+        $("#upLoadLocation").unbind().bind("change", function() {
+            freshUploadOK = false;
+            $("span.album div.albumBox").prepend('<div class="albumCell floatL" title="" href=""><a class="del" href="javascript:;" title="删除"></a><img class="loadingImg" photo_id="" photo_url="" src="' + commonParams.dodoStaticPath + '/shequPage/common/image/loading.gif"/></div>');
+            var handlerUrl = "../control/uploadFile.php";
+            //document.domain = 'localhost';
+            $.ajaxFileUpload({
+                url : handlerUrl,
+                secureuri : false,
+                fileElementId : "upLoadLocation",
+                //dataType: 'HTML', //返回值类型 一般设置为json
+                success : function(data) { 
+                    var obj = null;
+                    try {
+                        obj = eval('(' + data + ')');
+                    } catch (ex) {
+                        obj = data;
+                    }
+
+                    if (obj.state == "SUCCESS") {
+                        
+                        alert("上传成功");
+
+                    } else {
+                        freshUploadOK = true;
+                        var msg = "上传失败";
+                        promptMessageDialog({
+                            icon : "warning",
+                            content : msg
+                        });
+                        //成功finish；警告warning；错误error；提示hint；疑问query
+                    }
+                },
+                error : function(data, status, e) { 
+                    freshUploadOK = true;
+                    promptMessageDialog({
+                        icon : "warning",
+                        content : e
+                    });
+                    //成功finish；警告warning；错误error；提示hint；疑问query
+                }
+            });
+        });
+    });
 
     
 });
