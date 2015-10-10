@@ -1,0 +1,222 @@
+﻿body {
+    color: #606A7A;
+    /* font-size: 12px; */
+    /* line-height: 1.5; */
+    /* font-family: Arial,Helvetica,'Microsoft YaHei','simsun'; */
+    background-color: #fef9f2;
+}
+.frame_top{ 
+	height: 50px;
+	line-height: 50px;
+	font-size: 20px;
+	text-align: right;
+	padding-right:40px; 
+    background-color:#ccc;
+}
+.frame_top a { 
+	 background-color: blue; 
+	 color: #fff;
+} 
+  
+        .quick-nav
+        {
+            border-left: solid 3px #505151;
+            padding-left: 3px;
+        }
+
+            .quick-nav li
+            {
+                height: 25px;
+                line-height: 25px;
+            }
+            .quick-nav li a.sel{
+                 color: #f00;
+            }
+
+        fieldset
+        {
+            border: solid 1px #c3c3c3;
+            width: 1100px;
+            margin: 0 auto;
+            margin-bottom: 30px;
+            padding: 10px;
+        }
+        fieldset legend {
+            text-align: left;
+        }
+
+            fieldset div.des
+            {
+                margin-bottom: 10px;
+                padding: 3px;
+                font-size: 12px;
+                color: red;
+                background-color: #e4e3e3;
+            }
+
+        .code-demo1 h4
+        {
+            font-size: 14px;
+            height: 30px;
+            line-height: 30px;
+        }
+
+        .code-demo1 .copy-code
+        {
+            font-size: 12px;
+        }
+
+        .code-demo1 .code-area
+        {
+            margin-top: 5px;
+        }
+            
+            .code-demo1 .code-area .des
+            {
+                color: #A5A5A5;
+                font-size: 12px;
+                height: 20px;
+                line-height: 20px;
+            }
+
+            .code-demo1 .code-area textarea
+            {
+                border: solid 1px #c3c3c3;
+                width: 1100px;
+            }
+  
+        /* font-area*/
+        #font-area li span
+        {
+            display: block;
+            margin-top: 10px;
+        }
+    
+        /* button-area */
+        #button-area td.cl
+        {
+            padding-top: 0;
+            padding-bottom: 10px;
+        }
+
+        #button-area td
+        {
+            padding-right: 20px;
+        }
+     
+        /* list-area */
+        #list-area .show-area .results
+        {
+            margin-top: 15px;
+        }
+
+            #list-area .show-area .results .id
+            {
+                width: 60px;
+            }
+
+            #list-area .show-area .results .base-info .id
+            {
+                text-align: left;
+            }
+
+                #list-area .show-area .results .base-info .id .user-id
+                {
+                    margin-left: 18px;
+                }
+
+            #list-area .show-area .results .name
+            {
+                width: 92px;
+            }
+
+            #list-area .show-area .results .base-info .name .username
+            {
+                margin-left: 12px;
+            }
+
+            #list-area .show-area .results .age
+            {
+                width: 40px;
+            }
+
+            #list-area .show-area .results .education
+            {
+                width: 65px;
+            }
+
+            #list-area .show-area .results .experience
+            {
+                width: 75px;
+            }
+
+            #list-area .show-area .results .intention-job
+            {
+                width: 146px;
+            }
+
+            #list-area .show-area .results .intention-location
+            {
+                width: 95px;
+            }
+
+            #list-area .show-area .results .job-status
+            {
+                width: 95px;
+            }
+
+            #list-area .show-area .results .update-date
+            {
+                width: 105px;
+            }
+
+            #list-area .show-area .results .status
+            {
+                width: 50px;
+            }
+
+            #list-area .show-area .results .operation
+            {
+                width: 45px;
+            }
+
+            #list-area .show-area .results footer
+            {
+                border-top: solid 1px #D9D9D9;
+                /**/
+                height: 50px;
+                line-height: 50px;
+            }
+
+                #list-area .show-area .results footer .hint
+                {
+                    color: #999999;
+                }
+   
+        /* icon-area */
+        #icon-area li
+        {
+            margin-top: 5px;
+        }
+    
+        /* others-area */
+        .sbzArticleSwitch
+        {
+            border: solid 1px #dcdcdc;
+            height: 150px;
+            width: 150px;
+        }
+
+            .sbzArticleSwitch .bg
+            {
+                background-color: white;
+                opacity: 0.5;
+            }
+ 
+ #font-area li{ float: left}
+/*调整demo样式表现*/
+.topNav,.topNav .container{
+    position: relative;
+     width: 1100px;
+}
+/*==调整demo样式表现==*/

@@ -73,6 +73,49 @@ a:hover,a:active {
   margin:0 auto 
 }
 
+.font12,.f-fs12 {
+	font-size:12px;
+}
+
+.font14,.f-fs14 {
+	font-size:14px;
+}
+
+.f-fs16 {
+	font-size:16px;
+}
+
+.f-fs18 {
+	font-size:18px;
+}
+.f-fw {
+	font-weight:bold;
+}
+
+.f-fwNor {
+	font-weight:normal;
+}
+/*字体*/
+.defaultFont,.defaultUnderline,.defaultEffect,.defaultHover,.defaultDefHover{color: #666666;}
+.defaultUnderline{text-decoration: underline;}
+.defaultEffect:hover{color: #e25353;}
+.defaultHover:hover{text-decoration: underline;}
+.defaultDefHover:hover{color: #e25353;text-decoration: underline;}
+.grayFont,.grayUnderline,.grayEffect,.grayHover,.grayDefHover{color: #969696;}
+.grayUnderline{text-decoration: underline;}
+.grayEffect:hover{color: #e25353;}
+.grayHover:hover{text-decoration: underline;}
+.grayDefHover:hover{color: #e25353;text-decoration: underline;}
+
+.redFont,.redUnderline,.redHover{color: #e25353;}
+.redUnderline{text-decoration: underline;} 
+.redHover:hover{text-decoration: underline;}
+
+.greenFont,.greenUnderline,.greenHover{color: #66cc00;}
+.greenUnderline{text-decoration: underline;} 
+.greenHover:hover{text-decoration: underline;} 
+/*==字体==*/
+
 .topNav{ width:100%;min-width: 1020px; background:#3d3d3d; height:30px;position: fixed;z-index: 1000;top: 0px;}
 .topNav li{line-height:30px;font-size: 12px; color:#dcdcdc;text-align: center;border-left: 1px solid #2f2f2f; float: left; height: 30px;}
 .topNav li.last{border-right: 1px solid #444444;}
