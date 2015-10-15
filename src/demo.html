@@ -11,6 +11,7 @@
 	<link href="style/frame.css" rel="stylesheet">
     <script type="text/javascript" src="http://cdn.bootcss.com/jquery/1.8.3/jquery.js"></script>
 	<script src="js/jquery.zclip.min.js"  type="text/javascript"></script>
+    <script type="text/javascript" src="js/public.js"></script>
 	
 </head>
 <body style="font-size:14px;"> 
@@ -24,6 +25,8 @@
             <li><a class="grayEffect" href="#top-area">顶部栏(Top)</a></li>
             <li><a class="grayEffect" href="#nav-area">导航栏(Nav)</a></li>
             <li><a class="grayEffect" href="#path-area">面包屑(Path)</a></li>
+            <li><a class="grayEffect" href="#mianContainer-area">主体容器(mianContainer)</a></li>
+            <li><a class="grayEffect" href="#footer-area">底部(footer)</a></li>
             <li><a class="grayEffect" href="#border-area">边框(Border)</a></li>
             <li><a class="grayEffect" href="#quickPanel-area">快捷面版(QuickPanel)</a></li>
             <li><a class="grayEffect" href="#tabs-area">选项卡(Tabs)</a></li>
@@ -211,187 +214,295 @@
     </fieldset> 
     <fieldset id="nav-area">
         <legend>导航栏</legend>
-        <div class="des">当前导航栏有<mark>2</mark>种样式</div>
+        <div class="des">当前导航栏有<mark>1</mark>种样式</div>
         <div class="code-demo1">
-            <h4 style="display:inline-block;">心理健康课程平台导航栏:</h4>
+            <h4 style="display:inline-block;">是一种通栏的样式，包含了logo，实际使用中可以根据实际情况做相应的调整:</h4>
             <div class="show-area">
-                 <div class="nav_xl">
-                                    <a href="/xl/student" title="学生中心" target="" class="selected">
-                                        <i class="icon-learnC"></i>
-                                        <span>学生中心</span>
-                                    </a>
-                                    <a href="/xl/study" title="在线学习" target="">
-                                        <i class="icon-learn"></i>
-                                        <span >在线学习</span>
-                                    </a>
-                                    <a href="/xl/evaluate" title="质量评价" target="">
-                                        <i class="icon-test"></i>
-                                        <span>质量评价</span>
-                                    </a>
-                                    <a href="/xl/course" title="课堂评价" target="">
-                                      <i class="icon-lessonLecture"></i>
-                                      <span>课堂评价</span>
-                                    </a>
-                                    <a href="/xl/game" title="心理训练" target="">
-                                        <i class="icon-game"></i>
-                                        <span>心理训练</span>
-                                    </a>
-                                    <a href="/xl/question" title="问答" target="">
-                                        <i class="icon-FAQs"></i>
-                                        <span>问答</span>
-                                    </a>
-                                    <a href="/xl/info" title="资讯" target="">
-                                        <i class="icon-news"></i>
-                                        <span>资讯</span>
-                                    </a>
+                  <div class="header">
+                        <div class="container">
+                            <a class="master logo yundanLogo" href="/"></a>  
+                            <div class="nav">
+                                <ul>
+                                    <li><a href="" class="sec">首页</a>
+                                    </li>
+                                    <li>
+                                    <span style="display: none;"></span>
+                                        <a href="" class="sec">题库管理</a>
+                                        <ul class="secUl" style="display: none;">
+                                            <li>
+                                            <a href="">评价指标<em>&gt;</em></a>
+                                                <ul class="thirdUl" style="display: none;">
+                                                    <li>
+                                                        <a href="">三级菜单</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="">三级菜单</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="">添加试题</a></li>
+                                            <li><a href="">试题管理</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="active">
+                                        <span style="display: none;"></span>
+                                        <a href="" class="sec">试卷管理</a>
+                                        <ul class="secUl" style="display: none;">
+                                            <li><a href="">手工组卷</a></li>
+                                            <li><a href="">试卷管理</a></li> 
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <span style="display: none;"></span>
+                                        <a href="" class="sec">考试管理</a>
+                                        <ul class="secUl" style="display: none;">
+                                            <li><a href="">添加考试</a></li>
+                                            <li><a href="">考试管理</a></li> 
+                                        </ul>
+                                    </li>
+                                    <li>
+                                       <span style="display: none;"></span>
+                                        <a href="" class="sec">统计分析</a>
+                                        <ul class="secUl" style="display: none;">
+                                            <li><a href="">统计查询</a></li>
+                                            <li><a href="">对比分析</a></li> 
+                                        </ul>
+                                    </li>
+                                    <li class="last">
+                                        <span style="display: none;"></span>
+                                        <a href="" class="sec">系统管理</a>
+                                        <ul class="secUl" style="display: none;">
+                                            <li><a href="">数据字典</a></li>
+                                            <li><a href="">用户分组</a></li> 
+                                            <li><a href="">角色维护</a></li>
+                                            <li><a href="">用户管理</a></li> 
+                                        </ul>
+                                    </li> 
+                                </ul>
+                            </div>
+                        </div>
                 </div>
             </div>
             <ul class="code-area">
                 <li> 
-                    <span> 说明：使用selected样式设置选中的Tab.</span>
+                    <span class="des"> 说明：使用的时候需要在头部引入public.js，有下拉二级菜单显示</span>
                    
                 </li> 
                 <li class="code hide">
                     <textarea rows="9" cols="100" class="code_textarea" >
-                            <div class="nav_xl">
-                                    <a href="/xl/student" title="学生中心" target="" class="selected">
-                                        <i class="icon-learnC"></i>
-                                        <span>学生中心</span>
-                                    </a>
-                                    <a href="/xl/study" title="在线学习" target="">
-                                        <i class="icon-learn"></i>
-                                        <span >在线学习</span>
-                                    </a>
-                                    <a href="/xl/evaluate" title="质量评价" target="">
-                                        <i class="icon-test"></i>
-                                        <span>质量评价</span>
-                                    </a>
-                                    <a href="/xl/course" title="课堂评价" target="">
-                                      <i class="icon-lessonLecture"></i>
-                                      <span>课堂评价</span>
-                                    </a>
-                                    <a href="/xl/game" title="心理训练" target="">
-                                        <i class="icon-game"></i>
-                                        <span>心理训练</span>
-                                    </a>
-                                    <a href="/xl/question" title="问答" target="">
-                                        <i class="icon-FAQs"></i>
-                                        <span>问答</span>
-                                    </a>
-                                    <a href="/xl/info" title="资讯" target="">
-                                        <i class="icon-news"></i>
-                                        <span>资讯</span>
-                                    </a>
-                              </div>
+                            <div class="header">
+                                <div class="container">
+                                    <a class="master logo yundanLogo" href="/"></a>
+                                    <div class="nav">
+                                        <ul>
+                                            <li>
+                                                <a href="" class="sec">首页</a>
+                                            </li>
+                                            <li>
+                                                <span style="display: none;"></span>
+                                                <a href="" class="sec">题库管理</a>
+                                                <ul class="secUl" style="display: none;">
+                                                    <li>
+                                                        <a href="">
+                                                            评价指标 <em>&gt;</em>
+                                                        </a>
+                                                        <ul class="thirdUl" style="display: none;">
+                                                            <li>
+                                                                <a href="">三级菜单</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="">三级菜单</a>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                    <li>
+                                                        <a href="">添加试题</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="">试题管理</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="active">
+                                                <span style="display: none;"></span>
+                                                <a href="" class="sec">试卷管理</a>
+                                                <ul class="secUl" style="display: none;">
+                                                    <li>
+                                                        <a href="">手工组卷</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="">试卷管理</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <span style="display: none;"></span>
+                                                <a href="" class="sec">考试管理</a>
+                                                <ul class="secUl" style="display: none;">
+                                                    <li>
+                                                        <a href="">添加考试</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="">考试管理</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <span style="display: none;"></span>
+                                                <a href="" class="sec">统计分析</a>
+                                                <ul class="secUl" style="display: none;">
+                                                    <li>
+                                                        <a href="">统计查询</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="">对比分析</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="last">
+                                                <span style="display: none;"></span>
+                                                <a href="" class="sec">系统管理</a>
+                                                <ul class="secUl" style="display: none;">
+                                                    <li>
+                                                        <a href="">数据字典</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="">用户分组</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="">角色维护</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="">用户管理</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div> 
                     </textarea>
                 </li>
             </ul> 
-            <button class="copy_code f-fr" style="margin-right:115px;">复制代码</button> 
-        </div> 
-       
-        <div class="code-demo1">
-            <h4 style="display:inline-block;">生命安全课程平台导航栏:</h4>
-            <div class="show-area">
-                    <div class="nav_sm">
-                        <a href="/sm/resource" title="资源" target="" class="selected"> 
-                            <span>资源</span>
-                        </a>
-                        <a href="/sm/activity" title="研训" target="" > 
-                            <span>研训</span>
-                        </a>
-                        <a href="/sm/lesson" title="备课" target="" > 
-                            <span>备课</span>
-                        </a>
-                        <a href="/sm/course" title="课程" target="" > 
-                            <span>课程</span>
-                        </a>
-                        <a href="/sm/question" title="问答" target=""> 
-                            <span>问答</span>
-                        </a>
-                        <a href="/sm/info" title="资讯" target="" > 
-                            <span>资讯</span>
-                        </a>
-                        <a href="/sm/teacher" title="教师中心" target="" > 
-                            <span>教师中心</span>
-                        </a>
-                    </div>
-            </div>
-            <ul class="code-area">
-                <li> 
-                    <span> 说明：使用selected样式设置选中的Tab.</span>
-                   
-                </li> 
-                <li class="code hide">
-                    <textarea rows="9" cols="100" class="code_textarea" >
-                            <div class="nav_sm">
-                                    <a href="/sm/resource" title="资源" target=""  class="selected"> 
-                                        <span>资源</span>
-                                    </a>
-                                    <a href="/sm/activity" title="研训" target="" > 
-                                        <span>研训</span>
-                                    </a>
-                                    <a href="/sm/lesson" title="备课" target="" > 
-                                        <span>备课</span>
-                                    </a>
-                                    <a href="/sm/course" title="课程" target="" > 
-                                        <span>课程</span>
-                                    </a>
-                                    <a href="/sm/question" title="问答" target=""> 
-                                        <span>问答</span>
-                                    </a>
-                                    <a href="/sm/info" title="资讯" target="" > 
-                                        <span>资讯</span>
-                                    </a>
-                                    <a href="/sm/teacher" title="教师中心" target="" > 
-                                        <span>教师中心</span>
-                                    </a>
-                            </div>
-                    </textarea>
-                </li>
-            </ul> 
-            <button class="copy_code f-fr" style="margin-right:115px;">复制代码</button> 
-        </div>
-    
+            <button class="copy_code f-fr" style="margin-right:0;">复制代码</button> 
+        </div>   
     </fieldset> 
      <fieldset id="path-area">
         <legend>面包屑</legend>
         <div class="des">
-            当前字体有<mark>1</mark>种结构样式效果。
+            当前面包屑有<mark>1</mark>种结构样式效果。
         </div>
         <div class="code-demo1">
-            <h4 style="display:inline-block;">多多社区面包屑样例:</h4>
+            <h4 style="display:inline-block;">后台组件面包屑样例:</h4>
             <div class="show-area">
-                   <div class="topNavLink">
-                        <i></i>
-                        <a href="#">首页</a>
-                        <span>&gt;</span>
-                        <a href="#">我的班级</a>
-                        <span>&gt;</span>
-                        <em>我们是一群追求自由理想的少年</em>
-                    </div> 
+                   <div class="m-breakNav f-mb10"> <i class="icon_tc1"></i>
+                       <span>当前位置</span>
+                       ：
+                       <a href="/xl/teacher">教师</a> <b>&gt;</b>
+                       <a href="/xl/lesson">备课夹</a> <b>&gt;</b>
+                       公共备课夹
+                   </div>
             </div>
             <ul class="code-area">
                 <li> 
-                    <span> 说明：目前项目中面包屑结构都差不多，主要是皮肤不一样</span>
+                    <span class="des"> 说明：目前项目中面包屑结构都差不多，主要是皮肤不一样</span>
                    
                 </li> 
                 <li class="code hide">
                     <textarea rows="9" cols="100" class="code_textarea" >
-                            <div class="topNavLink">
-                                <i></i>
-                                <a href="#">首页</a>
-                                <span>&gt;</span>
-                                <a href="#">我的班级</a>
-                                <span>&gt;</span>
-                                <em>我们是一群追求自由理想的少年</em>
-                           </div> 
+                            <div class="m-breakNav f-mb10"> <i class="icon_tc1"></i>
+                                <span>当前位置</span>
+                                ：
+                                <a href="/xl/teacher">教师</a> <b>&gt;</b>
+                                <a href="/xl/lesson">备课夹</a> <b>&gt;</b>
+                                公共备课夹
+                            </div>
                     </textarea>
                 </li>
             </ul> 
-            <button class="copy_code f-fr" style="margin-right:115px;">复制代码</button> 
+            <button class="copy_code f-fr">复制代码</button> 
         </div>
     </fieldset>
-     <fieldset id="border-area">
+      <fieldset id="mianContainer-area">
+        <legend>主体容器</legend>
+        <div class="des">
+            当前主体容器有<mark>1</mark>种结构样式效果。
+        </div>
+        <div class="code-demo1">
+            <h4 style="display:inline-block;">后台组件主体容器样例:</h4>
+            <div class="show-area">
+                   <div class="wrap" style="">
+                       <div class="container" style="width:1100px">
+
+                           <!-- 测试数据 -->
+                           我是主要内容呀呀呀呀压实度呀呀呀呀我是主要内容呀呀呀呀压实度呀呀呀呀我是主要内容呀呀呀呀压实度呀呀呀呀我是主要内容呀呀呀呀压实度呀呀呀呀我是主要内容呀呀呀呀压实度呀呀呀呀我是主要内容呀呀呀呀压实度呀呀呀呀我是主要内容呀呀呀呀压实度呀呀呀呀
+                           <span style="width:100px; height:50px; background: white;display: block;margin: 10px auto;">嘿嘿，我也是测试内容！</span>
+                           <!-- ==测试数据== -->
+
+                       </div>
+                   </div>
+            </div>
+            <ul class="code-area">
+                <li> 
+                    <span class="des"> 
+                    说明：<br/>
+                    1).目前 <b>主体容器</b> 是页面的中间结构，与 <b>头部</b> 和 <b>尾部</b> 这样的通栏一起构成页面的主体结构；<br/>
+                    2).是除了头部跟尾部之外最大的容器，后面的单个面板都要被包含在其中，才能正确居中显示;<br/>
+                    3).测试数据实际使用中可以删除掉写自己的代码，这里只是举例；</span>
+                   
+                </li> 
+                <li class="code hide">
+                    <textarea rows="9" cols="100" class="code_textarea" >
+                           <div class="wrap" style="">
+                               <div class="container" style="width:1100px">
+
+                                   <!-- 测试数据 -->                           
+                                   我是主要内容呀呀呀呀压实度呀呀呀呀我是主要内容呀呀呀呀压实度呀呀呀呀我是主要内容呀呀呀呀压实度呀呀呀呀我是主要内容呀呀呀呀压实度呀呀呀呀我是主要内容呀呀呀呀压实度呀呀呀呀我是主要内容呀呀呀呀压实度呀呀呀呀我是主要内容呀呀呀呀压实度呀呀呀呀
+                                   <span style="width:100px; height:50px; background: white;display: block;margin: 10px auto;">嘿嘿，我也是测试内容！</span>
+                                   <!-- ==测试数据== --> 
+                               </div>
+                           </div>
+                    </textarea>
+                </li>
+            </ul> 
+            <button class="copy_code f-fr">复制代码</button> 
+        </div>
+    </fieldset>
+    <fieldset id="footer-area">
+        <legend>底部</legend>
+        <div class="des">
+            当前底部有<mark>1</mark>种结构样式效果。
+        </div>
+        <div class="code-demo1">
+            <h4 style="display:inline-block;">后台组件底部样例:</h4>
+            <div class="show-area">
+                  <footer class="footer">
+                      <dl class="ui-dlist">
+                          <dt class="ui-dlist-tit">主管单位：湖北省教育厅  主办单位：湖北省教育信息化中心   技术交流群： 198016304</dt>
+                          <dd class="ui-dlist-det">建议使用1024*768以上的屏幕分辨率和8.0以上版本的IE来访问本站</dd>
+                      </dl>
+                  </footer>
+            </div>
+            <ul class="code-area">
+                <li> 
+                    <span class="des"> 说明：底部是通栏，可以视情况修改底部样式；</span>
+                   
+                </li> 
+                <li class="code hide">
+                    <textarea rows="9" cols="100" class="code_textarea" >
+                          <footer class="footer">
+                              <dl class="ui-dlist">
+                                  <dt class="ui-dlist-tit">主管单位：湖北省教育厅  主办单位：湖北省教育信息化中心   技术交流群： 198016304</dt>
+                                  <dd class="ui-dlist-det">建议使用1024*768以上的屏幕分辨率和6.0以上版本的IE来访问本站</dd>
+                              </dl>
+                          </footer>
+                    </textarea>
+                </li>
+            </ul> 
+            <button class="copy_code f-fr">复制代码</button> 
+        </div>
+    </fieldset>
+    <fieldset id="border-area">
         <legend>边框</legend>
         <div class="des">
             当前边框有<mark>1</mark>种结构样式效果。
