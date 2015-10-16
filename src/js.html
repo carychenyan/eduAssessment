@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<title>多多社区前端设计框架 v0.1</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="utf-8"> 
+	<link href="style/public.css" rel="stylesheet">
+    <link media="all" href="style/lhgcalendar.css" rel="stylesheet">                            
+    <link media="all" href="style/index.css" rel="stylesheet"> 
+	<link href="style/frame.css" rel="stylesheet">
+    <script type="text/javascript" src="http://cdn.bootcss.com/jquery/1.8.3/jquery.js"></script>
+	<script src="js/jquery.zclip.min.js"  type="text/javascript"></script>
+    <script type="text/javascript" src="js/public.js"></script>
+    <script type="text/javascript" src="js/dialog.js"></script>
+	
+</head>
+<body style="font-size:14px;"> 
+<div class="frame_top"> 
+    <a href="start.html" class="customBtn colourBlack">开始</a>
+    <a href="css.html" class="customBtn colourBlack">css组件</a>
+    <a href="js.html" class="customBtn colourGreen">js组件</a>
+    <a href="thirdPart.html" class="customBtn colourBlack">第三方插件</a>
+</div>
+<div class="quick-nav" style="position:fixed; top:58px; left:5px;">
+        <ul> 
+            <li><a class="grayEffect sel" href="#tab-area">选项卡(Tab)</a></li>
+            <li><a class="grayEffect " href="#tips-area">提示弹窗(tips)</a></li> 
+            <li><a class="grayEffect " href="#dialog-area">普通弹窗(dialog)</a></li>
+            <li><a class="grayEffect " href="#conFirmDialog-area">确认弹窗(conFirmDialog)</a></li>
+        </ul>
+    </div>
+
+    <fieldset id="top" >
+        <legend>本页面说明</legend>
+        <div class="des">版权归博盛数字教育服务有限公司所有</div>
+        <p>
+           博盛数字教育统一样式
+            <br />
+            <br/>
+            本页面是用于博盛数字教育内部产品交流使用，也欢迎各位同事、朋友给予帮助和指点。
+            <mark>注意：请使用Chrome浏览，因为本页面没有做兼容处理。</mark>
+        </p>
+    </fieldset>   
+     <fieldset id="tab-area">
+        <legend>选项卡</legend>
+        <div class="des">
+            当前选项卡有<mark>1</mark>种结构样式效果。
+        </div>
+        <div class="code-demo1">
+            <h4 style="display:inline-block;">后台组件选项卡样例:</h4>
+            <div class="show-area">
+                   <div class="project projectForTab">
+                       <div class="projectTitle">
+                           <div class="projectTitleBor">
+                               <a class="projectName sel" href="javascript:void(0)">
+                                   <span></span>
+                                   本月阅读最多
+                               </a>
+                               <a class="projectName" href="javascript:void(0)">
+                                   <span></span>
+                                   本月分享最多
+                               </a>
+                           </div>
+                       </div>
+                       <!-- 阅读 -->                   
+                       <div class="formItem-wrap marginB10" style="padding: 15px 15px 0px; display: block;">
+                           <table class="tableSet">
+                               <!-- 可以在class中加入tableSet-inbox或tableSet-noborder分别适应不同的情况 -->                   
+                               <!-- 有边框 -->                   
+                               <thead>
+                                   <tr>
+                                       <th style="width:6%">
+                                           <input type="checkbox"></th>
+                                       <th style="width:50%">组名称</th>
+                                       <th style="width:18%">是否包含下级分组</th>
+                                       <th>组描述</th>
+                                   </tr>
+                               </thead>
+                               <!-- 表头可选 -->                   
+                               <tbody>
+                                   <tr>
+                                       <td>
+                                           <input type="checkbox"></td>
+                                       <td>孝感文昌区中学</td>
+                                       <td>
+                                           <input type="checkbox"></td>
+                                       <td>孝感文昌区中学下面还有附属小学，等等......</td>
+                                   </tr>
+                                   <tr class="tableSet-split">
+                                       <td>
+                                           <input type="checkbox"></td>
+                                       <td>孝感文昌区中学</td>
+                                       <td>
+                                           <input type="checkbox"></td>
+                                       <td>孝感文昌区中学下面还有附属小学，等等......</td>
+                                   </tr>
+                                   <tr>
+                                       <td>
+                                           <input type="checkbox"></td>
+                                       <td>孝感文昌区中学</td>
+                                       <td>
+                                           <input type="checkbox"></td>
+                                       <td>孝感文昌区中学下面还有附属小学，等等......</td>
+                                   </tr>
+                                   <tr class="tableSet-split">
+                                       <td>
+                                           <input type="checkbox"></td>
+                                       <td>孝感文昌区中学</td>
+                                       <td>
+                                           <input type="checkbox"></td>
+                                       <td>孝感文昌区中学下面还有附属小学，等等......</td>
+                                   </tr>
+                                   <tr>
+                                       <td>
+                                           <input type="checkbox"></td>
+                                       <td>孝感文昌区中学</td>
+                                       <td>
+                                           <input type="checkbox"></td>
+                                       <td>孝感文昌区中学下面还有附属小学，等等......</td>
+                                   </tr>
+                                   <tr class="tableSet-split">
+                                       <td>
+                                           <input type="checkbox"></td>
+                                       <td>孝感文昌区中学</td>
+                                       <td>
+                                           <input type="checkbox"></td>
+                                       <td>孝感文昌区中学下面还有附属小学，等等......</td>
+                                   </tr>
+                               </tbody>
+                           </table>
+                       </div>
+                       <!-- ==阅读== -->                   
+                       <!-- 分享 -->                   
+                       <div class="formItem-wrap marginB10" style="padding: 15px 15px 0px; display: none;">
+                           <table class="tableSet">
+                               <!-- 可以在class中加入tableSet-inbox或tableSet-noborder分别适应不同的情况 -->                   
+                               <!-- 有边框 -->                   
+                               <thead>
+                                   <tr>
+                                       <th style="width:6%">
+                                           <input type="checkbox"></th>
+                                       <th style="width:50%">组名称2</th>
+                                       <th style="width:18%">是否包含下级分组2</th>
+                                       <th>组描述2</th>
+                                   </tr>
+                               </thead>
+                               <!-- 表头可选 -->                   
+                               <tbody>
+                                   <tr>
+                                       <td>
+                                           <input type="checkbox"></td>
+                                       <td>孝感文昌区中学</td>
+                                       <td>
+                                           <input type="checkbox"></td>
+                                       <td>孝感文昌下面还有附属小学，等等......</td>
+                                   </tr>
+                                   <tr class="tableSet-split">
+                                       <td>
+                                           <input type="checkbox"></td>
+                                       <td>孝感文昌区中学</td>
+                                       <td>
+                                           <input type="checkbox"></td>
+                                       <td>孝感文昌下面还有附属小学，等等......</td>
+                                   </tr>
+                                   <tr>
+                                       <td>
+                                           <input type="checkbox"></td>
+                                       <td>文昌区中学</td>
+                                       <td>
+                                           <input type="checkbox"></td>
+                                       <td>孝感文昌区中学下面还有附属小学，等等......</td>
+                                   </tr>
+                                   <tr class="tableSet-split">
+                                       <td>
+                                           <input type="checkbox"></td>
+                                       <td>文昌区中学</td>
+                                       <td>
+                                           <input type="checkbox"></td>
+                                       <td>孝感文昌下面还有附属小学，等等......</td>
+                                   </tr>
+                                   <tr>
+                                       <td>
+                                           <input type="checkbox"></td>
+                                       <td>孝感文中学</td>
+                                       <td>
+                                           <input type="checkbox"></td>
+                                       <td>孝感文昌学下面还有附属小学，等等......</td>
+                                   </tr>
+                                   <tr class="tableSet-split">
+                                       <td>
+                                           <input type="checkbox"></td>
+                                       <td>孝昌区中学</td>
+                                       <td>
+                                           <input type="checkbox"></td>
+                                       <td>孝感文昌区中学下面还有附属小学，等等......</td>
+                                   </tr>
+                               </tbody>
+                           </table>
+                       </div>
+                       <div class="clear"></div>
+                       <!-- ==分享 ==--> </div>
+            </div>
+            <ul class="code-area">
+                <li> 
+                    <span class="des"> 
+                    说明：<br/>
+                    0),需要引用public.js<br/>
+                    1),目前切换是做在面板标题的切换上面，故 选项卡需要包含在class="projectTitleBor"中<br/>
+                    2),每一 选项卡要添加 class="projectName，当前样式为class="sel"<br/>
+                    3),目前切换是做在面板标题的切换上面，故 需要包含在class="projectTitleBor"中<br/>
+                    4),对应的每一项应该包含在class="formItem-wrap" 中
+                    </span>
+                   
+                </li> 
+                <li class="code hide">
+                    <textarea rows="9" cols="100" class="code_textarea" >
+                            <div class="project projectForTab">
+         <div class="projectTitle">
+           <div class="projectTitleBor">
+             <a class="projectName sel" href="javascript:void(0)">
+               <span></span>
+               本月阅读最多
+             </a>
+             <a class="projectName" href="javascript:void(0)">
+               <span></span>
+               本月分享最多
+             </a>
+           </div>
+         </div>
+         <!-- 阅读 -->           
+         <div class="formItem-wrap marginB10" style="padding: 15px 15px 0px; display: block;">
+           <table class="tableSet">
+             <!-- 可以在class中加入tableSet-inbox或tableSet-noborder分别适应不同的情况 -->           
+             <!-- 有边框 -->           
+             <thead>
+               <tr>
+                 <th style="width:6%">
+                   <input type="checkbox"></th>
+                 <th style="width:50%">组名称</th>
+                 <th style="width:18%">是否包含下级分组</th>
+                 <th>组描述</th>
+               </tr>
+             </thead>
+             <!-- 表头可选 -->           
+             <tbody>
+               <tr>
+                 <td>
+                   <input type="checkbox"></td>
+                 <td>孝感文昌区中学</td>
+                 <td>
+                   <input type="checkbox"></td>
+                 <td>孝感文昌区中学下面还有附属小学，等等......</td>
+               </tr>
+               <tr class="tableSet-split">
+                 <td>
+                   <input type="checkbox"></td>
+                 <td>孝感文昌区中学</td>
+                 <td>
+                   <input type="checkbox"></td>
+                 <td>孝感文昌区中学下面还有附属小学，等等......</td>
+               </tr>
+               <tr>
+                 <td>
+                   <input type="checkbox"></td>
+                 <td>孝感文昌区中学</td>
+                 <td>
+                   <input type="checkbox"></td>
+                 <td>孝感文昌区中学下面还有附属小学，等等......</td>
+               </tr>
+               <tr class="tableSet-split">
+                 <td>
+                   <input type="checkbox"></td>
+                 <td>孝感文昌区中学</td>
+                 <td>
+                   <input type="checkbox"></td>
+                 <td>孝感文昌区中学下面还有附属小学，等等......</td>
+               </tr>
+               <tr>
+                 <td>
+                   <input type="checkbox"></td>
+                 <td>孝感文昌区中学</td>
+                 <td>
+                   <input type="checkbox"></td>
+                 <td>孝感文昌区中学下面还有附属小学，等等......</td>
+               </tr>
+               <tr class="tableSet-split">
+                 <td>
+                   <input type="checkbox"></td>
+                 <td>孝感文昌区中学</td>
+                 <td>
+                   <input type="checkbox"></td>
+                 <td>孝感文昌区中学下面还有附属小学，等等......</td>
+               </tr>
+             </tbody>
+           </table>
+         </div>
+         <!-- ==阅读== -->           
+         <!-- 分享 -->           
+         <div class="formItem-wrap marginB10" style="padding: 15px 15px 0px; display: none;">
+           <table class="tableSet">
+             <!-- 可以在class中加入tableSet-inbox或tableSet-noborder分别适应不同的情况 -->           
+             <!-- 有边框 -->           
+             <thead>
+               <tr>
+                 <th style="width:6%">
+                   <input type="checkbox"></th>
+                 <th style="width:50%">组名称2</th>
+                 <th style="width:18%">是否包含下级分组2</th>
+                 <th>组描述2</th>
+               </tr>
+             </thead>
+             <!-- 表头可选 -->           
+             <tbody>
+               <tr>
+                 <td>
+                   <input type="checkbox"></td>
+                 <td>孝感文昌区中学</td>
+                 <td>
+                   <input type="checkbox"></td>
+                 <td>孝感文昌下面还有附属小学，等等......</td>
+               </tr>
+               <tr class="tableSet-split">
+                 <td>
+                   <input type="checkbox"></td>
+                 <td>孝感文昌区中学</td>
+                 <td>
+                   <input type="checkbox"></td>
+                 <td>孝感文昌下面还有附属小学，等等......</td>
+               </tr>
+               <tr>
+                 <td>
+                   <input type="checkbox"></td>
+                 <td>文昌区中学</td>
+                 <td>
+                   <input type="checkbox"></td>
+                 <td>孝感文昌区中学下面还有附属小学，等等......</td>
+               </tr>
+               <tr class="tableSet-split">
+                 <td>
+                   <input type="checkbox"></td>
+                 <td>文昌区中学</td>
+                 <td>
+                   <input type="checkbox"></td>
+                 <td>孝感文昌下面还有附属小学，等等......</td>
+               </tr>
+               <tr>
+                 <td>
+                   <input type="checkbox"></td>
+                 <td>孝感文中学</td>
+                 <td>
+                   <input type="checkbox"></td>
+                 <td>孝感文昌学下面还有附属小学，等等......</td>
+               </tr>
+               <tr class="tableSet-split">
+                 <td>
+                   <input type="checkbox"></td>
+                 <td>孝昌区中学</td>
+                 <td>
+                   <input type="checkbox"></td>
+                 <td>孝感文昌区中学下面还有附属小学，等等......</td>
+               </tr>
+             </tbody>
+           </table>
+         </div>
+         <div class="clear"></div>
+         <!-- ==分享 ==--> </div>
+                    </textarea>
+                </li>
+            </ul> 
+            <button class="copy_code f-fr">复制代码</button> 
+        </div>
+    </fieldset>
+    <fieldset id="tips-area">
+        <legend>提示弹窗</legend>
+        <div class="des">
+            当前提示弹窗有<mark>1</mark>种结构样式效果。
+        </div>
+        <div class="code-demo1">
+            <h4 style="display:inline-block;">后台组件提示弹窗样例:</h4>
+            <div class="show-area"> 
+                <a href="javascript:void(0);" name=" " class="customBtn colourBlack marginR10" id="popTips">点击测试</a>
+                <script type="text/javascript">
+                    //选择对象提示
+                        $("#popTips").bind("click", function() {
+                            promptMessageDialog({
+                                icon: "finish",
+                                content: "恭喜注册成功！"
+                            }); //成功finish；警告warning；错误error；提示hint；疑问query
+                        });
+                </script>
+            </div>
+            <ul class="code-area">
+                <li> 
+                    <span class="des"> 
+                    说明：<br/>
+                    0),需要引用dialog.js<br/>
+                    1),需要绑定事件请查看下面实例<br/> 
+                    </span>
+                   
+                </li> 
+                <li class="code hide">
+                    <textarea rows="9" cols="100" class="code_textarea" >
+                        <a href="javascript:void(0);" name=" " class="customBtn colourBlack marginR10" id="popTips">点击测试</a>
+                        <script type="text/javascript">
+                            //选择对象提示
+                                $("#popTips").bind("click", function() {
+                                    promptMessageDialog({
+                                        icon: "warning",
+                                        content: "请填写意见建议！"
+                                    }); //成功finish；警告warning；错误error；提示hint；疑问query
+                                });
+                        </script>    
+                    </textarea>
+                </li>
+            </ul> 
+            <button class="copy_code f-fr">复制代码</button> 
+        </div>
+    </fieldset> 
+    <fieldset id="dialog-area">
+        <legend>普通弹窗</legend>
+        <div class="des">
+            当前普通弹窗有<mark>1</mark>种结构样式效果。
+        </div>
+        <div class="code-demo1">
+            <h4 style="display:inline-block;">后台组件普通弹窗样例:</h4>
+            <div class="show-area"> 
+                <a href="javascript:void(0);" id="addPage" class="customBtn colourGreen marginR10">添加完成</a>
+                <script type="text/javascript">
+                     //添加完成---弹出窗口  
+                     $("#addPage").unbind().bind("click", function() {
+                       var addLocationDialogHTML = '<div class="customTipsWrap tipsHint"><i class="icon_hintSmall floatL"></i><div class="floatL width298">提示：对学生当月动态的评价需在下月完成。</div><div class="clear"></div></div><form class="formStyle" name="" method="post" action="#" id=""><fieldset><div class="formStyle-item"><label for="" class="formStyle-label">评价开始时间:</label><select id="province" name="province" class="customForm_inputBoxDefault customForm_select grid_col2 marginR10 marginL10"><option value="">1号</option></select>到<select id="province" name="province" class="customForm_inputBoxDefault customForm_select grid_col2"><option value="">1号</option></select></div><div class="formStyle-item"><label for="" class="formStyle-label">评价结束时间:</label><select id="province" name="province" class="customForm_inputBoxDefault customForm_select grid_col2 marginR10"><option value="">1号</option></select>到<select id="province" name="province" class="customForm_inputBoxDefault customForm_select grid_col2"><option value="">1号</option></select></div></fieldset></form>';
+                         styledialog.initDialogHTML({
+                             title: "添加",
+                             content: addLocationDialogHTML,
+                             width: 640, 
+                             confirm: {
+                                 show: true,
+                                 name: "确认"
+                             },
+                             cancel: {
+                                 show: true,
+                                 name: "取消"
+                             }
+                         });
+                         styledialog.initContent("添加", addLocationDialogHTML, addLocationEvent);
+
+                         function addLocationEvent() {
+                             
+                              $(".option input[name='confirm']").bind("click",function(){
+                                alert("是点击了确定呀！");
+                              });
+
+                         }
+                     });
+                </script>
+            </div>
+            <ul class="code-area">
+                <li> 
+                    <span class="des"> 
+                    说明：<br/>
+                    0),需要引用dialog.js<br/>
+                    1),需要绑定事件请查看下面实例<br/> 
+                    </span>
+                   
+                </li> 
+                <li class="code hide">
+                    <textarea rows="9" cols="100" class="code_textarea" >
+                        <a href="javascript:void(0);" id="addPage" class="customBtn colourGreen marginR10">添加完成</a>
+                <script type="text/javascript">
+                   $(function(){
+
+                     //添加完成---弹出窗口  
+                     $("#addPage").unbind().bind("click", function() {
+                       var addLocationDialogHTML = '<div class="customTipsWrap tipsHint"><i class="icon_hintSmall floatL"></i><div class="floatL width298">提示：对学生当月动态的评价需在下月完成。</div><div class="clear"></div></div><form class="formStyle" name="" method="post" action="#" id=""><fieldset><div class="formStyle-item"><label for="" class="formStyle-label">评价开始时间:</label><select id="province" name="province" class="customForm_inputBoxDefault customForm_select grid_col2 marginR10 marginL10"><option value="">1号</option></select>到<select id="province" name="province" class="customForm_inputBoxDefault customForm_select grid_col2"><option value="">1号</option></select></div><div class="formStyle-item"><label for="" class="formStyle-label">评价结束时间:</label><select id="province" name="province" class="customForm_inputBoxDefault customForm_select grid_col2 marginR10"><option value="">1号</option></select>到<select id="province" name="province" class="customForm_inputBoxDefault customForm_select grid_col2"><option value="">1号</option></select></div></fieldset></form>';
+                         styledialog.initDialogHTML({
+                             title: "添加",
+                             content: addLocationDialogHTML,
+                             width: 640, 
+                             confirm: {
+                                 show: true,
+                                 name: "确认"
+                             },
+                             cancel: {
+                                 show: true,
+                                 name: "取消"
+                             }
+                         });
+                         styledialog.initContent("添加", addLocationDialogHTML, addLocationEvent);
+
+
+                         function addLocationEvent() {  
+                              $(".option input[name='confirm']").bind("click",function(){
+                                alert("是点击了确定呀！");
+                              });
+                         }
+                     }); 
+
+                   });
+                     
+                </script> 
+                    </textarea>
+                </li>
+            </ul> 
+            <button class="copy_code f-fr">复制代码</button> 
+        </div>
+    </fieldset>    
+    <fieldset id="conFirmDialog-area">
+        <legend>确认弹窗</legend>
+        <div class="des">
+            当前确认弹窗有<mark>1</mark>种结构样式效果。
+        </div>
+        <div class="code-demo1">
+            <h4 style="display:inline-block;">后台组件确认弹窗样例:</h4>
+            <div class="show-area"> 
+                <a href="javascript:;" name=" " class="customBtn colourBlack marginR10" id="testComfor">确定</a>
+                <script type="text/javascript">
+                        //考试试卷---确认弹框
+                        $("#testComfor").bind("click", function() {      
+                            function toDeleteNews() {
+                                alert("成功");
+                            }
+                            cueDialog(toDeleteNews, this, false, "你确定要删除此图片吗？");
+                        }); 
+                </script>
+            </div>
+            <ul class="code-area">
+                <li> 
+                    <span class="des"> 
+                    说明：<br/>
+                    0),需要引用dialog.js<br/>
+                    1),需要绑定事件请查看下面实例<br/> 
+                    </span>
+                   
+                </li> 
+                <li class="code hide">
+                    <textarea rows="9" cols="100" class="code_textarea" >
+                        <a href="javascript:;" name=" " class="customBtn colourBlack marginR10" id="testComfor">确定</a>
+                        <script type="text/javascript">
+                                //考试试卷---确认弹框
+                                $("#testComfor").bind("click", function() {      
+                                    function toDeleteNews() {
+                                        alert("成功");
+                                    }
+                                    cueDialog(toDeleteNews, this, false, "你确定要删除此图片吗？");
+                                }); 
+                        </script>
+                    </textarea>
+                </li>
+            </ul> 
+            <button class="copy_code f-fr">复制代码</button> 
+        </div>
+    </fieldset>
+     <script>
+$(document).ready(function(){
+
+    //复制
+    $('.copy_code').zclip({
+        path : 'js/ZeroClipboard.swf',
+        copy : function(){
+            var mythis=this;
+           return $(this).prev('.code-area').find('.code_textarea').val();
+       }
+    });
+
+    //左边侧边点击
+    $(".quick-nav li a").bind("click",function(){
+
+        $(this).addClass("sel");
+        $(this).parent().siblings("li").find("a").removeClass("sel");
+
+    });
+
+
+});
+    </script>
+</body> 
+</html>

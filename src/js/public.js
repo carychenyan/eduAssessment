@@ -326,6 +326,9 @@ tablesOp=function(settings){
 
     //入口函数
     my.init=function(){
+            var main = $("#" + my.settings.checkAll);
+            console.log(main.parents(".tableSet"));
+            main.parents(".tableSet").find("tr:even").css("background-color","#f9f9f9");
             my.checkAll();
             my.checkSingle();
             my.del();
@@ -494,11 +497,18 @@ jQuery.fn.extend({
                     if (content <= 0 || content == this.defaultValue) {
                         
                         if (($(this).next(".tipsForErro").css("display")) == undefined) {
+                             
                             $(this).focus().after("<span class='tipsForErro' style='color:red; padding-left:4px;'>该项为必填项</span>");
+                        
                         }
-                        else{
+
+                        else if(($(this).next(".tipsForErro").html())!="该项为必填项"){
+
+                            $(this).next(".tipsForErro").html("该项为必填项");
+
+                        }
+                        else
                             return;
-                        }
                         submit = false;
                         return false;
                     }
@@ -516,7 +526,7 @@ jQuery.fn.extend({
                 // 检查最大长度
                 main.maxlength.each(function (i) {
                     var $this = $(this);
-                    var maxlength = $(this).data('maxlength');
+                    var maxlength = $(this).data('maxlength');                 
                     if (this.value.length > maxlength) {
                            
                         if (($(this).next(".tipsForErro").css("display")) == undefined) {

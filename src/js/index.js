@@ -51,6 +51,7 @@ $(function(){
      styledialog.initContent("添加", addLocationDialogHTML, addLocationEvent);
 
      function addLocationEvent() {
+        alert(234);
          
      }
  });

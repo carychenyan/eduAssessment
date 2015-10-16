@@ -4,19 +4,21 @@
     /* line-height: 1.5; */
     /* font-family: Arial,Helvetica,'Microsoft YaHei','simsun'; */
     background-color: #fef9f2;
+    padding-top: 50px;
 }
 .frame_top{ 
-	height: 50px;
-	line-height: 50px;
-	font-size: 20px;
-	text-align: right;
-	padding-right:40px; 
-    background-color:#ccc;
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    height: 50px;
+    line-height: 50px;
+    font-size: 14px;
+    padding-left: 6px;
+    background-color: #ccc;
+    width: 100%;
 }
-.frame_top a { 
-	 background-color: blue; 
-	 color: #fff;
-} 
+  
   
         .quick-nav
         {
@@ -35,7 +37,7 @@
 
         fieldset
         {
-            border: solid 1px #c3c3c3;
+            border: solid 2px #c3c3c3;
             width: 1100px;
             margin: 0 auto;
             margin-bottom: 30px;
@@ -43,6 +45,7 @@
         }
         fieldset legend {
             text-align: left;
+            font-size: 20px;
         }
 
             fieldset div.des
@@ -53,7 +56,10 @@
                 color: red;
                 background-color: #e4e3e3;
             }
-
+             fieldset .texRed
+            {
+                 color: #f00;
+            }    
         .code-demo1 h4
         {
             font-size: 14px;
@@ -70,7 +76,11 @@
         {
             margin-top: 5px;
         }
-            
+         .code-demo1 .code-area li:first-child
+        {
+            background: #3A3A3A;
+            padding: 10px;
+        }
             .code-demo1 .code-area .des
             {
                 color: #A5A5A5;
