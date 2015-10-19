@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-	<title>多多社区前端设计框架 v0.1</title>
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta charset="utf-8"> 
-	<link href="style/public.css" rel="stylesheet">
+    <title>多多社区前端设计框架 v0.1</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8"> 
+    <link href="style/public.css" rel="stylesheet">
     <link media="all" href="style/lhgcalendar.css" rel="stylesheet">                            
     <link media="all" href="style/index.css" rel="stylesheet"> 
-	<link href="style/frame.css" rel="stylesheet">
+    <link href="style/frame.css" rel="stylesheet">
     <script type="text/javascript" src="http://cdn.bootcss.com/jquery/1.8.3/jquery.js"></script>
-	<script src="js/jquery.zclip.min.js"  type="text/javascript"></script>
-    <script type="text/javascript" src="js/public.js"></script>
-	
+    <script src="js/jquery.zclip.min.js"  type="text/javascript"></script>
+    <script type="text/javascript" src="js/lhgcalendar.js"></script>
+    <script type="text/javascript" src="ueditor/ueditor.config.js"></script>
+    <script type="text/javascript" src="ueditor/ueditor.all.js"></script> 
+    
+    
 </head>
 <body style="font-size:14px;"> 
 <div class="frame_top"> 
@@ -23,21 +26,10 @@
 </div>
 <div class="quick-nav" style="position:fixed; top:58px; left:5px;">
         <ul> 
-            <li><a class="grayEffect sel" href="#font-area">字体(Font)</a></li>
-            <li><a class="grayEffect" href="#button-area">按钮(Button)</a></li>
-            <li><a class="grayEffect" href="#top-area">顶部栏(Top)</a></li>
-            <li><a class="grayEffect" href="#nav-area">导航栏(Nav)</a></li>
-            <li><a class="grayEffect" href="#path-area">面包屑(Path)</a></li>
-            <li><a class="grayEffect" href="#mianContainer-area">主体容器(mianContainer)</a></li>
-            <li><a class="grayEffect" href="#footer-area">底部(footer)</a></li> 
-            <li><a class="grayEffect" href="#panel-area">面版(panel)</a></li>
-            <li><a class="grayEffect" href="#radio-area">表单(单选)(radio)</a></li>
-            <li><a class="grayEffect" href="#input-area">表单(输入框)(input)</a></li>
-             <li><a class="grayEffect" href="#select-area">表单(下拉选择列表)(select)</a></li>
-            <li><a class="grayEffect" href="#textarea-area">表单(多行文本输入)(textarea)</a></li>
-            <li><a class="grayEffect" href="#checkbox-area">表单(多选)(checkbox)</a></li>
-            <li><a class="grayEffect" href="#table-area">表格(table)</a></li>      
-            <li><a class="grayEffect" href="#top">回到顶部</a></li>
+            <li><a class="grayEffect sel" href="#editor-area">文本编辑器(Editor)</a></li> 
+            <li><a class="grayEffect " href="#calendar-area">日历(Calendar)</a></li> 
+            <li><a class="grayEffect " href="#chart-area">图表(Chart)</a></li> 
+            <li><a class="grayEffect " href="#top">回到顶部</a></li>
         </ul>
     </div>
 
@@ -48,984 +40,335 @@
            博盛数字教育统一样式
             <br />
             <br/>
-             本页面是用于博盛数字教育内部产品交流使用，也欢迎各位同事、朋友给予帮助和指点。 
+            本页面是用于博盛数字教育内部产品交流使用，也欢迎各位同事、朋友给予帮助和指点。
             <mark>注意：请使用Chrome浏览，因为本页面没有做兼容处理。</mark>
         </p>
-    </fieldset>
-
-    <fieldset id="font-area">
-        <legend>字体</legend>
+    </fieldset>   
+    <fieldset id="editor-area">
+        <legend>文本编辑器</legend>
         <div class="des">
-            当前字体有<mark>16</mark>种样式效果，每种颜色有4种不同的表现形式。
+            当前文本编辑器有<mark>1</mark>种结构样式效果。
         </div>
-        <ul>
-            <li>
-                <span class="defaultFont">博盛(#969696)</span>
-                <pre>class="defaultFont"</pre>
-                <span class="defaultUnderline">博盛</span>
-                <pre>class="defaultUnderline"</pre>
-                <span class="defaultEffect">博盛（变色交互）</span>
-                <pre>class="defaultEffect"</pre>
-                <span class="defaultHover">博盛（下划线交互）</span>
-                <pre>class="defaultHover"</pre>
-                 <span class="defaultDefHover">博盛（变色下划线）</span>
-                <pre>class="grayDefHover"</pre>
-            </li>
-            <li>
-                <span class="grayFont">博盛(#666666)</span>
-                <pre>class="grayFont"</pre>
-                <span class="grayUnderline">博盛</span>
-                <pre>class="grayUnderline"</pre>
-                <span class="grayEffect">博盛（变色交互）</span>
-                <pre>class="grayEffect"</pre> 
-                <span class="grayHover">博盛（下划线交互）</span>
-                <pre>class="grayHover"</pre>
-                <span class="grayDefHover">博盛（变色下划线）</span>
-                <pre>class="grayDefHover"</pre>
-            </li>
-            <li>
-                <span class="redFont">博盛(#e25353)</span>
-                <pre>class="redFont"</pre>
-                <span class="redUnderline">博盛</span>
-                <pre>class="redFontrline"</pre> 
-                <span class="redHover">博盛（下划线交互）</span>
-                <pre>class="redFontr"</pre>
-            </li>
-               <li>
-                <span class="greenFont">博盛(#66cc00)</span>
-                <pre>class="greenFont"</pre>
-                <span class="greenUnderline">博盛</span>
-                <pre>class="greenUnderline"</pre> 
-                <span class="greenHover">博盛（下划线交互）</span>
-                <pre>class="greenHover"</pre>
-            </li>
-           
-        </ul>
-    </fieldset>
-
-    <fieldset id="button-area">
-        <legend>按钮</legend>
-        <div class="des">
-            当前按钮有<mark>3</mark>种样式，每种颜色的按钮分为大中小两种。大中小又分别分为长短两种。
-        </div>
-        <table>  
-            <tr>
-                <td>
-                    <a class="customBtnSuperLarge colourBlack">黑色按钮（大）</a>
-                </td>
-                <td>
-                    <a class="customBtnSuperLarge colourWhite">默认按钮（大）</a>
-                </td>
-                <td>
-                    <a class="customBtnSuperLarge colourGreen">绿色按钮（大）</a>
-                </td>
-            </tr>
-            <tr>
-                <td class="cl">
-                    <pre>class="customBtnSuperLarge colourBlack"</pre>
-                </td>
-                <td>
-                    <pre>class="customBtnSuperLarge colourWhite"</pre>
-                </td>
-                <td class="cl"> 
-                    <pre>class="customBtnSuperLarge colourGreen"</pre>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <a class="customBtn colourBlack">黑色按钮（中）</a>
-                </td>
-                <td>
-                    <a class="customBtn colourWhite">默认按钮（中）</a>
-                </td>
-                <td>
-                    <a class="customBtn colourGreen">绿色按钮（中）</a>
-                </td>
-            </tr>
-            <tr>
-                <td class="cl">
-                    <pre>class="customBtn colourBlack"</pre>
-                </td>
-                <td>
-                    <pre>class="customBtn colourWhite"</pre>
-                </td>
-                <td class="cl">
-                    <pre>class="customBtn colourGreen"</pre>
-                </td>
-            </tr>           
-        </table>
-    </fieldset>
-
-<fieldset id="top-area">
-        <legend>顶部栏</legend>
-        <div class="des">当前顶部栏有<mark>1</mark>种样式</div>
         <div class="code-demo1">
-             <h4 style="display:inline-block;">结合首页样例:</h4>
-             <div class="show-area"> 
-                 <div class="topNav">
-                    <div class="container">
-                        <ul class="left">
-                            <li class="phoneNum"><span class="master phone" title="教育质量测评系统"></span>欢迎登录教育质量测评系统</li>
-                            
-                        </ul>
-                        <ul class="right">
-                            <li class="logined" style="display: none;"><a href="/myaccount.html"><span>您好，</span><span class="name spanUserName"></span><span id="vipSpan" class="customerVip vip0"></span></a></li>
-                            <li class="logined" style="display: none;"><a href="/logout.do">退出</a></li> 
-                            
-                            <li class="notLogin"><a href="/login.html">登录</a></li>
-                            <li class="notLogin"><a href="/register.html">注册</a></li>            
-                            <li><a href="/help-center.html">帮助</a></li>
-                            <li><a href="/">首页</a></li>
-                            <li class="last"><a href="/mobile.html" target="_blank">手机客户端</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <ul class="code-area">
-                <li> 
-                    <span class="des"> 说明：右侧登录、注册等为快速入口，可以视情况增减</span>
-                   
-                </li> 
-                <li class="code hide">
-                    <textarea rows="9" cols="100" class="code_textarea">
-                            <div class="topNav">
-                                    <div class="container">
-                                        <ul class="left">
-                                            <li class="phoneNum"><span class="master phone" title="教育质量测评系统"></span>欢迎登录教育质量测评系统</li>
-                                            
-                                        </ul>
-                                        <ul class="right">
-                                            <li class="logined" style="display: none;"><a href="/myaccount.html"><span>您好，</span><span class="name spanUserName"></span><span id="vipSpan" class="customerVip vip0"></span></a></li>
-                                            <li class="logined" style="display: none;"><a href="/logout.do">退出</a></li> 
-                                            
-                                            <li class="notLogin"><a href="/login.html">登录</a></li>
-                                            <li class="notLogin"><a href="/register.html">注册</a></li>            
-                                            <li><a href="/help-center.html">帮助</a></li>
-                                            <li><a href="/">首页</a></li>
-                                            <li class="last"><a href="/mobile.html" target="_blank">手机客户端</a></li>
-                                        </ul>
-                                    </div>
-                          </div>   
-                    </textarea>
-                </li>
-            </ul>
-
-            <button class="copy_code f-fr" style="margin-right:0;">点击复制</button> 
-        </div>  
-    </fieldset> 
-    <fieldset id="nav-area">
-        <legend>导航栏</legend>
-        <div class="des">当前导航栏有<mark>1</mark>种样式</div>
-        <div class="code-demo1">
-            <h4 style="display:inline-block;">是一种通栏的样式，包含了logo，实际使用中可以根据实际情况做相应的调整:</h4>
+            <h4 style="display:inline-block;">后台组件文本编辑器样例:</h4>
             <div class="show-area">
-                  <div class="header">
-                        <div class="container">
-                            <a class="master logo yundanLogo" href="/"></a>  
-                            <div class="nav">
-                                <ul>
-                                    <li><a href="" class="sec">首页</a>
-                                    </li>
-                                    <li>
-                                    <span style="display: none;"></span>
-                                        <a href="" class="sec">题库管理</a>
-                                        <ul class="secUl" style="display: none;">
-                                            <li>
-                                            <a href="">评价指标<em>&gt;</em></a>
-                                                <ul class="thirdUl" style="display: none;">
-                                                    <li>
-                                                        <a href="">三级菜单</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="">三级菜单</a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="">添加试题</a></li>
-                                            <li><a href="">试题管理</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="active">
-                                        <span style="display: none;"></span>
-                                        <a href="" class="sec">试卷管理</a>
-                                        <ul class="secUl" style="display: none;">
-                                            <li><a href="">手工组卷</a></li>
-                                            <li><a href="">试卷管理</a></li> 
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <span style="display: none;"></span>
-                                        <a href="" class="sec">考试管理</a>
-                                        <ul class="secUl" style="display: none;">
-                                            <li><a href="">添加考试</a></li>
-                                            <li><a href="">考试管理</a></li> 
-                                        </ul>
-                                    </li>
-                                    <li>
-                                       <span style="display: none;"></span>
-                                        <a href="" class="sec">统计分析</a>
-                                        <ul class="secUl" style="display: none;">
-                                            <li><a href="">统计查询</a></li>
-                                            <li><a href="">对比分析</a></li> 
-                                        </ul>
-                                    </li>
-                                    <li class="last">
-                                        <span style="display: none;"></span>
-                                        <a href="" class="sec">系统管理</a>
-                                        <ul class="secUl" style="display: none;">
-                                            <li><a href="">数据字典</a></li>
-                                            <li><a href="">用户分组</a></li> 
-                                            <li><a href="">角色维护</a></li>
-                                            <li><a href="">用户管理</a></li> 
-                                        </ul>
-                                    </li> 
-                                </ul>
-                            </div>
-                        </div>
-                </div>
-            </div>
-            <ul class="code-area">
-                <li> 
-                    <span class="des"> 说明：使用的时候需要在头部引入public.js，有下拉二级菜单显示</span>
-                   
-                </li> 
-                <li class="code hide">
-                    <textarea rows="9" cols="100" class="code_textarea" >
-                            <div class="header">
-                                <div class="container">
-                                    <a class="master logo yundanLogo" href="/"></a>
-                                    <div class="nav">
-                                        <ul>
-                                            <li>
-                                                <a href="" class="sec">首页</a>
-                                            </li>
-                                            <li>
-                                                <span style="display: none;"></span>
-                                                <a href="" class="sec">题库管理</a>
-                                                <ul class="secUl" style="display: none;">
-                                                    <li>
-                                                        <a href="">
-                                                            评价指标 <em>&gt;</em>
-                                                        </a>
-                                                        <ul class="thirdUl" style="display: none;">
-                                                            <li>
-                                                                <a href="">三级菜单</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="">三级菜单</a>
-                                                            </li>
-                                                        </ul>
-                                                    </li>
-                                                    <li>
-                                                        <a href="">添加试题</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="">试题管理</a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li class="active">
-                                                <span style="display: none;"></span>
-                                                <a href="" class="sec">试卷管理</a>
-                                                <ul class="secUl" style="display: none;">
-                                                    <li>
-                                                        <a href="">手工组卷</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="">试卷管理</a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                <span style="display: none;"></span>
-                                                <a href="" class="sec">考试管理</a>
-                                                <ul class="secUl" style="display: none;">
-                                                    <li>
-                                                        <a href="">添加考试</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="">考试管理</a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                <span style="display: none;"></span>
-                                                <a href="" class="sec">统计分析</a>
-                                                <ul class="secUl" style="display: none;">
-                                                    <li>
-                                                        <a href="">统计查询</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="">对比分析</a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li class="last">
-                                                <span style="display: none;"></span>
-                                                <a href="" class="sec">系统管理</a>
-                                                <ul class="secUl" style="display: none;">
-                                                    <li>
-                                                        <a href="">数据字典</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="">用户分组</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="">角色维护</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="">用户管理</a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div> 
-                    </textarea>
-                </li>
-            </ul> 
-            <button class="copy_code f-fr" style="margin-right:0;">复制代码</button> 
-        </div>   
-    </fieldset> 
-     <fieldset id="path-area">
-        <legend>面包屑</legend>
-        <div class="des">
-            当前面包屑有<mark>1</mark>种结构样式效果。
-        </div>
-        <div class="code-demo1">
-            <h4 style="display:inline-block;">后台组件面包屑样例:</h4>
-            <div class="show-area">
-                   <div class="m-breakNav f-mb10"> <i class="icon_tc1"></i>
-                       <span>当前位置</span>
-                       ：
-                       <a href="/xl/teacher">教师</a> <b>&gt;</b>
-                       <a href="/xl/lesson">备课夹</a> <b>&gt;</b>
-                       公共备课夹
-                   </div>
-            </div>
-            <ul class="code-area">
-                <li> 
-                    <span class="des"> 说明：目前项目中面包屑结构都差不多，主要是皮肤不一样</span>
-                   
-                </li> 
-                <li class="code hide">
-                    <textarea rows="9" cols="100" class="code_textarea" >
-                            <div class="m-breakNav f-mb10"> <i class="icon_tc1"></i>
-                                <span>当前位置</span>
-                                ：
-                                <a href="/xl/teacher">教师</a> <b>&gt;</b>
-                                <a href="/xl/lesson">备课夹</a> <b>&gt;</b>
-                                公共备课夹
-                            </div>
-                    </textarea>
-                </li>
-            </ul> 
-            <button class="copy_code f-fr">复制代码</button> 
-        </div>
-    </fieldset>
-      <fieldset id="mianContainer-area">
-        <legend>主体容器</legend>
-        <div class="des">
-            当前主体容器有<mark>1</mark>种结构样式效果。
-        </div>
-        <div class="code-demo1">
-            <h4 style="display:inline-block;">后台组件主体容器样例:</h4>
-            <div class="show-area">
-                   <div class="wrap" style="">
-                       <div class="container" style="width:1100px">
+                    <div class="formStyle-item"  style="width: 100%;">
+                         <label for="" class="formStyle-label">须知详情：</label>
+                         <span id="editorArticle" style="width:1064px;float: left"></span> 
+                     </div>
+                     <script type="text/javascript">
+                         $(function(){  
 
-                           <!-- 测试数据 -->
-                           我是主要内容呀呀呀呀压实度呀呀呀呀我是主要内容呀呀呀呀压实度呀呀呀呀我是主要内容呀呀呀呀压实度呀呀呀呀我是主要内容呀呀呀呀压实度呀呀呀呀我是主要内容呀呀呀呀压实度呀呀呀呀我是主要内容呀呀呀呀压实度呀呀呀呀我是主要内容呀呀呀呀压实度呀呀呀呀
-                           <span style="width:100px; height:50px; background: white;display: block;margin: 10px auto;">嘿嘿，我也是测试内容！</span>
-                           <!-- ==测试数据== -->
+                            //富文本编辑器
+                            var editor = UE.getEditor('editorArticle',{
+                                            autoHeight: false
+                                         });
 
-                       </div>
-                   </div>
+                         });
+                     </script>
             </div>
+            <div class="clear"></div>
             <ul class="code-area">
                 <li> 
                     <span class="des"> 
                     说明：<br/>
-                    1).目前 <b>主体容器</b> 是页面的中间结构，与 <b>头部</b> 和 <b>尾部</b> 这样的通栏一起构成页面的主体结构；<br/>
-                    2).是除了头部跟尾部之外最大的容器，后面的单个面板都要被包含在其中，才能正确居中显示;<br/>
-                    3).测试数据实际使用中可以删除掉写自己的代码，这里只是举例；</span>
+                    1),需要把ueditor文件夹放在根目录里面<br/>
+                    2),头部引用ueditor.config.js  ueditor.all.js<br/>
+                    3),html结构及js调用请参考实例代码<br/> 
+                    4),本实例为最简单配置  ueditor其他配置说明：<a href="http://fex.baidu.com/ueditor/#start-toolbar" target="_blank">点击查看</a><br/> 
+                    5),使用editor.getContent()方法可以获得编辑器的内容<br/>
+                       &nbsp;&nbsp;&nbsp;使用editor.setContent('欢迎使用ueditor')方法可以设置编辑器的内容<br/>
+                       &nbsp;&nbsp;&nbsp;使用editor.getContentTxt()方法可以获得编辑器的纯文本内容编辑器的纯文本<br/>
+                       &nbsp;&nbsp;&nbsp;使用editor.getPlainTxt()方法可以获得编辑器的带格式的纯文本内容<br/>
+                       &nbsp;&nbsp;&nbsp;使用editor.hasContents()方法判断编辑器里是否有内容<br/>
+                    </span>
                    
                 </li> 
                 <li class="code hide">
                     <textarea rows="9" cols="100" class="code_textarea" >
-                           <div class="wrap" style="">
-                               <div class="container" style="width:1100px">
-
-                                   <!-- 测试数据 -->                           
-                                   我是主要内容呀呀呀呀压实度呀呀呀呀我是主要内容呀呀呀呀压实度呀呀呀呀我是主要内容呀呀呀呀压实度呀呀呀呀我是主要内容呀呀呀呀压实度呀呀呀呀我是主要内容呀呀呀呀压实度呀呀呀呀我是主要内容呀呀呀呀压实度呀呀呀呀我是主要内容呀呀呀呀压实度呀呀呀呀
-                                   <span style="width:100px; height:50px; background: white;display: block;margin: 10px auto;">嘿嘿，我也是测试内容！</span>
-                                   <!-- ==测试数据== --> 
-                               </div>
+                           <div class="formStyle-item"  style="width: 100%;">
+                                       <label for="" class="formStyle-label">须知详情：</label>
+                                       <span id="editorArticle" style="width:1064px;float: left"></span> 
                            </div>
+                           <script type="text/javascript">
+                                 $(function(){                            
+                                    //富文本编辑器
+                                    var editor = UE.getEditor('editorArticle');
+                                    var editor = new UE.ui.Editor();
+                                    editor.render('editorArticle');
+                                 });
+                           </script>
                     </textarea>
                 </li>
             </ul> 
             <button class="copy_code f-fr">复制代码</button> 
         </div>
-    </fieldset>
-    <fieldset id="footer-area">
-        <legend>底部</legend>
+    </fieldset> 
+    <fieldset id="calendar-area">
+        <legend>日历</legend>
         <div class="des">
-            当前底部有<mark>1</mark>种结构样式效果。
+            当前日历有<mark>1</mark>种结构样式效果。
         </div>
         <div class="code-demo1">
-            <h4 style="display:inline-block;">后台组件底部样例:</h4>
+            <h4 style="display:inline-block;">后台组件日历样例:</h4>
             <div class="show-area">
-                  <footer class="footer">
-                      <dl class="ui-dlist">
-                          <dt class="ui-dlist-tit">主管单位：湖北省教育厅  主办单位：湖北省教育信息化中心   技术交流群： 198016304</dt>
-                          <dd class="ui-dlist-det">建议使用1024*768以上的屏幕分辨率和8.0以上版本的IE来访问本站</dd>
-                      </dl>
-                  </footer>
+                     <div class="formStyle-item" style="width:100%;">
+                           <label for="" class="formStyle-label">试卷名称：</label>
+                           <input type="text" name="date_test" id="date_test" value="2012-03-21" class="customForm_inputBoxDefault customForm_txtInput grid_col15"/> 
+                           <a href="javascript:void(0);" class="customBtn colourBlack" id="getDateBtn">测试获取日期</a>                
+                     </div>
+                     <script type="text/javascript">
+                         $(function(){   
+
+                            //日历
+                            //绑定日期
+                            $("#date_test").calendar({ maxDate:'#date_test', format:'yyyy-MM-dd', targetFormat:'yyyy-MM-dd' });
+                            $("#getDateBtn").bind("click",function(){                                
+                               var d=$("#date_test").val();
+                               alert(d);
+                            });
+
+
+                         });
+                     </script>
             </div>
+            <div class="clear"></div>
             <ul class="code-area">
                 <li> 
-                    <span class="des"> 说明：底部是通栏，可以视情况修改底部样式；</span>
+                    <span class="des"> 
+                    说明：<br/> 
+                    1),头部引用lhgcalendar.css  lhgcalendar.js<br/>
+                    2),html结构及js调用及绑定请参考实例代码<br/> 
+                    3),本实例为最简单配置  lhgcalendar其他使用及demo：<a href="http://www.canwin.net/common/lhgcalendar/_demo/demo.html" target="_blank">点击查看</a><br/>  
+                    </span>
                    
                 </li> 
                 <li class="code hide">
                     <textarea rows="9" cols="100" class="code_textarea" >
-                          <footer class="footer">
-                              <dl class="ui-dlist">
-                                  <dt class="ui-dlist-tit">主管单位：湖北省教育厅  主办单位：湖北省教育信息化中心   技术交流群： 198016304</dt>
-                                  <dd class="ui-dlist-det">建议使用1024*768以上的屏幕分辨率和6.0以上版本的IE来访问本站</dd>
-                              </dl>
-                          </footer>
+                           <div class="formStyle-item" style="width:100%;">
+                           <label for="" class="formStyle-label">试卷名称：</label>
+                           <input type="text" name="date_test" id="date_test" value="2012-03-21" class="customForm_inputBoxDefault customForm_txtInput grid_col15"/> 
+                           <a href="javascript:void(0);" class="customBtn colourBlack" id="getDateBtn">测试获取日期</a>                
+                     </div>
+                     <script type="text/javascript">
+                         $(function(){   
+
+                            //日历
+                            //绑定日期
+                            $("#date_test").calendar({ maxDate:'#date_test', format:'yyyy-MM-dd', targetFormat:'yyyy-MM-dd' });
+                            $("#getDateBtn").bind("click",function(){                                
+                               var d=$("#date_test").val();
+                               alert(d);
+                            });
+
+
+                         });
+                     </script>
                     </textarea>
                 </li>
             </ul> 
             <button class="copy_code f-fr">复制代码</button> 
         </div>
-    </fieldset>
-     <fieldset id="panel-area">
-        <legend>面板</legend>
+    </fieldset> 
+     <fieldset id="chart-area">
+        <legend>图表</legend>
         <div class="des">
-            当前面板有<mark>1</mark>种结构样式效果。
+            当前图表有<mark>1</mark>种结构样式效果。
         </div>
         <div class="code-demo1">
-            <h4 style="display:inline-block;">后台组件面板样例:</h4>
+            <h4 style="display:inline-block;">后台组件图表样例:</h4>
             <div class="show-area">
-                 <div class="project">
-                     <div class="projectTitle">
-                         <div class="projectTitleBor">
-                             <a class="projectName sel" href="javascript:void(0)">
-                                 <span></span>
-                                 日历日期123123 
-                             </a><em>【 统计各地开课情况，数据来自多多社区班级课表 】</em>
+                     <!-- 图表 -->                     
+                     <div class="project">
+                         <div class="projectTitle">
+                             <div class="projectTitleBor">
+                                 <a class="projectName sel" href="javascript:void(0)">
+                                     <span></span>
+                                     图表
+                                 </a>
+                             </div>
                          </div>
-                     </div>
-                     <div class="formItem-wrap marginB10">
-                         <div class="formStyle-item" style="width:100%;">
-                             <label for="" class="formStyle-label" styletitle="styleTitle" titlecon="试卷名称综合测试第一册">试卷名称：</label>
-                             <input type="text" name="date_test" value="" class="customForm_inputBoxDefault customForm_txtInput grid_col15"></div>
+                         <div class="formItem-wrap marginB10" id="container" style="width: 1000px; height: 400px; margin:10px auto"></div>
                          <div class="clear"></div>
                      </div>
-                     <div class="clear"></div>
-                 </div>
+                     <!-- ==图表== -->
+                     <script type="text/javascript">
+                          $(function(){
+                              //图表
+                               $('#container').highcharts({
+                                    chart: {
+                                        type: 'column'
+                                    },
+                                    title: {
+                                        text: 'Monthly Average Rainfall'
+                                    },
+                                    subtitle: {
+                                        text: 'Source: WorldClimate.com'
+                                    },
+                                    xAxis: {
+                                        categories: [
+                                            'Jan',
+                                            'Feb',
+                                            'Mar',
+                                            'Apr',
+                                            'May',
+                                            'Jun',
+                                            'Jul',
+                                            'Aug',
+                                            'Sep',
+                                            'Oct',
+                                            'Nov',
+                                            'Dec'
+                                        ],
+                                        crosshair: true
+                                    },
+                                    yAxis: {
+                                        min: 0,
+                                        title: {
+                                            text: 'Rainfall (mm)'
+                                        }
+                                    },
+                                    tooltip: {
+                                        headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                                        pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                                            '<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
+                                        footerFormat: '</table>',
+                                        shared: true,
+                                        useHTML: true
+                                    },
+                                    plotOptions: {
+                                        column: {
+                                            pointPadding: 0.2,
+                                            borderWidth: 0
+                                        }
+                                    },
+                                    series: [{
+                                        name: 'Tokyo',
+                                        data: [49.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4]
+
+                                    }, {
+                                        name: 'New York',
+                                        data: [83.6, 78.8, 98.5, 93.4, 106.0, 84.5, 105.0, 104.3, 91.2, 83.5, 106.6, 92.3]
+
+                                    }, {
+                                        name: 'London',
+                                        data: [48.9, 38.8, 39.3, 41.4, 47.0, 48.3, 59.0, 59.6, 52.4, 65.2, 59.3, 51.2]
+
+                                    }, {
+                                        name: 'Berlin',
+                                        data: [42.4, 33.2, 34.5, 39.7, 52.6, 75.5, 57.4, 60.4, 47.6, 39.1, 46.8, 51.1]
+
+                                    }]
+                                });
+  
+                          });                        
+                     </script>                     
             </div>
+            <div class="clear"></div>
             <ul class="code-area">
                 <li> 
                     <span class="des"> 
-                    说明：<br/>
-                    1),面板是中间主要内容的最基本结构；<br/>
-                    2),其中又分为头部 class="projectTitle" 及 面板主要内容部分  class="formItem-wrap";<br/>
-                    3),头部包含面板主标题和介绍（后面小字部分），面板主要内容包含该面板详细内容，有表单、文本编辑器、按钮、图表等等。
+                    说明：<br/> 
+                    1),页面底部需要引用highcharts.js  exporting.js<br/>
+                    2),html结构及js调用及绑定请参考实例代码<br/> 
+                    3),本实例为最简单配置  highcharts其他使用及demo：<a href="http://www.hcharts.cn/" target="_blank">点击查看</a><br/>  
                     </span>
                    
                 </li> 
                 <li class="code hide">
                     <textarea rows="9" cols="100" class="code_textarea" >
-                           <div class="project">
-                                <!-- 面板头部 -->
-                               <div class="projectTitle">
-                                  <div class="projectTitleBor"> 
-                                       <a class="projectName sel" href="javascript:void(0)">
-                                           <span></span>
-                                           日历日期<em>【 统计各地开课情况，数据来自多多社区班级课表 】</em>
-                                       </a>
-                                   </div> 
-                               </div>
-                                <!-- ==面板头部 ==-->
-                               <div class="formItem-wrap marginB10">
-                                <!-- 面板主要内容 -->
-                               <div class="formStyle-item" style="width:100%;">
-                                   <label for="" class="formStyle-label" styletitle="styleTitle" titlecon="试卷名称综合测试第一册">试卷名称：</label>
-                                   <input type="text" name="date_test" value="" class="customForm_inputBoxDefault customForm_txtInput grid_col15"></div>
-                               <div class="clear"></div>
-                                <!-- ==面板主要内容== -->
-                               </div>
-                               <div class="clear"></div>
-                           </div>
-                    </textarea>
-                </li>
-            </ul> 
-            <button class="copy_code f-fr">复制代码</button> 
-        </div>
-    </fieldset>
-   <fieldset id="input-area">
-        <legend>表单(输入框)</legend>
-        <div class="des">
-            当前表单(输入框)有<mark>3</mark>种结构样式效果。
-        </div>
-        <div class="code-demo1">
-            <h4 style="display:inline-block;">后台组件表单(输入框)样例1:</h4>
-            <div class="show-area">
-                 <div class="formStyle-item">
-                     <label for="" class="formStyle-label">
-                         <span class="formRequired">*</span>
-                         考试名称：
-                     </label>
-                     <input type="text" value="" class="require customForm_inputBoxDefault customForm_txtInput grid_col10 maxlength" data-maxlength="5"/>                 
-                 </div>
-            </div>
-            <div class="clearfix"></div>
-            <ul class="code-area">
-                <li> 
-                    <span class="des"> 
-                    说明：<br/>
-                    1),这种输入框是最简单的输入框样式；<br/>
-                    2),其结构包含前部项目名称和input输入框，如不需要前面项目名称可以删除掉<br/>  
-                    </span>
-                   
-                </li> 
-                <li class="code hide">
-                    <textarea rows="9" cols="100" class="code_textarea" >
-                          <div class="formStyle-item">
-                              <label for="" class="formStyle-label">
-                                  <span class="formRequired">*</span>
-                                  考试名称：
-                              </label>
-                              <input type="text" value="" class="require customForm_inputBoxDefault customForm_txtInput grid_col10 maxlength" data-maxlength="5"/>                          
-                          </div>
-                    </textarea>
-                </li>
-            </ul> 
-            <button class="copy_code f-fr">复制代码</button> 
-        </div>
-        <div class="code-demo1">
-            <h4 style="display:inline-block;">后台组件表单(输入框)样例2:</h4>
-            <div class="show-area f-w100 clearfix">
-                 <div class="formStyle-item" style="width:100%">
-                     <label for="" class="formStyle-label">
-                         <span class="formRequired">*</span>
-                         考试时间：
-                     </label>
-                     <input type="text" value="" class="require customForm_inputBoxDefault customForm_txtInput grid_col5_6">                 
-                     &nbsp;
-                     <input type="text" value="" class="  customForm_inputBoxDefault customForm_txtInput grid_col5_6"></div>
-            </div>
-            <div class="clearfix"></div>
-            <ul class="code-area">
-                <li> 
-                    <span class="des"> 
-                    说明：<br/>
-                    1),这种输入框是上一种的扩展，后面连续两个输入框；<br/> 
-                    </span>
-                   
-                </li> 
-                <li class="code hide">
-                    <textarea rows="9" cols="100" class="code_textarea" >
-                          <div class="formStyle-item">
-                              <label for="" class="formStyle-label">
-                                  <span class="formRequired">*</span>
-                                  考试时间：
-                              </label>
-                              <input type="text" value="" class="require customForm_inputBoxDefault customForm_txtInput grid_col5_6">                          
-                              &nbsp;
-                              <input type="text" value="" class="  customForm_inputBoxDefault customForm_txtInput grid_col5_6"></div>
-                    </textarea>
-                </li>
-            </ul> 
-            <button class="copy_code f-fr">复制代码</button> 
-        </div>
-        <div class="code-demo1">
-        <h4 style="display:inline-block;">后台组件表单(输入框)样例3:<span class="texRed">(增加验证最大输入长度及必填项验证)</span> </h4>
-            <div class="show-area f-w100 clearfix">
-                  <div class="formStyle-item f-w100">
-                    <label for="" class="formStyle-label" styletitle="styleTitle" titlecon="试卷名称综合测试第一册"><span class="formRequired">*</span>用户名：</label>
-                    <form name="formExamSetting">
-                        <input type="text" value="" class="require maxlength customForm_inputBoxDefault customForm_txtInput grid_col15"  data-maxlength="5"/>                    
-                    </form>
-                    <br/>
-                    <a href="javascript:;" name=" " class="customBtn colourBlack marginR10" id="examSettingComfor">确定</a>
-                <script type="text/javascript">
+                          <!-- 图表 -->                     
+                     <div class="project">
+                         <div class="projectTitle">
+                             <div class="projectTitleBor">
+                                 <a class="projectName sel" href="javascript:void(0)">
+                                     <span></span>
+                                     图表
+                                 </a>
+                             </div>
+                         </div>
+                         <div class="formItem-wrap marginB10" id="container" style="width: 1000px; height: 400px; margin:10px auto"></div>
+                         <div class="clear"></div>
+                     </div>
+                     <!-- ==图表== -->
+                     <script type="text/javascript">
+                          $(function(){
+                              //图表
+                               $('#container').highcharts({
+                                    chart: {
+                                        type: 'column'
+                                    },
+                                    title: {
+                                        text: 'Monthly Average Rainfall'
+                                    },
+                                    subtitle: {
+                                        text: 'Source: WorldClimate.com'
+                                    },
+                                    xAxis: {
+                                        categories: [
+                                            'Jan',
+                                            'Feb',
+                                            'Mar',
+                                            'Apr',
+                                            'May',
+                                            'Jun',
+                                            'Jul',
+                                            'Aug',
+                                            'Sep',
+                                            'Oct',
+                                            'Nov',
+                                            'Dec'
+                                        ],
+                                        crosshair: true
+                                    },
+                                    yAxis: {
+                                        min: 0,
+                                        title: {
+                                            text: 'Rainfall (mm)'
+                                        }
+                                    },
+                                    tooltip: {
+                                        headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                                        pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                                            '<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
+                                        footerFormat: '</table>',
+                                        shared: true,
+                                        useHTML: true
+                                    },
+                                    plotOptions: {
+                                        column: {
+                                            pointPadding: 0.2,
+                                            borderWidth: 0
+                                        }
+                                    },
+                                    series: [{
+                                        name: 'Tokyo',
+                                        data: [49.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4]
 
-                   //表单提交时候验证 必填项 最大长度 最小长度
-                    $('form[name="formExamSetting"]').checkRequire("examSettingComfor");
+                                    }, {
+                                        name: 'New York',
+                                        data: [83.6, 78.8, 98.5, 93.4, 106.0, 84.5, 105.0, 104.3, 91.2, 83.5, 106.6, 92.3]
 
-                </script>
-                </div>
-            </div>
-            <div class="clearfix"></div>
-            <ul class="code-area">
-                <li> 
-                    <span class="des"> 
-                    说明：<br/>
-                    1),这种输入框是第一种的扩展,成为一个占一行的输入框；输入框的宽度可以根据 clas="grid_col15" 配置<br/> 
-                    2),要验证输入框的文本最大长度及必填项，需要 在头部添加  public.js<br/>
-                    3),必填项需要加 class="require" <br/>
-                    4),最长输入字数 class="maxlength"  data-maxlength="5" <br/>
-                    5),同本例子类似，还可以 验证用户名、手机号码、电话号码、邮箱、中文、身份证号，代码见下面代码注释js部分 
-                    </span>
-                   
-                </li> 
-                <li class="code hide">
-                    <textarea rows="9" cols="100" class="code_textarea" >
-                           <div class="formStyle-item f-w100">
-                               <label for="" class="formStyle-label" styletitle="styleTitle" titlecon="试卷名称综合测试第一册">
-                                   <span class="formRequired">*</span>
-                                   用户名：
-                               </label>
-                               <form name="formExamSetting">
-                                   <input type="text" value="" class="require maxlength customForm_inputBoxDefault customForm_txtInput grid_col15"  data-maxlength="5"/>                           
-                               </form>
-                               <br/>                           
-                               <a href="javascript:;" name=" " class="customBtn colourBlack marginR10" id="examSettingComfor">确定</a>
-                               <script type="text/javascript">
+                                    }, {
+                                        name: 'London',
+                                        data: [48.9, 38.8, 39.3, 41.4, 47.0, 48.3, 59.0, 59.6, 52.4, 65.2, 59.3, 51.2]
 
-                                    //表单提交时候验证 必填项 最大长度 最小长度
-                                    $('form[name="formExamSetting"]').checkRequire("examSettingComfor");
+                                    }, {
+                                        name: 'Berlin',
+                                        data: [42.4, 33.2, 34.5, 39.7, 52.6, 75.5, 57.4, 60.4, 47.6, 39.1, 46.8, 51.1]
 
-                                    //验证用户名、手机号码、电话号码、邮箱、中文、身份证号  
-
-                                    //     if (adValidate.checkUser($(".userValidate").val()) == false) {
-
-                                    //          alert("您输入的用户名不正确");
-
-                                    //     } 
-
-                                    //验证手机号码 adValidate.checkMobile($(".mobileValidate").val());
-                                    //验证电话号码 adValidate.checkPhone($(".phoneValidate").val());
-                                    //验证邮箱     adValidate.checkEmail($(".emailValidate").val());
-                                    //验证中文     adValidate.checkNameCH($(".nameCHValidate").val());
-                                    //验证身份证号 adValidate.checkIDcards($(".IDcardValidate").val());
-                    
-                            </script>
-                           </div>
+                                    }]
+                                });
+  
+                          });                        
+                     </script>     
                     </textarea>
                 </li>
             </ul> 
             <button class="copy_code f-fr">复制代码</button> 
         </div>
     </fieldset> 
-    <fieldset id="select-area">
-        <legend>表单(下拉选择列表)</legend>
-        <div class="des">
-            当前表单(下拉选择列表)有<mark>1</mark>种结构样式效果。
-        </div>
-        <div class="code-demo1">
-            <h4 style="display:inline-block;">后台组件表单(下拉选择列表)样例1:</h4>
-            <div class="show-area">
-                 <div class="formStyle-item">
-                        <label for="" class="formStyle-label">考试时长：</label>
-                         <select name="" id="" class="customForm_inputBoxDefault">
-                          <option value="">限制时长</option>
-                          <option value="">不限制时长</option>
-                        </select>
-                        <input type="text" value="60" class="customForm_inputBoxDefault customForm_txtInput grid_col2">&nbsp;分钟
-                    </div>
-            </div>
-            <div class="clearfix"></div>
-            <ul class="code-area">
-                <li> 
-                    <span class="des"> 
-                    说明：<br/>
-                    1),这种下拉选择列表是最简单的下拉选择列表样式；以后会定制样式皮肤；<br/> 
-                    2),实例的输入框跟文本与本实例没有直接关系，实际使用可以删除<br/> 
-                    </span>
-                   
-                </li> 
-                <li class="code hide">
-                    <textarea rows="9" cols="100" class="code_textarea" >
-                          <div class="formStyle-item">
-                              <label for="" class="formStyle-label">考试时长：</label>
-                              <select name="" id="" class="customForm_inputBoxDefault">
-                                  <option value="">限制时长</option>
-                                  <option value="">不限制时长</option>
-                              </select>
-                              <input type="text" value="60" class="customForm_inputBoxDefault customForm_txtInput grid_col2">&nbsp;分钟</div>
-                    </textarea>
-                </li>
-            </ul> 
-            <button class="copy_code f-fr">复制代码</button> 
-        </div> 
-    </fieldset> 
-    <fieldset id="textarea-area">
-        <legend>表单(多行文本输入)</legend>
-        <div class="des">
-            当前表单(多行文本输入)有<mark>1</mark>种结构样式效果。
-        </div>
-        <div class="code-demo1">
-            <h4 style="display:inline-block;">后台组件表单(多行文本输入)样例1:</h4>
-            <div class="show-area">
-                 <div class="formStyle-item" style="width: 100%;">
-                     <label for="" class="formStyle-label">考生须知：</label>
-                     <textarea name="" id="" cols="" rows="" style="width:90%;" class="customForm_inputBoxDefault customForm_textarea grid_col26"></textarea>
-                 </div>
-            </div>
-            <div class="clearfix"></div>
-            <ul class="code-area">
-                <li> 
-                    <span class="des"> 
-                    说明：<br/>
-                    1),这种多行文本输入是最简单的多行文本输入样式；<br/>
-                    2),js验证必填项、最大输入长度跟上面input类似<br/>  
-                    </span>
-                   
-                </li> 
-                <li class="code hide">
-                    <textarea rows="9" cols="100" class="code_textarea" >
-                          <div class="formStyle-item" style="width: 100%;">
-                              <label for="" class="formStyle-label">考生须知：</label>
-                              &lt;textarea name="" id="" cols="" rows="" class="customForm_inputBoxDefault customForm_textarea grid_col26"&gt;&lt;/textarea&gt;
-                          </div>
-                    </textarea>
-                </li>
-            </ul> 
-            <button class="copy_code f-fr">复制代码</button> 
-        </div> 
-    </fieldset> 
-    <fieldset id="radio-area">
-        <legend>表单(单选)</legend>
-        <div class="des">
-            当前表单(单选)有<mark>1</mark>种结构样式效果。
-        </div>
-        <div class="code-demo1">
-            <h4 style="display:inline-block;">后台组件表单(单选)样例1:</h4>
-            <div class="show-area">
-                 <div class="formStyle-item" style="width:100%;">
-                     <label for="" class="formStyle-label">考试次数：</label>
-                     <label class="marginR10 check-num">
-                         <input type="radio" name="checkNum" class="marginR5">一次</label>
-                     <label class="marginR10 check-num">
-                         <input type="radio" name="checkNum" class="marginR5">三次</label>
-                     <label class="marginR10 check-num">
-                         <input type="radio" name="checkNum" class="marginR5">三次以上</label>
-
-                 </div>
-            </div>
-            <div class="clearfix"></div>
-            <ul class="code-area">
-                <li> 
-                    <span class="des"> 
-                    说明：<br/>
-                    1),这种单选是最简单的单选样式；<br/> 
-                    2),以后会定制样式皮肤；
-                    </span>
-                   
-                </li> 
-                <li class="code hide">
-                    <textarea rows="9" cols="100" class="code_textarea" >
-                          <div class="formStyle-item" style="width:100%;">
-                              <label for="" class="formStyle-label">考试次数：</label>
-                              <label class="marginR10 check-num">
-                                  <input type="radio" name="checkNum" class="marginR5">一次</label>
-                              <label class="marginR10 check-num">
-                                  <input type="radio" name="checkNum" class="marginR5">三次</label>
-                              <label class="marginR10 check-num">
-                                  <input type="radio" name="checkNum" class="marginR5">三次以上</label>
-
-                          </div>
-                    </textarea>
-                </li>
-            </ul> 
-            <button class="copy_code f-fr">复制代码</button> 
-        </div> 
-    </fieldset> 
-    <fieldset id="checkbox-area">
-        <legend>表单(多选)</legend>
-        <div class="des">
-            当前表单(多选)有<mark>1</mark>种结构样式效果。
-        </div>
-        <div class="code-demo1">
-            <h4 style="display:inline-block;">后台组件表单(多选)样例1:</h4>
-            <div class="show-area">
-                 <div class="formStyle-item" style="width:100%;">
-                     <label for="" class="formStyle-label">考试人员：</label>
-                     <label class="marginR10 check-num">
-                         <input type="checkbox" name="checkboxNum" class="marginR5">张三</label>
-                     <label class="marginR10 check-num">
-                         <input type="checkbox" name="checkboxNum" class="marginR5">李四</label>
-                     <label class="marginR10 check-num">
-                         <input type="checkbox" name="checkboxNum" class="marginR5">王五</label>
-
-                 </div>
-            </div>
-            <div class="clearfix"></div>
-            <ul class="code-area">
-                <li> 
-                    <span class="des"> 
-                    说明：<br/>
-                    1),这种单选是最简单的单选样式；<br/> 
-                    2),以后会定制样式皮肤；
-                    </span>
-                   
-                </li> 
-                <li class="code hide">
-                    <textarea rows="9" cols="100" class="code_textarea" >
-                          <div class="formStyle-item" style="width:100%;">
-                              <label for="" class="formStyle-label">考试次数：</label>
-                              <label class="marginR10 check-num">
-                                  <input type="radio" name="checkNum" class="marginR5">一次</label>
-                              <label class="marginR10 check-num">
-                                  <input type="radio" name="checkNum" class="marginR5">三次</label>
-                              <label class="marginR10 check-num">
-                                  <input type="radio" name="checkNum" class="marginR5">三次以上</label>
-
-                          </div>
-                    </textarea>
-                </li>
-            </ul> 
-            <button class="copy_code f-fr">复制代码</button> 
-        </div> 
-    </fieldset> 
-    <fieldset id="table-area">
-        <legend>表格</legend>
-        <div class="des">
-            当前表格有<mark>1</mark>种结构样式效果。
-        </div>
-        <div class="code-demo1">
-            <h4 style="display:inline-block;">后台组件表格样例1:</h4>
-            <div class="show-area">
-                 <table class="tableSet">
-                <!-- 可以在class中加入tableSet-inbox或tableSet-noborder分别适应不同的情况 -->
-                <!-- 有边框 -->
-                <thead>
-                    <tr>
-                        <th style="width:6%"><div id="checkAllObj"><input type="checkbox" id="checkAll"><label for="checkAll">&nbsp;全选</label></div></th>
-                        <th style="width:40%">组名称</th>
-                        <th style="width:18%">是否包含下级分组</th>
-                        <th style="width:20%">组描述</th>
-                        <th>操作</th>
-                    </tr>
-                </thead>
-                <!-- 表头可选 -->
-                <tbody>
-                    <tr>
-                        <td><input type="checkbox" name="checkboxItem" id="1" class="marginR5">1</td>
-                        <td>孝感文昌区中学</td>
-                        <td><input type="checkbox"></td>
-                        <td>孝感文昌区中学下面还有附属小学，等等......</td>
-                        <td> 
-                            <input type="button" value="预览" style="cursor: pointer;color:#2fcc71;border:0px none;background: none;">&nbsp;
-                            <input type="button" name="del" value="删除" style="cursor: pointer;color:#2fcc71;border:0px none;background: none;"> 
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><input type="checkbox" name="checkboxItem" id="2" class="marginR5">2</td>
-                        <td>孝感文昌区中学</td>
-                        <td><input type="checkbox"></td>
-                        <td>孝感文昌区中学下面还有附属小学，等等......</td>
-                        <td> 
-                            <input type="button" value="预览" style="cursor: pointer;color:#2fcc71;border:0px none;background: none;">&nbsp;
-                            <input type="button" name="del" value="删除" style="cursor: pointer;color:#2fcc71;border:0px none;background: none;"> 
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><input type="checkbox" name="checkboxItem" id="3" class="marginR5">3</td>
-                        <td>孝感文昌区中学</td>
-                        <td><input type="checkbox"></td>
-                        <td>孝感文昌区中学下面还有附属小学，等等......</td>
-                        <td> 
-                            <input type="button" value="预览" style="cursor: pointer;color:#2fcc71;border:0px none;background: none;">&nbsp;
-                            <input type="button" name="del" value="删除" style="cursor: pointer;color:#2fcc71;border:0px none;background: none;"> 
-                        </td>
-                    </tr>
-                     
-                </tbody>              
-            </table>
-            <script type="text/javascript">
-                //表单全选
-                var tablesOps = new tablesOp({
-                    'o': 'checkAllObj',
-                    'item': 'checkboxItem',
-                    'del': 'del',
-                });
-                tablesOps.init();
-            </script>
-            </div>
-            <div class="clearfix"></div>
-            <ul class="code-area">
-                <li> 
-                    <span class="des"> 
-                    说明：<br/>
-                    1),这种单选是最简单的单选样式；<br/> 
-                    2),全选、删除需要添加引用public.js<br/> 
-                    3),调用全选、删除方法如下实例
-                    </span>
-                   
-                </li> 
-                <li class="code hide">
-                    <textarea rows="9" cols="100" class="code_textarea" >
-                           <table class="tableSet">
-                <!-- 可以在class中加入tableSet-inbox或tableSet-noborder分别适应不同的情况 -->
-                <!-- 有边框 -->
-                <thead>
-                    <tr>
-                        <th style="width:6%"><div id="checkAllObj"><input type="checkbox" id="checkAll"><label for="checkAll">&nbsp;全选</label></div></th>
-                        <th style="width:40%">组名称</th>
-                        <th style="width:18%">是否包含下级分组</th>
-                        <th style="width:20%">组描述</th>
-                        <th>操作</th>
-                    </tr>
-                </thead>
-                <!-- 表头可选 -->
-                <tbody>
-                    <tr>
-                        <td><input type="checkbox" name="checkboxItem" id="1" class="marginR5">1</td>
-                        <td>孝感文昌区中学</td>
-                        <td><input type="checkbox"></td>
-                        <td>孝感文昌区中学下面还有附属小学，等等......</td>
-                        <td> 
-                            <input type="button" value="预览" style="cursor: pointer;color:#2fcc71;border:0px none;background: none;">&nbsp;
-                            <input type="button" name="del" value="删除" style="cursor: pointer;color:#2fcc71;border:0px none;background: none;"> 
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><input type="checkbox" name="checkboxItem" id="2" class="marginR5">2</td>
-                        <td>孝感文昌区中学</td>
-                        <td><input type="checkbox"></td>
-                        <td>孝感文昌区中学下面还有附属小学，等等......</td>
-                        <td> 
-                            <input type="button" value="预览" style="cursor: pointer;color:#2fcc71;border:0px none;background: none;">&nbsp;
-                            <input type="button" name="del" value="删除" style="cursor: pointer;color:#2fcc71;border:0px none;background: none;"> 
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><input type="checkbox" name="checkboxItem" id="3" class="marginR5">3</td>
-                        <td>孝感文昌区中学</td>
-                        <td><input type="checkbox"></td>
-                        <td>孝感文昌区中学下面还有附属小学，等等......</td>
-                        <td> 
-                            <input type="button" value="预览" style="cursor: pointer;color:#2fcc71;border:0px none;background: none;">&nbsp;
-                            <input type="button" name="del" value="删除" style="cursor: pointer;color:#2fcc71;border:0px none;background: none;"> 
-                        </td>
-                    </tr>
-                     
-                </tbody>              
-            </table>
-            <script type="text/javascript">
-                //表单全选
-                var tablesOps = new tablesOp({
-                    'o': 'checkAllObj',
-                    'item': 'checkboxItem',
-                    'del': 'del',
-                });
-                tablesOps.init();
-            </script>
-                    </textarea>
-                </li>
-            </ul> 
-            <button class="copy_code f-fr">复制代码</button> 
-        </div> 
-    </fieldset> 
-    <script>
+<script>
 $(document).ready(function(){
 
     //复制
@@ -1048,5 +391,7 @@ $(document).ready(function(){
 
 });
     </script>
+<script src="js/third-party/highcharts.js"></script>
+<script src="js/third-party/exporting.js"></script> 
 </body> 
 </html>
