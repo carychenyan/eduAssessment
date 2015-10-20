@@ -8,21 +8,16 @@
 	<script type="text/javascript" src="ueditor/ueditor.all.js"></script> 
 </head>
 <body>
-	<div class="formStyle-item"  style="width: 100%;">
-                         <label for="" class="formStyle-label">须知详情：</label>
-                         <span id="editorArticle" style="width:1064px;float: left"></span> 
-                     </div>
-                     <script type="text/javascript">
-                      
-
-                            //富文本编辑器
-                            var editor = UE.getEditor('editorArticle',{
-
-                                            autoHeight: false
-
-                                         });
-
-                        
-                     </script>
+<div id="div1">123123</div>
+	 <script type="text/javascript">
+          document.getElementById('div1').onclick=function(){
+            var that=this;
+            alert(this.id);
+            var callback=function(){
+                alert(that.id);
+            }
+            callback();
+          };
+     </script>
 </body>
 </html>
