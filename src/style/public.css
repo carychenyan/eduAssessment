@@ -808,10 +808,9 @@ a.imgA: active,a.imgA: hover {
 .customTipsNoCon {
 	width: 100%;
 	padding: 15% 0;
+	color: #b5b5b5;
 	text-align: center;
-	background: #fff;
-	font-size: 16px;
-	color: #333
+	background: #f7f7f7;
 }
 .customTipsSuccessfulOperation {
 	padding:0 20px; 
