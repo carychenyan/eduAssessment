@@ -588,6 +588,75 @@ jQuery.fn.extend({
             }
         });
 
+    },
+    /**
+     *加载列表筛选
+     */
+    loadDataList:function(configs,select,operate){  
+        // configs,select都是数组eg  ["../control/indexPage.php",1,"magzine"],["p","requestData"]
+        // configs第一个参数是请求url,后面的是提交给后台的参数键值
+        // select是传给后台的参数键名
+        return this.each(function(i) {
+            var settings=configs,sel=select,main=$(this);
+            //var  = 'requestData=' + target + '&p=' + 1; //在php真实环境中是  site_id=123456&target='magzine'  且p翻页不需要带上
+            var requestUrl = settings[0],requestDataTex='';
+            for (var i = 1; i < settings.length; i++) {  
+                   var j=sel[i - 1]+"="+settings[i];
+                if (i ==1) {
+                    requestDataTex +=j;
+                } else {
+                    requestDataTex +="&"+j;
+                }
+            }
+            
+            //翻页
+             function disscussContent(data) { 
+
+                        var obj = null;
+                        try {
+                            obj = eval('(' + data + ')');
+                        } catch (ex) {
+                            obj = data.data;
+                        }
+                          //console.log(obj);
+                         var pageContent=main;
+                        function setDisscussHTML(objR) { 
+                         //console.log(objR);                     
+                            if (objR.data.count > 0) {
+                                 var list_html = ''; 
+                                     
+                                for (var index=0;index<objR.data.data.length;index++) { 
+                                       var objRItem=objR.data.data[index];
+                                       list_html+= "<tr>";
+                                   for(var j in objRItem) {
+                                            var tit=
+                                            list_html += "<td>";
+                                            list_html += objRItem[j];
+                                            list_html += "</td>";
+                                    } 
+                                    if(operate!=undefined){
+                                        list_html += "<td id="+objRItem.id+">"+operate.operate+"</td>";
+                                    }   
+                                    list_html+= "</tr>";                 
+                                     
+                                }
+                                    
+
+                                pageContent.find("ul").html(list_html);
+
+                            } else {
+
+                                pageContent.find("ul").html("抱歉，没有相关结果。");                        
+
+                            }
+                        }
+                         
+                        var requestMenberpage = new jsPage(obj.count, "pageNum", "3", requestUrl,requestDataTex, setDisscussHTML);
+                         pageMethod.call(requestMenberpage);
+             }
+            AjaxForJson(requestUrl, requestDataTex, disscussContent, null);
+
+        });
     }
 
 });

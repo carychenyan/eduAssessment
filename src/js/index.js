@@ -175,52 +175,58 @@ $(function(){
 
     });
 
-    //翻页
-     function disscussContent(data) { 
 
-                var obj = null;
-                try {
-                    obj = eval('(' + data + ')');
-                } catch (ex) {
-                    obj = data;
-                }
-                  console.log(obj);
-                 var pageContent=$(".pageContent")
-                function setDisscussHTML(objR) { 
-                 console.log(objR);                     
-                    if (objR.count > 0) {
-                         var list_html = '';
-                        for (index in objR.data) {                       
-                            list_html += "<li class=\"articleItem\">";
-                            list_html += "<div class=\"doc_name\">";
-                            list_html += "<a href=\"\" target=\"_blank\">";
-                            list_html += objR.data[index].tit;
-                            list_html += "<\/a>";
-                            list_html += "<\/div>";
-                            list_html += "<div class=\"doc_intro\">";
-                            list_html += objR.data[index].content;
-                            list_html += "<\/div>";
-                            list_html += "<\/li>";
-                        }
+  //   var site_id = 123456,
+  //       target = 'magzine';
+  //   var requestDataTex = 'requestData=' + target + '&p=' + 1; //在php真实环境中是  site_id=123456&target='magzine'  且p翻页不需要带上
+  //   var requestUrl = "../control/indexPage.php";
+  //   //翻页
+  //    function disscussContent(data) { 
 
-                        pageContent.find("ul").html(list_html);
+  //               var obj = null;
+  //               try {
+  //                   obj = eval('(' + data + ')');
+  //               } catch (ex) {
+  //                   obj = data;
+  //               }
+  //                 //console.log(obj);
+  //                var pageContent=$(".pageContent")
+  //               function setDisscussHTML(objR) { 
+  //                //console.log(objR);                     
+  //                   if (objR.count > 0) {
+  //                        var list_html = '';
+  //                       for (index in objR.data) {                       
+  //                           list_html += "<li class=\"articleItem\">";
+  //                           list_html += "<div class=\"doc_name\">";
+  //                           list_html += "<a href=\"\" target=\"_blank\">";
+  //                           list_html += objR.data[index].tit;
+  //                           list_html += "<\/a>";
+  //                           list_html += "<\/div>";
+  //                           list_html += "<div class=\"doc_intro\">";
+  //                           list_html += objR.data[index].content;
+  //                           list_html += "<\/div>";
+  //                           list_html += "<\/li>";
+  //                       }
 
-                    } else {
+  //                       pageContent.find("ul").html(list_html);
 
-                        pageContent.find("ul").html("抱歉，没有相关结果。");                        
+  //                   } else {
 
-                    }
-                }
+  //                       pageContent.find("ul").html("抱歉，没有相关结果。");                        
+
+  //                   }
+  //               }
                  
-                var requestMenberpage = new jsPage(obj.count, "pageNum", "4", requestUrl,requestDataTex, setDisscussHTML);
-                pageMethod.call(requestMenberpage);
-            }
-            var site_id=123456,target='magzine';
-            var requestDataTex = 'requestData='+target+'&p='+1;//在php真实环境中是  site_id=123456&target='magzine'  且p翻页不需要带上
-            var requestUrl = "../control/indexPage.php";
+  //               var requestMenberpage = new jsPage(obj.count, "pageNum", "3", requestUrl,requestDataTex, setDisscussHTML);
+  //                pageMethod.call(requestMenberpage);
+  //           } 
 
-            AjaxForJson(requestUrl, requestDataTex, disscussContent, null);
+  // AjaxForJson(requestUrl, requestDataTex, disscussContent, null);
+  //{"url":"../control/indexPage.php","p":1,"requestData":"magzine"}//configs
+  //["p","requestData"]//select
 
+  //页面筛选，列表加载
+  $(".pageContent").loadDataList(["../control/indexPage.php",1,"magzine"],["p","requestData"],{"operate":"<a href='javascript:void(0);' class='view'>查看</a>"});
 
   
    //日历
