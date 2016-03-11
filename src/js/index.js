@@ -224,10 +224,27 @@ $(function(){
   // AjaxForJson(requestUrl, requestDataTex, disscussContent, null);
   //{"url":"../control/indexPage.php","p":1,"requestData":"magzine"}//configs
   //["p","requestData"]//select
-
+   function callbackTab(){
+      //表单全选、删除
+      var tablesOpsExample = new tablesOp({
+        'o': 'checkAllObj',
+        'item': 'checkboxItem',
+        'del': 'del'
+      });
+      tablesOpsExample.init();
+   }
   //页面筛选，列表加载
-  $(".pageContent").loadDataList(["../control/indexPage.php",1,"magzine"],["p","requestData"],{"operate":"<a href='javascript:void(0);' class='view'>查看</a>"});
-
+  $(".tablePageContent").loadDataList(
+    ["../control/indexPage.php", 1, "magzine"], ["p", "requestData"], {
+      "operate": "<input type='checkbox' name='checkboxItem'>"
+    }, {
+      "operate": "<a href='javascript:void(0);' class='view'>设为班主任</a>"
+    }, {
+      "operate": "<a href='javascript:void(0);' class='view'>查看</a><a href='javascript:void(0);' name='del' class='view'>删除</a>"
+    },
+    callbackTab
+  );
+  
   
    //日历
    $('input[name="date_test"]').calendar();

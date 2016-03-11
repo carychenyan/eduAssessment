@@ -342,9 +342,10 @@
                         <td>孝感文昌区中学</td>
                         <td><input type="checkbox"></td>
                         <td>孝感文昌区中学下面还有附属小学，等等......</td>
-                        <td> 
-                            <input type="button" value="预览" style="cursor: pointer;color:#2fcc71;border:0px none;background: none;">&nbsp;
-                            <input type="button" name="del" value="删除" style="cursor: pointer;color:#2fcc71;border:0px none;background: none;"> 
+                        <td>  
+                             <a href='javascript:void(0);' name="del" class='view'>预览</a>
+                             &nbsp;
+                            <a href='javascript:void(0);' name="del">删除</a> 
                         </td>
                     </tr>
                      
@@ -515,10 +516,36 @@
                    </a>
                </div>
            </div> 
-           <div class="tableCon pageContent">
-               <ul></ul>
+           <div class="tableCon">
+             <div class="tableBtn ">
+               <a href="javascript:void(0);" name="delAll" class="customBtn colourWhite marginR10">删除</a>
+               <a href="javascript:void(0);" name=" " class="customBtn colourBlack marginR10" id="popTips">选择对象</a>
+               <div class="clear"></div>
+             </div>
+             <table class="tableSet">
+               <!-- 可以在class中加入tableSet-inbox或tableSet-noborder分别适应不同的情况 -->           
+               <!-- 有边框 -->           
+               <thead>
+                 <tr>
+                   <th style="width:6%">
+                     <div class="checkAllObj">
+                       <input type="checkbox" id="">                   
+                       <label for="">&nbsp;全选</label>
+                     </div>
+                   </th> 
+                   <th style="width:50%">组名称</th>
+                   <th style="width:18%">是否包含下级分组</th>
+                   <th >组描述1</th>
+                   <th>组描述2</th>
+                   <th>组描述3</th>
+                   <th>组描述4</th>
+                 </tr>
+               </thead>
+               <!-- 表头可选 -->           
+               <tbody class="tablePageContent"></tbody>
+             </table>
            </div>
-           <div class="page" id="pageNum"></div>
+            <div class="page" id="pageNum"></div>
        </div>
        <!-- ==翻页实例== -->    
        <div class="footBtn">

@@ -269,14 +269,14 @@ $(function() {
 tablesOp=function(settings){
     var my =this;
         my.settings = {
-            checkAll: settings.o, //全选最外层id
+            checkAll: settings.o, //全选最外层name
             item: settings.item ,//每一列inpu的name
             del: settings.del //每一列inpu的name
         };
 
     //全选
     my.checkAll = function() {
-        var main = $("#" + my.settings.checkAll);
+        var main = $("." + my.settings.checkAll);
         var child = main.parent().parent().parent().siblings("tbody").find("input[name='" +my.settings.item + "']");
         main.bind("click", function() {
             var checkStatus = main.find("input").prop('checked');
@@ -290,7 +290,7 @@ tablesOp=function(settings){
 
     //单选
     my.checkSingle = function() {
-        var main = $("#" + my.settings.checkAll);
+        var main = $("." + my.settings.checkAll);
         var child = $("input[name='" + my.settings.item + "']");
 
         child.bind('click', function() {
@@ -302,7 +302,7 @@ tablesOp=function(settings){
 
     //删除单行
     my.del = function() {
-        var delO = $("input[name='" + my.settings.del + "']");
+        var delO = $("a[name='" + my.settings.del + "']");
         var id = delO.parent().parent().find("input[name='" + my.settings.item + "']").attr("id");
         delO.bind('click', function() {
             $(this).parent().parent().remove();
@@ -323,7 +323,34 @@ tablesOp=function(settings){
             */
         });
     };
+     //删除全部
+    my.delAll = function() {
+        var main = $("." + my.settings.checkAll).parents(".tableSet");
+        var child = main.siblings(".tableBtn ").find("a[name='delAll']");
+        var childCheckBox = main.find("input[name='checkboxItem']");
+        var checkStatus=false;
+        var l=childCheckBox.length;
+        child.bind("click", function() {
+               childCheckBox.each(function(i){
+                   if($(this).prop('checked')!=false){ 
+                        checkStatus=true;
+                        $(this).parent().parent().find("a[name='del']").trigger("click");
+                        window.location.href=window.location.href;
+                         
+                   } 
+                   if (checkStatus == false && i == (l - 1)) {
+                        promptMessageDialog({
+                            icon: "error",
+                            content: "请填选择要删除的列！"
+                        }); //成功finish；警告warning；错误error；提示hint；疑问query
+                   }
+               }); 
+              
+           
 
+        });
+    }; 
+    
     //入口函数
     my.init=function(){
             var main = $("#" + my.settings.checkAll);
@@ -332,6 +359,7 @@ tablesOp=function(settings){
             my.checkAll();
             my.checkSingle();
             my.del();
+            my.delAll();
     };    
 
 };
@@ -592,10 +620,14 @@ jQuery.fn.extend({
     /**
      *加载列表筛选
      */
-    loadDataList:function(configs,select,operate){  
+    loadDataList:function(configs,select,choose,operate1,operate2,fn){  
         // configs,select都是数组eg  ["../control/indexPage.php",1,"magzine"],["p","requestData"]
         // configs第一个参数是请求url,后面的是提交给后台的参数键值
         // select是传给后台的参数键名
+        //operate1是否这一串需要checkbox操作按钮
+        //operate2是否这一串需要操作按钮
+        //choose全选多选框
+        //fn回调函数
         return this.each(function(i) {
             var settings=configs,sel=select,main=$(this);
             //var  = 'requestData=' + target + '&p=' + 1; //在php真实环境中是  site_id=123456&target='magzine'  且p翻页不需要带上
@@ -628,21 +660,32 @@ jQuery.fn.extend({
                                 for (var index=0;index<objR.data.data.length;index++) { 
                                        var objRItem=objR.data.data[index];
                                        list_html+= "<tr>";
+                                    if (choose!= undefined||choose!= null) {
+                                        list_html += "<td>" + choose.operate + "</td>";
+                                    }
                                    for(var j in objRItem) {
                                             var tit=
                                             list_html += "<td>";
                                             list_html += objRItem[j];
                                             list_html += "</td>";
                                     } 
-                                    if(operate!=undefined){
-                                        list_html += "<td id="+objRItem.id+">"+operate.operate+"</td>";
+                                    if(operate1!=undefined||operate1!=null){
+                                        list_html += "<td>"+operate1.operate+"</td>";
+                                    } 
+                                    if(operate2!=undefined||operate2!=null){
+                                        list_html += "<td id="+objRItem.id+">"+operate2.operate+"</td>";
                                     }   
                                     list_html+= "</tr>";                 
                                      
-                                }
-                                    
+                                }                                    
 
-                                pageContent.find("ul").html(list_html);
+                                pageContent.html(list_html);
+
+                                if (fn != undefined || fn != null)//回调函数
+
+                                {
+                                    fn();
+                                }
 
                             } else {
 
