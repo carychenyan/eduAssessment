@@ -694,7 +694,7 @@ jQuery.fn.extend({
                             }
                         }
                          
-                        var requestMenberpage = new jsPage(obj.count, "pageNum", "3", requestUrl,requestDataTex, setDisscussHTML);
+                         var requestMenberpage = new jsPage(obj.count, "pageNum", "3", requestUrl,requestDataTex, setDisscussHTML);
                          pageMethod.call(requestMenberpage);
              }
             AjaxForJson(requestUrl, requestDataTex, disscussContent, null);

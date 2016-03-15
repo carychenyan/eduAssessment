@@ -545,7 +545,25 @@
                <tbody class="tablePageContent"></tbody>
              </table>
            </div>
-            <div class="page" id="pageNum"></div>
+           <div class="m-page clearfix">
+             <div class="f-fl num">
+               共：
+               <span name="countNum">100</span>
+               条数据，当前第
+               <span name="currentNum">1</span>
+               /10页&nbsp;&nbsp;&nbsp;&nbsp;
+               每页显示
+               <select name=""   class="customForm_inputBoxDefault">
+                 <option value="10">10行</option>
+                 <option value="20">20行</option>
+                 <option value="30">30行</option>
+                 <option value="40">40行</option>
+                 <option value="50">50行</option>
+               </select>
+             </div>
+             <div class="page f-fr" id="pageNum"></div>
+           </div>
+            
        </div>
        <!-- ==翻页实例== -->    
        <div class="footBtn">

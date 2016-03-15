@@ -345,6 +345,18 @@ body{
 	background:#e54949;
 	border:1px solid #edadad;
 }
+
+.m-page{
+	padding: 0 20px;
+	color: #999;
+	line-height: 16px;
+}
+.m-page .customForm_inputBoxDefault{
+
+}
+.m-page .page{
+	margin-top: 0
+}
 /*== 分页调整 ==*/
 
 .project {
