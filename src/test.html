@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	 <script type="text/javascript" src="http://cdn.bootcss.com/jquery/1.8.3/jquery.js"></script>
+	<script type="text/javascript" src="ueditor/ueditor.config.js"></script>
+	<script type="text/javascript" src="ueditor/ueditor.all.js"></script> 
+</head>
+<body>
+<ul id="test">
+<li>这是第一条alert(0);</li>
+<li>这是第二条alert(1);</li>
+<li>这是第三条alert(2);</li>
+</ul>
+<script type="text/javascript">
+    var elements = document.getElementById('test').querySelectorAll('li');
+    for (var i = 0; i < elements.length; i++) {
+      (function(){
+        var j=i;
+         elements[j].onclick = function () {
+            alert(j);
+        }
+      })();
+        
+    }
+</script>
+</body>
+</html>
