@@ -347,15 +347,23 @@ body{
 }
 
 .m-page{
-	padding: 0 20px;
-	color: #999;
+	padding:0 20px;
+	color: #666;
 	line-height: 16px;
 }
 .m-page .customForm_inputBoxDefault{
-
+    width: 60px;
+    font-size: 12px;
 }
-.m-page .page{
-	margin-top: 0
+.m-page #pageNum{
+	margin-top:0;
+	padding-top:0;
+}
+.m-page .num dl dt{
+  margin: 5px 5px 0 0;	 
+}
+.m-page .num span{
+	font-weight: bold;
 }
 /*== 分页调整 ==*/
 
