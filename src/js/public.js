@@ -350,11 +350,15 @@ tablesOp=function(settings){
 
         });
     }; 
-    
+    //总条数、当前页码、每页显示
+    my.pageNumber = function() {
+         var main = $("." + my.settings.checkAll).parent().parent().siblings(".m-page"); 
+         main.find("span[name='countNum']")
+    };
     //入口函数
     my.init=function(){
             var main = $("#" + my.settings.checkAll);
-            console.log(main.parents(".tableSet"));
+            //console.log(main.parents(".tableSet"));
             main.parents(".tableSet").find("tr:even").css("background-color","#f9f9f9");
             my.checkAll();
             my.checkSingle();
@@ -546,7 +550,7 @@ jQuery.fn.extend({
 
                     }
                 });
-                console.log(submit);
+                //console.log(submit);
                 if (submit == false) {//停顿，跳出检测函数                    
                     return false;
                 }
@@ -620,18 +624,19 @@ jQuery.fn.extend({
     /**
      *加载列表筛选
      */
-    loadDataList:function(configs,select,choose,operate1,operate2,fn){  
+    loadDataList:function(configs,select,choose,operate1,operate2,listN,fn){  
         // configs,select都是数组eg  ["../control/indexPage.php",1,"magzine"],["p","requestData"]
         // configs第一个参数是请求url,后面的是提交给后台的参数键值
         // select是传给后台的参数键名
         //operate1是否这一串需要checkbox操作按钮
         //operate2是否这一串需要操作按钮
         //choose全选多选框
+        //listN位每一页的条数
         //fn回调函数
         return this.each(function(i) {
             var settings=configs,sel=select,main=$(this);
             //var  = 'requestData=' + target + '&p=' + 1; //在php真实环境中是  site_id=123456&target='magzine'  且p翻页不需要带上
-            var requestUrl = settings[0],requestDataTex='';
+            var requestUrl = settings[0],requestDataTex='',listNum=listN;//main.parent().parent().siblings(".m-page").find("select.customForm_inputBoxDefault").val();
             for (var i = 1; i < settings.length; i++) {  
                    var j=sel[i - 1]+"="+settings[i];
                 if (i ==1) {
@@ -684,22 +689,37 @@ jQuery.fn.extend({
                                 if (fn != undefined || fn != null)//回调函数
 
                                 {
-                                    fn();
+                                    
+                                    fn(main,objR.data.count,listNum);
                                 }
 
                             } else {
-
-                                pageContent.find("ul").html("抱歉，没有相关结果。");                        
+                                
+                                var colNum=pageContent.parent().find("thead th").length;
+                                pageContent.html('<tr><td colspan='+colNum+'>抱歉，没有相关结果。</td></tr>');                        
 
                             }
                         }
                          
-                         var requestMenberpage = new jsPage(obj.count, "pageNum", "3", requestUrl,requestDataTex, setDisscussHTML);
+                         var requestMenberpage = new jsPage(obj.count, "pageNum", listNum, requestUrl,requestDataTex, setDisscussHTML);
                          pageMethod.call(requestMenberpage);
              }
             AjaxForJson(requestUrl, requestDataTex, disscussContent, null);
 
         });
+    },
+    /**
+     *每一页条目数调整
+     */
+    pageListNum:function(fn){
+         return this.each(function(i) {
+            var main=$(this);
+            mian.change(function(){
+                var n=main.val();
+                    fn();
+            });
+
+         });
     }
 
 });
@@ -1102,15 +1122,17 @@ jsPage.prototype.page = function() {
         this.endstr = "<a href='javascript:void(0)' p='" + this.totalpage + "'>尾页</a>";
         if (this.cpage != 1) {
             if (this.cpage >= this.totalpage) {
-                document.getElementById(this.page_obj_id).innerHTML = "<div>" + this.startstr + this.Prestr + this.outstr + "<\/div>";
+                document.getElementById(this.page_obj_id).innerHTML = "<div name='pageContnet' totalpage="+this.totalpage+">" + this.startstr + this.Prestr + this.outstr + "<\/div>";
             } else {
-                document.getElementById(this.page_obj_id).innerHTML = "<div>" + this.startstr + this.Prestr + this.outstr + this.nextstr + this.endstr + "<\/div>";
+                document.getElementById(this.page_obj_id).innerHTML = "<div name='pageContnet' totalpage="+this.totalpage+">" + this.startstr + this.Prestr + this.outstr + this.nextstr + this.endstr + "<\/div>";
             }
         } else {
-            document.getElementById(this.page_obj_id).innerHTML = "<div>" + this.outstr + this.nextstr + this.endstr + "<\/div>";
+            document.getElementById(this.page_obj_id).innerHTML = "<div name='pageContnet' totalpage="+this.totalpage+">" + this.outstr + this.nextstr + this.endstr + "<\/div>";
         }
     } else {
+        var o=document.getElementById(this.page_obj_id);
         document.getElementById(this.page_obj_id).innerHTML = "";
+        $(o).parents(".m-page").html("");
     }
     this.outstr = "";
 };

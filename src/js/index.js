@@ -224,27 +224,55 @@ $(function(){
   // AjaxForJson(requestUrl, requestDataTex, disscussContent, null);
   //{"url":"../control/indexPage.php","p":1,"requestData":"magzine"}//configs
   //["p","requestData"]//select
-   function callbackTab(){
+   function callbackTab(o,allNum,listNum){
+      var m_page=o.parent().parent().siblings(".m-page"),currentpagenum;
       //表单全选、删除
       var tablesOpsExample = new tablesOp({
         'o': 'checkAllObj',
         'item': 'checkboxItem',
         'del': 'del'
       });
+
+      //页码加载
+      var pageNum=function(){
+         var totalNum=m_page.find("div[name='pageContnet']").attr("totalpage");
+        currentpagenum=m_page.find("span.current").html();
+        m_page.find("span[name='currentNum']").html(currentpagenum);
+        m_page.find("span[name='countNum']").html(allNum);
+        m_page.find("span[name='totalNum']").html(totalNum);
+
+      };
+
+
       tablesOpsExample.init();
+      pageNum();
+     
+     
    }
-  //页面筛选，列表加载
-  $(".tablePageContent").loadDataList(
-    ["../control/indexPage.php", 1, "magzine"], ["p", "requestData"], {
-      "operate": "<input type='checkbox' name='checkboxItem'>"
-    }, {
-      "operate": "<a href='javascript:void(0);' class='view'>设为班主任</a>"
-    }, {
-      "operate": "<a href='javascript:void(0);' class='view'>查看</a><a href='javascript:void(0);' name='del' class='view'>删除</a>"
-    },
-    callbackTab
-  );
-  
+  //页面筛选，loadData列表加载
+  var loadData = function(i) {
+    $(".tablePageContent").loadDataList(
+      ["../control/indexPage.php", 1, "magzine",i], ["p", "requestData","listNum"], {
+        "operate": "<input type='checkbox' name='checkboxItem'>"
+      }, {
+        "operate": "<a href='javascript:void(0);' class='view'>设为班主任</a>"
+      }, {
+        "operate": "<a href='javascript:void(0);' class='view'>查看</a><a href='javascript:void(0);' name='del' class='view'>删除</a>"
+      },
+      i,
+      callbackTab
+      
+    );
+  }; 
+
+  //每一页条目数调整
+  $(".m-page .customForm_inputBoxDefault").change(function() {
+    var i=$(this).val();
+    loadData(i);
+  });
+
+  loadData(1);//初始化
+
   
    //日历
    $('input[name="date_test"]').calendar();

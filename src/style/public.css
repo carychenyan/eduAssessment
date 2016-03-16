@@ -365,6 +365,9 @@ body{
 .m-page .num span{
 	font-weight: bold;
 }
+.m-page .num span[name='totalNum']{
+	font-weight: normal;
+}
 /*== 分页调整 ==*/
 
 .project {
