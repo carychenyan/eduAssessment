@@ -224,6 +224,7 @@ $(function(){
   // AjaxForJson(requestUrl, requestDataTex, disscussContent, null);
   //{"url":"../control/indexPage.php","p":1,"requestData":"magzine"}//configs
   //["p","requestData"]//select
+var loadData = function(i) {
    function callbackTab(o,allNum,listNum){
       var m_page=o.parent().parent().siblings(".m-page"),currentpagenum;
       //表单全选、删除
@@ -249,8 +250,8 @@ $(function(){
      
      
    }
-  //页面筛选，loadData列表加载
-  var loadData = function(i) {
+   
+    //页面筛选，loadData列表加载 
     $(".tablePageContent").loadDataList(
       ["../control/indexPage.php", 1, "magzine",i], ["p", "requestData","listNum"], {
         "operate": "<input type='checkbox' name='checkboxItem'>"
